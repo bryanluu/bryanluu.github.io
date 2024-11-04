@@ -4,8 +4,19 @@
   width: 200px;
 }
 
-main#resume-content * {
+main * {
   font-family: "Carlito", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+h1.cv-name {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2.cv-section-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: solid 3px black;
 }

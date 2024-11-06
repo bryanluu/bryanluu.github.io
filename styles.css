@@ -3,20 +3,3 @@
   border: 5px solid #266DA9;
   width: 200px;
 }
-
-main * {
-  font-family: "Carlito", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h1.cv-name {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-h2.cv-section-title {
-  font-weight: bold;
-  text-transform: uppercase;
-  border-bottom: solid 3px black;
-}

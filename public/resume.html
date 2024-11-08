@@ -26,14 +26,16 @@
       padding: 30px;
     }
 
-    .cv-content * {
+    h1, h2, p, span, a, li  {
       font-family: "Carlito", sans-serif;
       font-weight: 400;
       font-style: normal;
     }
 
     .cv-header {
+      padding-bottom: 1em;
       margin-bottom: 1em;
+      border-bottom: 1px dashed lightgray;
     }
 
     .cv-name {
@@ -86,6 +88,71 @@
     a:hover {
       color: #548FC1;
       text-decoration: underline;
+    }
+
+    aside {
+      border-left: 1px dashed lightgray;
+    }
+
+    .cv-entries {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cv-entry {
+      border-bottom: 1px dashed lightgray;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cv-entry:first-child {
+      padding-top: 0;
+    }
+
+    .cv-entry:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .cv-entry > .cv-role {
+      font-size: large;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      grid-column: 1 / 3;
+    }
+
+    .cv-entry > .cv-company {
+      grid-column: 1 / -1;
+    }
+
+    .cv-entry > .cv-company * {
+      font-weight: bold;
+    }
+
+    .cv-entry > .cv-duration {
+      grid-column: 1 / 2;
+      font-size: small;
+    }
+
+    .cv-entry > .cv-location {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      font-size: small;
+    }
+
+    .cv-entry > .cv-list {
+      grid-column: 1 / -1;
+    }
+
+    .cv-entry > .cv-list > li {
+      list-style-type: disc;
+    }
+
+    li {
+      text-justify: auto;
     }
   </style>
 </head>

@@ -135,12 +135,18 @@
     .cv-entry > .cv-duration {
       grid-column: 1 / 2;
       font-size: small;
+      display: flex;
+      gap: 1ex;
+      align-items: center;
     }
 
     .cv-entry > .cv-location {
       grid-column: 2 / 3;
       grid-row: 3 / 4;
       font-size: small;
+      display: flex;
+      gap: 1ex;
+      align-items: center;
     }
 
     .cv-entry > .cv-list {
@@ -201,10 +207,23 @@
           <h2 class="cv-section-title">Work Experience</h2>
           <ul class="cv-entries">
             <li class="cv-entry">
-              <p class="cv-role">👔 Intermediate Software Developer</p>
-              <span class="cv-company">🏢 <a href="https://opentech.eco/">OPEN Technologies</a></span>
-              <span class="cv-location">📍 Vancouver, BC</span>
-              <span class="cv-duration">🗓️ <time datetime="2022-05">May 2022</time> - <time datetime="2024-04">April 2024</time></span>
+              <p class="cv-role">Intermediate Software Developer</p>
+              <span class="cv-company">
+                <a href="https://opentech.eco/">OPEN Technologies</a>
+              </span>
+              <span class="cv-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                Vancouver, BC
+              </span>
+              <span class="cv-duration">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                  <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/>
+                  <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                </svg>
+                <time datetime="2022-05">May 2022</time> - <time datetime="2024-04">April 2024</time>
+              </span>
               <ul class="cv-list">
                 <li class="cv-item">Supporting maintenance and feature-development for OPEN’s flagship product, GRID, by implementing software in <strong>Clojure, Python, JavaScript, HTML/CSS, PostgreSQL</strong></li>
                 <li class="cv-item">Designed <strong>PostgreSQL</strong> data infrastructure and visualizations for a new project serving 70,000 homes in Saskatoon</li>
@@ -214,25 +233,46 @@
               </ul>
             </li>
             <li class="cv-entry">
-              <p class="cv-role">👔 Full-Stack Software Developer</p>
-              <span class="cv-company">🏢 <a href="https://proofgov.com/">Proof Data Technology Inc.</a></span>
-              <span class="cv-location">📍 Remote</span>
-              <span class="cv-duration">🗓️ <time datetime="2021-06">June 2021</time> - <time datetime="2021-12">December 2021</time></span>
+              <p class="cv-role">Full-Stack Software Developer</p>
+              <span class="cv-company"><a href="https://proofgov.com/">Proof Data Technology Inc.</a></span>
+              <span class="cv-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                Remote
+              </span>
+              <span class="cv-duration">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                  <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/>
+                  <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                </svg>
+                <time datetime="2021-06">June 2021</time> - <time datetime="2021-12">December 2021</time>
+              </span>
               <ul class="cv-list">
                 <li class="cv-item">Delivered value to customers across Canada by maintaining features
                   of the government-tech platform across the stack (<strong>Ruby-on-Rails, Vue/JavaScript/CSS/HTML</strong>) as part of a team of 6 developers</li>
                 <li class="cv-item">Empowered users and improved workflows for users and developers
-                  alike by developing core new features, including one pursued inde-
-                  pendently</li>
+                  alike by developing core new features, including one pursued independently</li>
                 <li class="cv-item">Contributed to team progress by deploying Agile software practice
                   and performing <em>GitHub Pull-Requests</em></li>
               </ul>
             </li>
             <li class="cv-entry">
-              <p class="cv-role">👔 Research Assistant</p>
-              <span class="cv-company">🏢 <a href="https://wispo.ece.wisc.edu/">Wisconsin Power Systems Group - University of Wisconsin-Madison</a></span>
-              <span class="cv-location">📍 Madison, WI, USA</span>
-              <span class="cv-duration">🗓️ <time datetime="2020-08">August 2020</time> - <time datetime="2021-01"> January 2021</time></span>
+              <p class="cv-role">Research Assistant</p>
+              <span class="cv-company"><a href="https://wispo.ece.wisc.edu/">Wisconsin Power Systems Group - University of Wisconsin-Madison</a></span>
+              <span class="cv-location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                Madison, WI, USA
+              </span>
+              <span class="cv-duration">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                  <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/>
+                  <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                </svg>
+                <time datetime="2020-08">August 2020</time> - <time datetime="2021-01"> January 2021</time>
+              </span>
               <ul class="cv-list">
                 <li class="cv-item">Simulated a small power grid with various convertor configurations in
                   <strong>MATLAB</strong> from scratch</li>

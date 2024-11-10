@@ -181,16 +181,8 @@
 
     /* Creates icons which open up to their unfilled versions */
 
-    details > summary > svg.open {
+    details:not([open]) > summary > svg.open {
       display: none;
-    }
-
-    details[open] > summary > svg.open {
-      display: block;
-    }
-
-    details > summary > svg.closed {
-      display: block;
     }
 
     details[open] > summary > svg.closed {

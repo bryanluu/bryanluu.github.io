@@ -15,15 +15,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
     }
 
     .cv-content {
       background-color: white;
       max-width: 816px;
       /* height: 1054px; */
-      border: 1px solid black;
+      /* border: 1px solid black; */
+      margin: 10px;
       padding: 30px;
+      padding-top: 35px;
     }
 
     h1, h2, h3, p, span, a, li  {
@@ -34,8 +36,6 @@
 
     .cv-header {
       padding-bottom: 1em;
-      margin-bottom: 1em;
-      border-bottom: 1px dashed lightgray;
     }
 
     h1 {
@@ -46,7 +46,7 @@
 
     h2 {
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 18pt;
       text-transform: uppercase;
     }
 
@@ -166,7 +166,13 @@
     }
 
     li {
-      text-justify: auto;
+      /* text-align: justify;
+      text-justify: auto; */
+      font-size: 11pt;
+    }
+
+    li.cv-item {
+      line-height: 1.25;
     }
 
     .list-schools {
@@ -221,6 +227,24 @@
     details > summary > svg:hover {
       scale: 110%;
     }
+
+    @media (max-width: 576px) {
+      aside {
+        border: none;
+      }
+    }
+
+    @media print {
+      footer, .no-print {
+        display: none;
+      }
+
+      .cv-content {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -263,7 +287,7 @@
       </div>
     </header>
     <div class="cv-body row">
-      <main class="col-md-7">
+      <main class="col-sm-7">
         <section class="cv-section">
           <h2 class="cv-section-title">Work Experience</h2>
           <ul class="cv-entries">
@@ -427,7 +451,7 @@
             </ul>
           </details>
         </section>
-        <section class="cv-section">
+        <section class="cv-section no-print">
           <h2 class="cv-section-title">Interests</h2>
           <details closed>
             <summary>

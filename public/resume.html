@@ -102,6 +102,11 @@
       border-left: 1px dashed lightgray;
     }
 
+    .cv-list {
+      list-style-position: outside;
+      padding-left: 1em;
+    }
+
     .cv-entries {
       list-style: none;
       margin: 0;
@@ -180,14 +185,6 @@
       padding-bottom: 2px;
     }
 
-    .cv-item:has(details) {
-      list-style-image: url('../assets/images/mortarboard.svg');
-    }
-
-    .cv-item:has(details[open]) {
-      list-style-image: url('../assets/images/mortarboard-fill.svg');
-    }
-
     .list-hammers {
       list-style-image: url('../assets/images/hammer.svg');
     }
@@ -216,7 +213,8 @@
       display: flex;
       flex-direction: column;
       gap: 1em;
-      margin-left: 0.5ex;
+      padding: 0;
+      margin: 0;
     }
 
     .list-schools summary {
@@ -238,9 +236,29 @@
       padding-left: 0;
     }
 
-    .cv-list {
-      list-style-position: outside;
-      padding-left: 1em;
+
+    /* To make the mortarboard bullets interactive when hovered on */
+
+    .list-schools li.cv-item:has(details) {
+      list-style: none;
+      background-image: url('../assets/images/mortarboard.svg');
+      background-repeat: no-repeat;
+      background-size: 14pt;
+      padding-left: 28px;
+      margin: 0;
+    }
+
+    .list-schools li.cv-item:has(details[open]) {
+      list-style: none;
+      background-image: url('../assets/images/mortarboard-fill.svg');
+      background-repeat: no-repeat;
+      background-size: 14pt;
+      padding-left: 28px;
+      margin: 0;
+    }
+
+    .list-schools li.cv-item:has(details):hover {
+      background-size: 15pt;
     }
 
     .cv-skills {
@@ -267,7 +285,7 @@
       display: none;
     }
 
-    details > summary > svg:hover {
+    details > summary:hover > svg {
       scale: 110%;
     }
 

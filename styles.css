@@ -1,3 +1,9 @@
+:root {
+  --bs-primary: #266DA9;
+  --bs-primary-rgb: #266DA9;
+  --bs-primary-bg-subtle: #548FC1;
+}
+
 .profile-pic {
   border-radius: 50%;
   border: 5px solid #266DA9;

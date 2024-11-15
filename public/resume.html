@@ -60,7 +60,7 @@
     }
 
     .cv-tagline {
-      color: var(--bs-primary);
+      color: var(--bl-primary);
       margin-bottom: 5px;
       display: flex;
       flex-wrap: wrap;
@@ -89,12 +89,12 @@
     }
 
     a {
-      color: var(--bs-primary);
+      color: var(--bl-primary);
       text-decoration: none;
     }
 
     a:hover {
-      color: var(--bs-primary-bg-subtle);
+      color: var(--bl-primary-bg-subtle);
       text-decoration: underline;
     }
 
@@ -322,6 +322,18 @@
   </style>
 </head>
 <body>
+  <!-- TODO fix print nav -->
+  <nav class="d-flex flex-wrap justify-content-center mb-4 border-bottom no-print">
+    <a href="/" class="d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img class="profile-pic-mini" src="../assets/images/profile_pic.jpg" alt="Photo of me wearing a hat, with a cat on it">
+      <span class="fs-4 text-light">Bryan L. Luu</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="./resume.html" class="nav-link active" aria-current="page">Resumé</a></li>
+    </ul>
+  </nav>
   <div class="cv-content">
     <header class="cv-header">
       <h1 class="cv-name">Bryan L. Luu</h1>

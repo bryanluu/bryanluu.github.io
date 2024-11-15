@@ -1,11 +1,43 @@
 :root {
-  --bs-primary: #266DA9;
-  --bs-primary-rgb: #266DA9;
-  --bs-primary-bg-subtle: #548FC1;
+  --bl-primary: #266DA9;
+  --bl-primary-rgb: #266DA9;
+  --bl-primary-bg-subtle: #548FC1;
+  --bl-light: rgb(248, 249, 250);
+  --bl-light-text-emphasis: lightblue;
 }
 
 .profile-pic {
   border-radius: 50%;
-  border: 5px solid #266DA9;
+  border: 5px solid var(--bl-primary);
   width: 200px;
+}
+
+.profile-pic-mini {
+  border-radius: 50%;
+  border: 1px solid var(--bl-primary);
+  width: 32px;
+}
+
+nav {
+  width: 100%;
+  padding: 1em;
+  background-color: var(--bl-primary-bg-subtle);
+}
+
+.nav-link {
+  color: var(--bl-light);
+}
+
+.nav-link:hover {
+  color: var(--bl-light-text-emphasis);
+}
+
+.nav-pills .nav-link.active {
+  color: var(--bl-light);
+  background-color: var(--bl-primary);
+}
+
+.nav-pills .nav-link.active:hover {
+  color: var(--bl-primary);
+  background-color: var(--bl-light-text-emphasis);
 }

@@ -28,7 +28,13 @@
       padding-top: 35px;
     }
 
-    h1, h2, h3, p, span, a, li  {
+    .cv-content h1,
+    .cv-content h2,
+    .cv-content h3,
+    .cv-content p,
+    .cv-content span,
+    .cv-content a,
+    .cv-content li  {
       font-family: "Carlito", sans-serif;
       font-weight: 400;
       font-style: normal;
@@ -60,7 +66,7 @@
     }
 
     .cv-tagline {
-      color: var(--bl-primary);
+      color: var(--bs-primary);
       margin-bottom: 5px;
       display: flex;
       flex-wrap: wrap;
@@ -88,13 +94,13 @@
       font-size: small;
     }
 
-    a {
-      color: var(--bl-primary);
+    .cv-content a {
+      color: var(--bs-primary);
       text-decoration: none;
     }
 
-    a:hover {
-      color: var(--bl-primary-bg-subtle);
+    .cv-content a:hover {
+      color: var(--bs-primary-bg-subtle);
       text-decoration: underline;
     }
 
@@ -322,12 +328,11 @@
   </style>
 </head>
 <body>
-  <nav class="d-flex flex-wrap justify-content-center mb-4 border-bottom no-print">
-    <a href="/" class="d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+  <nav class="navbar bg-primary mb-4 border-bottom no-print">
+    <a href="/" class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto text-decoration-none">
       <img class="profile-pic-mini" src="../assets/images/profile_pic.jpg" alt="Photo of me wearing a hat, with a cat on it">
-      <span class="fs-4 text-light">Bryan L. Luu</span>
+      <span class="fs-4">Bryan L. Luu</span>
     </a>
-
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="./resume.html" class="nav-link active" aria-current="page">Resumé</a></li>

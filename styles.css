@@ -41,3 +41,14 @@ nav {
   color: var(--bl-primary);
   background-color: var(--bl-light-text-emphasis);
 }
+
+.btn-primary {
+  --bs-btn-bg: var(--bl-primary) !important;
+  --bs-btn-hover-bg: var(--bl-primary-bg-subtle) !important;
+  --bs-btn-color: var(--bl-light) !important;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}

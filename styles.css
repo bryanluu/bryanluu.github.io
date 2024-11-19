@@ -23,8 +23,10 @@
 
 .btn-primary {
   --bs-btn-bg: var(--bs-primary) !important;
-  --bs-btn-hover-bg: var(--bs-primary-bg-subtle) !important;
+  --bs-btn-hover-bg: var(--bs-light-text-emphasis) !important;
   --bs-btn-color: var(--bs-light) !important;
+  --bs-btn-hover-border-color: transparent !important;
+  --bs-btn-hover-color: var(--bs-primary) !important;
 }
 
 .profile-pic {

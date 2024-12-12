@@ -145,6 +145,7 @@
 
     .cv-entry > .cv-company {
       grid-column: 1 / -1;
+      color: var(--bs-primary);
     }
 
     .cv-entry > .cv-company * {
@@ -182,7 +183,7 @@
     }
 
     .cv-company, .cv-company * {
-      font-weight: bold;
+      font-weight: bold !important;
       font-size: 12pt;
     }
 
@@ -342,7 +343,7 @@
     <header class="cv-header">
       <h1 class="cv-name">Bryan L. Luu</h1>
       <div class="cv-tagline">
-        <span style="margin-right: 10px;">Embedded Software Developer</span>
+        <span style="margin-right: 10px;">Software Developer</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
           <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
         </svg>
@@ -386,7 +387,7 @@
               <span class="cv-company">
                 <a href="https://opentech.eco/">OPEN Technologies</a>
               </span>
-              <span class="cv-location">Vancouver, BC</span>
+              <span class="cv-location">Vancouver, BC, Canada</span>
               <span class="cv-duration">
                 <time datetime="2022-05">May 2022</time> - <time datetime="2024-04">April 2024</time>
               </span>
@@ -402,7 +403,7 @@
               <span class="cv-role">Full-Stack Software Developer</span>
               <span class="cv-company"><a href="https://proofgov.com/">Proof Data Technology Inc.</a></span>
               <span class="cv-location">
-                Remote
+                Remote (Canada)
               </span>
               <span class="cv-duration">
                 <time datetime="2021-06">June 2021</time> - <time datetime="2021-12">December 2021</time>
@@ -432,6 +433,55 @@
                   etc) schemes on the modelled grid</li>
                 <li class="cv-item">Provided simple abstractions and helpful documentation for the next
                   user/researcher to build arbitrary power models</li>
+              </ul>
+            </li>
+            <li class="cv-entry">
+              <span class="cv-role">Undergraduate Summer Student</span>
+              <span class="cv-company"><a href="https://perimeterinstitute.ca/">Perimeter Institute for Theoretical Physics</a></span>
+              <span class="cv-location">
+                Waterloo, ON, Canada
+              </span>
+              <span class="cv-duration">
+                <time datetime="2017-05">May 2017</time> - <time datetime="2017-08"> August 2017</time>
+              </span>
+              <ul class="cv-list">
+                <li class="cv-item">Selected along with 6 others amongst 100+ students to perform summer research at the Institute.</li>
+                <li class="cv-item">Upgraded supervisor's <b>C</b>-program, SSMC, that uses a sub-stochastic Markov process to solve MAX-SAT problems by reducing solve-times for hard instances.</li>
+                <li class="cv-item">Extended a paper by David Gosset and Sergei Bravyi (<a href="https://goo.gl/aKn6ia">arXiv:1612.05602</a>) to examine the performance of certain algorithms on modelling the XX, YY, and ZZ interactions of an Ising spin lattice. The effort yielded a negative result.</li>
+              </ul>
+            </li>
+            <li class="cv-entry">
+              <span class="cv-role">Software Engineer & Lab Assistant</span>
+              <span class="cv-company">UBC XUV Spectroscopy Laboratory</span>
+              <span class="cv-location">
+                Vancouver, BC, Canada
+              </span>
+              <span class="cv-duration">
+                <time datetime="2016-09">September 2016</time> - <time datetime="2016-12"> December 2016</time>
+              </span>
+              <ul class="cv-list">
+                <li class="cv-item">Developed <b>GUI</b> program using <b>Qt</b>’s <b>Python</b> bindings enabling the control of Piezo-electronics and high-speed
+                  cameras for the lab’s main experiment setup.</li>
+                <li class="cv-item">Expanded the program into a different camera application to track a mineral sample to within 50 microns using
+                  <b>Open CV</b> computer vision library.</li>
+                <li class="cv-item">Fixed an <b>FPGA</b> servo system for use in experiment and to lock laser frequency for long term stability.</li>
+              </ul>
+            </li>
+            <li class="cv-entry">
+              <span class="cv-role">Software Engineer & Lab Assistant</span>
+              <span class="cv-company"><a href="https://iqoqi.at/en/iqoqi-innsbruck">University of Innsbruck / Institute for Quantum Optics and Quantum Information (IQOQI)</a></span>
+              <span class="cv-location">
+                Innsbruck, Austria
+              </span>
+              <span class="cv-duration">
+                <time datetime="2015-06">June 2015</time> - <time datetime="2015-12"> December 2015</time>
+              </span>
+              <ul class="cv-list">
+                <li class="cv-item">Maintained a central <b>Qt C++</b> application that controlled the lab’s main experiments as the lead developer.</li>
+                <li class="cv-item">Improved the <b>GUI</b>, culminating in the implementation of a large new feature, the User <b>API</b>, that allowed
+                  researchers to specify custom behaviors easily through <b>Python</b> scripts or other processes.</li>
+                <li class="cv-item">Guided a team of developers to tackle program-related tickets, acting as the program’s expert and giving
+                  informative presentations to share knowledge.</li>
               </ul>
             </li>
           </ul>

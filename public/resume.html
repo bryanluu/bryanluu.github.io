@@ -62,7 +62,12 @@
     }
 
     .cv-section-title {
+      padding-top: 1ex;
       border-bottom: solid 3px black;
+    }
+
+    .cv-section:first-child > .cv-section-title {
+      padding-top: 0;
     }
 
     .cv-tagline {
@@ -121,8 +126,8 @@
 
     .cv-entry {
       border-bottom: 1px dashed lightgray;
-      padding-top: 1em;
-      padding-bottom: 1em;
+      padding-top: 1ex;
+      padding-bottom: 1ex;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }

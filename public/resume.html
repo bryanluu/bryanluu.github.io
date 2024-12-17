@@ -61,10 +61,17 @@
       font-size: 18px;
     }
 
+    main > .cv-section:first-child {
+      break-after: page;
+    }
+
+    aside > .cv-section {
+      break-inside: avoid;
+    }
+
     .cv-section-title {
       padding-top: 1ex;
       border-bottom: solid 3px black;
-      break-before: page;
     }
 
     .cv-section:first-child > .cv-section-title {

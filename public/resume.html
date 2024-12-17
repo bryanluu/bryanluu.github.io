@@ -34,7 +34,8 @@
     .cv-content p,
     .cv-content span,
     .cv-content a,
-    .cv-content li  {
+    .cv-content li,
+    .cv-content footer {
       font-family: "Carlito", sans-serif;
       font-weight: 400;
       font-style: normal;
@@ -330,7 +331,7 @@
     }
 
     @media print {
-      footer, .no-print {
+      .no-print {
         display: none !important;
       }
 
@@ -338,6 +339,13 @@
         border: none;
         margin: 0;
         padding: 0;
+      }
+
+      .cv-footer {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
       }
     }
   </style>
@@ -740,9 +748,10 @@
           </details>
         </section>
       </aside>
+      <footer class="container cv-footer">References available upon request</footer>
     </div>
   </div>
-  <footer>© Bryan Luu. All rights reserved.</footer>
+  <footer class="no-print">© Bryan Luu. All rights reserved.</footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

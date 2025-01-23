@@ -18,6 +18,10 @@
       gap: 10px;
     }
 
+    #nav {
+      width: 100%;
+    }
+
     .cv-content {
       background-color: white;
       max-width: 816px;
@@ -374,16 +378,7 @@
   </style>
 </head>
 <body>
-  <nav class="navbar bg-primary mb-4 border-bottom no-print">
-    <a href="/" class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto text-decoration-none">
-      <img class="profile-pic-mini" src="../assets/images/profile_pic.jpg" alt="Photo of me wearing a hat, with a cat on it">
-      <span class="fs-4">Bryan L. Luu</span>
-    </a>
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-      <li class="nav-item"><a href="./resume.html" class="nav-link active" aria-current="page">Resumé</a></li>
-    </ul>
-  </nav>
+  <div id="nav"></div>
   <div class="cv-content">
     <header class="cv-header">
       <h1 class="cv-name">Bryan L. Luu</h1>
@@ -779,6 +774,6 @@
   <footer class="no-print">© Bryan Luu. All rights reserved.</footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="./index.js"></script>
+  <script src="../index.js"></script>
 </body>
 </html>

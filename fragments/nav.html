@@ -1,0 +1,16 @@
+<nav class="navbar bg-primary mb-4 border-bottom no-print">
+  <a href="/" class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto text-decoration-none">
+    <img class="profile-pic-mini" src="/assets/images/profile_pic.jpg" alt="Photo of me wearing a hat, with a cat on it">
+    <span class="fs-4">Bryan L. Luu</span>
+  </a>
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="/public/resume.html" class="nav-link">Resumé</a></li>
+  </ul>
+</nav>
+<script>
+  var pageTitle = getPageTitle();
+  var linkSelector = `#nav .nav-link:contains('${pageTitle}')`;
+  $(linkSelector).addClass("active");
+  $(linkSelector).attr('aria-current', 'page');
+</script>

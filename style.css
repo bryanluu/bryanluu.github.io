@@ -69,3 +69,8 @@ footer {
     --bs-nav-underline-link-active-color: var(--bs-light) !important;
   }
 }
+
+.scrollspy {
+  height: 60vh;
+  overflow-y: scroll;
+}

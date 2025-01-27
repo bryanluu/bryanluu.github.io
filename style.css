@@ -10,15 +10,17 @@
   background-color: var(--bs-primary) !important;
 }
 
-.nav, .navbar, .nav-pills, .nav-underline {
-  --bs-nav-link-color: var(--bs-light) !important;
-  --bs-nav-link-hover-color: var(--bs-light-text-emphasis) !important;
-  --bs-nav-link-font-size: 1.1rem !important;
-  --bs-navbar-brand-color: var(--bs-light) !important;
-  --bs-navbar-brand-hover-color: var(--bs-light-text-emphasis) !important;
-  --bs-nav-pills-link-active-color: var(--bs-light) !important;
-  --bs-nav-pills-link-active-bg: var(--bs-primary-bg-subtle) !important;
-  --bs-nav-underline-link-active-color: var(--bs-light) !important;
+@scope (#nav) {
+  .nav, .navbar, .nav-pills, .nav-underline {
+    --bs-nav-link-color: var(--bs-light) !important;
+    --bs-nav-link-hover-color: var(--bs-light-text-emphasis) !important;
+    --bs-nav-link-font-size: 1.1rem !important;
+    --bs-navbar-brand-color: var(--bs-light) !important;
+    --bs-navbar-brand-hover-color: var(--bs-light-text-emphasis) !important;
+    --bs-nav-pills-link-active-color: var(--bs-light) !important;
+    --bs-nav-pills-link-active-bg: var(--bs-primary-bg-subtle) !important;
+    --bs-nav-underline-link-active-color: var(--bs-light) !important;
+  }
 }
 
 .btn-primary {
@@ -53,4 +55,17 @@ nav {
 footer {
   display: flex;
   justify-content: center;
+}
+
+@scope (#projects-list) {
+  .nav, .navbar, .nav-pills, .nav-underline {
+    --bs-nav-link-color: var(--bs-primary) !important;
+    --bs-nav-link-hover-color: var(--bs-light-text-emphasis) !important;
+    --bs-nav-link-font-size: 1.1rem !important;
+    --bs-navbar-brand-color: var(--bs-light) !important;
+    --bs-navbar-brand-hover-color: var(--bs-light-text-emphasis) !important;
+    --bs-nav-pills-link-active-color: var(--bs-light) !important;
+    --bs-nav-pills-link-active-bg: var(--bs-primary-bg-subtle) !important;
+    --bs-nav-underline-link-active-color: var(--bs-light) !important;
+  }
 }

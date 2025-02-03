@@ -2,6 +2,7 @@
   --bs-primary: #266DA9 !important;
   --bs-primary-rgb: #266DA9 !important;
   --bs-primary-bg-subtle: #548FC1 !important;
+  --bs-primary-text-emphasis: #266DA9 !important;
   --bs-light: rgb(248, 249, 250) !important;
   --bs-light-text-emphasis: lightblue !important;
 }
@@ -77,9 +78,17 @@ footer {
     background-color: var(--bs-light);
     text-decoration: underline;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+  }
 }
 
 .scrollspy {
   height: 60vh;
   overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--bs-primary);
 }

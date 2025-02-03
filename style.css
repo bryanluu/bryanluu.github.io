@@ -62,6 +62,10 @@ footer {
   justify-content: center;
 }
 
+#projects-list {
+  --bs-gutter-x: 0;
+}
+
 @scope (#projects-list) {
   .nav, .navbar, .nav-pills, .nav-underline {
     --bs-nav-link-color: var(--bs-primary) !important;
@@ -81,6 +85,25 @@ footer {
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: bolder;
+  }
+
+  #projects-content {
+    padding: 0;
+  }
+
+  #projects-content .section > * {
+    padding: 1em;
+  }
+
+  .section-header {
+    background-color: var(--bs-primary);
+    padding: 1ex;
+    margin: 0;
+    width: 100%
+  }
+
+  .section-header h4 {
+    color: var(--bs-light);
   }
 }
 

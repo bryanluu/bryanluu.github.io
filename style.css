@@ -95,6 +95,11 @@ footer {
     padding: 1em;
   }
 
+  #projects-content .section > hr {
+    padding: 0;
+    margin: 0;
+  }
+
   .section-header {
     background-color: var(--bs-primary);
     padding: 1ex;

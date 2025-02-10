@@ -9,6 +9,13 @@ function getPageTitle() {
   return pageTitle;
 }
 
+function loadProject() {
+  var projectID = $(this).attr("id");
+  var projectContentPath = "/fragments/projects/" + projectID + ".html"
+  $(this).load(projectContentPath);
+}
+
 $(document).ready(function () {
   $("#nav").load("/fragments/nav.html");
+  $(".project").each(loadProject);
 });

@@ -100,6 +100,12 @@ footer {
     margin: 0;
   }
 
+  #projects-content .project {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
   .section-header {
     background-color: var(--bs-primary);
     padding: 1ex;

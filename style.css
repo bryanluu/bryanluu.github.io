@@ -42,10 +42,11 @@
   width: 200px;
 }
 
-.profile-pic-mini {
+.logo-mini {
   border-radius: 50%;
   border: 1px solid var(--bs-light);
   width: 32px;
+  background-color: lightblue;
 }
 
 .navbar-brand:hover > .profile-pic-mini {

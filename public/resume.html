@@ -310,7 +310,7 @@
       margin: 0;
     }
 
-    .list-schools li.cv-item:has(details[open]) {
+    .list-schools li.cv-item:has(details[open]):not(.empty) {
       list-style: none;
       background-image: url('../assets/images/mortarboard-fill.svg');
       background-repeat: no-repeat;
@@ -619,6 +619,17 @@
         <section class="cv-section">
           <h2 class="cv-section-title">Education</h2>
           <ul class="cv-list list-schools">
+            <li class="cv-item empty">
+              <details>
+                <summary>
+                  <h3>Advanced Certificate in <a href="https://www.bcit.ca/programs/sustainable-business-advanced-certificate-part-time-5145adcert/">Sustainable Business</a></h3>
+                  <span class="cv-company"><a href="https://www.bcit.ca/">BCIT</a></span>
+                  <span class="cv-duration">
+                    <time datetime="2024-09">September 2024</time> - present
+                  </span>
+                </summary>
+              </details>
+            </li>
             <li class="cv-item">
               <details>
                 <summary>

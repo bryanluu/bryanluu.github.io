@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/bryanluu/bryanluu.github.io/issues"
   },
-  "homepage": "https://github.com/bryanluu/bryanluu.github.io#readme"
+  "homepage": "https://github.com/bryanluu/bryanluu.github.io#readme",
+  "dependencies": {
+    "astro": "^7.0.6"
+  }
 }

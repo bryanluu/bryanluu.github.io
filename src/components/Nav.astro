@@ -1,0 +1,34 @@
+---
+// var pageTitle = getPageTitle();
+// var linkSelector = `#nav .nav-link:contains('${pageTitle}')`;
+// $(linkSelector).addClass("active");
+// $(linkSelector).attr('aria-current', 'page');
+---
+<style>
+    .nav, .navbar, .nav-pills, .nav-underline {
+    --bs-nav-link-color: var(--bs-light) !important;
+    --bs-nav-link-hover-color: var(--bs-light-text-emphasis) !important;
+    --bs-nav-link-font-size: 1.1rem !important;
+    --bs-navbar-brand-color: var(--bs-light) !important;
+    --bs-navbar-brand-hover-color: var(--bs-light-text-emphasis) !important;
+    --bs-nav-pills-link-active-color: var(--bs-light) !important;
+    --bs-nav-pills-link-active-bg: var(--bs-primary-bg-subtle) !important;
+    --bs-nav-underline-link-active-color: var(--bs-light) !important;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+</style>
+<nav class="navbar bg-primary mb-4 border-bottom no-print">
+  <a href="/" class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto text-decoration-none">
+    <img class="profile-pic-mini" src="/public/assets/profile_pic.jpg" alt="Photo of me wearing a hat, with a cat on it">
+    <span class="fs-4">Bryan L. Luu</span>
+  </a>
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+    <!-- The link below won't work locally because it links to the resume repo -->
+    <li class="nav-item"><a href="/resume/resume.pdf" class="nav-link">Resumé</a></li>
+    <!-- <li class="nav-item"><a href="/public/projects.html" class="nav-link">Projects</a></li> -->
+  </ul>
+</nav>

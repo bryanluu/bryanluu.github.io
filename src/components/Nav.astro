@@ -1,24 +1,44 @@
 ---
-// var pageTitle = getPageTitle();
-// var linkSelector = `#nav .nav-link:contains('${pageTitle}')`;
-// $(linkSelector).addClass("active");
-// $(linkSelector).attr('aria-current', 'page');
+import '../styles/custom.scss';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 ---
 <style>
-    .nav, .navbar, .nav-pills, .nav-underline {
-    --bs-nav-link-color: var(--bs-light) !important;
-    --bs-nav-link-hover-color: var(--bs-light-text-emphasis) !important;
-    --bs-nav-link-font-size: 1.1rem !important;
-    --bs-navbar-brand-color: var(--bs-light) !important;
-    --bs-navbar-brand-hover-color: var(--bs-light-text-emphasis) !important;
-    --bs-nav-pills-link-active-color: var(--bs-light) !important;
-    --bs-nav-pills-link-active-bg: var(--bs-primary-bg-subtle) !important;
-    --bs-nav-underline-link-active-color: var(--bs-light) !important;
+  .profile-pic {
+    border-radius: 50%;
+    border: 5px solid var(--bs-primary);
+    width: 200px;
+  }
+
+  .profile-pic-mini {
+    border-radius: 50%;
+    border: 1px solid var(--bs-light);
+    width: 32px;
   }
 
   .nav-link:hover {
     text-decoration: underline;
   }
+
+  .navbar-brand:hover > .profile-pic-mini {
+    border: 1px solid var(--bs-light-text-emphasis);
+  }
+
+  nav {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .nav, .navbar, .nav-pills, .nav-underline {
+    --bs-nav-link-color: var(--bs-light);
+    --bs-nav-link-hover-color: var(--bs-light-text-emphasis);
+    --bs-nav-link-font-size: 1.1rem;
+    --bs-navbar-brand-color: var(--bs-light);
+    --bs-navbar-brand-hover-color: var(--bs-light-text-emphasis);
+    --bs-nav-pills-link-active-color: var(--bs-light);
+    --bs-nav-pills-link-active-bg: var(--bs-primary-bg-subtle);
+    --bs-nav-underline-link-active-color: var(--bs-light);
+  }
+
 </style>
 <nav class="navbar bg-primary mb-4 border-bottom no-print">
   <a href="/" class="navbar-brand d-flex align-items-center gap-2 mb-3 mb-md-0 me-md-auto text-decoration-none">

@@ -12,7 +12,11 @@
 }
 
 @scope (#nav) {
-  .nav, .navbar, .nav-pills, .nav-underline {
+
+  .nav,
+  .navbar,
+  .nav-pills,
+  .nav-underline {
     --bs-nav-link-color: var(--bs-light) !important;
     --bs-nav-link-hover-color: var(--bs-light-text-emphasis) !important;
     --bs-nav-link-font-size: 1.1rem !important;
@@ -48,7 +52,7 @@
   width: 32px;
 }
 
-.navbar-brand:hover > .profile-pic-mini {
+.navbar-brand:hover>.profile-pic-mini {
   border: 1px solid var(--bs-light-text-emphasis);
 }
 
@@ -67,7 +71,11 @@ footer {
 }
 
 @scope (#projects-list) {
-  .nav, .navbar, .nav-pills, .nav-underline {
+
+  .nav,
+  .navbar,
+  .nav-pills,
+  .nav-underline {
     --bs-nav-link-color: var(--bs-primary) !important;
     --bs-nav-link-hover-color: var(--bs-primary-bg-subtle) !important;
     --bs-nav-link-font-size: 1.1rem !important;
@@ -83,7 +91,12 @@ footer {
     text-decoration: underline;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: bolder;
   }
 
@@ -91,11 +104,11 @@ footer {
     padding: 0;
   }
 
-  #projects-content .section > * {
+  #projects-content .section>* {
     padding: 1em;
   }
 
-  #projects-content .section > hr {
+  #projects-content .section>hr {
     padding: 0;
     margin: 0;
   }
@@ -123,6 +136,11 @@ footer {
   overflow-y: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--bs-primary);
 }

@@ -4,8 +4,6 @@ import React from "react";
 function buildNavLinks(activePage) {
   const navLinks = {
     "Home": "/index.html",
-    /* The link below won't work locally because it links to the resume repo */
-    "Resumé": "/resume/resume.pdf"
   };
 
   return Object.entries(navLinks).map(entry => {
@@ -19,7 +17,7 @@ function buildNavLinks(activePage) {
 }
 
 function Nav(props) {
-  return <nav class="navbar navbar-dark bg-primary mb-4 border-bottom fixed-top">
+  return <nav class="navbar navbar-dark bg-primary mb-4 border-bottom sticky-top">
     <div className="container-fluid">
       <a href="/" class="navbar-brand">
         <span class="fs-4">Bryan Luu</span>

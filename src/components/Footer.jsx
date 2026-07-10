@@ -1,7 +1,9 @@
 import React from "react";
 
 function Footer(props) {
-    return <footer>© Bryan Luu. All rights reserved.</footer>
+    const currentYear = new Date().getFullYear();
+
+    return <footer class="d-flex justify-content-center">© Bryan Luu {currentYear}. All rights reserved.</footer>
 }
 
 export default Footer;

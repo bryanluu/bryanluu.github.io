@@ -5,11 +5,11 @@ function Hero() {
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6 container">
                 <div class="d-flex justify-content-center align-items-center gap-3">
-                    <i class="bi bi-cpu" style={{ fontSize: "72pt" }}></i>
-                    <i class="bi bi-three-dots" style={{ fontSize: "32pt" }}></i>
-                    <i class="bi bi-file-earmark-code" style={{ fontSize: "72pt" }}></i>
-                    <i class="bi bi-three-dots" style={{ fontSize: "32pt" }}></i>
-                    <i class="bi bi-window" style={{ fontSize: "72pt" }}></i >
+                    <i class="bi bi-cpu" style={{ fontSize: "72pt" }} aria-hidden="true"></i>
+                    <i class="bi bi-three-dots" style={{ fontSize: "32pt" }} aria-hidden="true"></i>
+                    <i class="bi bi-file-earmark-code" style={{ fontSize: "72pt" }} aria-hidden="true"></i>
+                    <i class="bi bi-three-dots" style={{ fontSize: "32pt" }} aria-hidden="true"></i>
+                    <i class="bi bi-window" style={{ fontSize: "72pt" }} aria-hidden="true"></i >
                 </div >
             </div >
             <div class="col-lg-6">

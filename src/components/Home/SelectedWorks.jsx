@@ -35,7 +35,7 @@ function CaseStudyCard(caseStudy) {
 function SelectedWorks() {
   return (
     <div className="container">
-      <h2 className="fs-3">Selected Works</h2>
+      <h2 className="fs-3">Selected work</h2>
       <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
         <div className="col">
           <CaseStudyCard />

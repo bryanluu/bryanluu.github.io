@@ -15,10 +15,9 @@ const { title } = Astro.props;
         <title>Bryan Luu | {title}</title>
     </head>
     <body>
-        <div class="d-flex flex-column justify-contant-start">
+        <div class="d-flex flex-column min-vh-100">
             <Nav activePage={title} />
             <slot />
-            <div class="flex-grow-1"></div>
             <Footer />
         </div>
     </body>

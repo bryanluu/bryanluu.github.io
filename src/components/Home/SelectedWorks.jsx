@@ -31,7 +31,8 @@ function CaseStudyCard(props) {
           link-underline link-underline-opacity-0 link-underline-opacity-100-hover
           align-items-baseline mt-auto"
         >
-          Read case study <i className="bi bi-chevron-right"></i>
+          Read about {caseStudy.name}
+          <i className="bi bi-chevron-right"></i>
         </a>
       </div>
     </div>

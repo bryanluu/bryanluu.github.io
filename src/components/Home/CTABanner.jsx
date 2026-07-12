@@ -2,15 +2,29 @@ import React from "react";
 
 function CTABanner(props) {
   return (
-    <div class="p-5 text-center">
-      <div class="container py-5">
-        <h1 class="text-body-emphasis">Full-width jumbotron</h1>
-        <p class="col-lg-8 mx-auto lead">
-          This takes the basic jumbotron above and makes its background
-          edge-to-edge with a <code>.container</code> inside to align content.
-          Similar to above, it's been recreated with built-in grid and utility
-          classes.
+    <div className="p-5 text-center">
+      <div className="container py-5">
+        <h2 className="text-body-emphasis">Need my help?</h2>
+        <p className="col-lg-8 mx-auto lead" style={{ textWrap: "balance" }}>
+          I take on web apps, hardware-to-UI integrations, and technical
+          consultations — every engagement at a fixed scope and price.
         </p>
+        <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+          {/* TODO: link buttons */}
+          <button
+            type="button"
+            className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
+          >
+            <i className="bi bi-telephone-fill"></i>
+            Book a discovery call
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline-secondary btn-lg px-3"
+          >
+            Learn about my services <i className="bi bi-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   );

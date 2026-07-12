@@ -37,8 +37,9 @@ function Nav(props) {
           {buildNavLinks(props.activePage)}
         </ul>
         {/* TODO: wire up booking service */}
-        <button class="btn btn-primary">
-          Book a call <i class="bi bi-telephone-fill"></i>
+        <button class="btn btn-primary d-flex gap-2">
+          <i class="bi bi-telephone-fill"></i>
+          Book a call
         </button>
       </div>
     </nav>

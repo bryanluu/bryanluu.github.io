@@ -2,11 +2,15 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Home/Hero";
 import SelectedWorks from "../components/Home/SelectedWorks"
+import CTABanner from "../components/Home/CTABanner";
 ---
 
 <MainLayout title="Home">
   <Hero />
   <div class="bg-light border py-3">
     <SelectedWorks />
+  </div>
+  <div class="my-5">
+    <CTABanner />
   </div>
 </MainLayout>

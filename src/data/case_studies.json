@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "GRID Arcade",
+    "name": "GRID Arcade",
+    "description": "Mini-arcade built on one C++ codebase shared between hardware and emulation.",
+    "skills": ["Electronics", "C++", "Game Design"],
+    "preview": {
+      "src": "assets/GRID_arcade.jpg",
+      "alt": "Photo of a mini-arcade system, showing an LED grid display with a joystick."
+    }
+  },
+  {
+    "id": 2,
+    "title": "CMS @ OPEN Technologies",
+    "name": "OPEN CMS",
+    "description": "Multi-tenant CMS providing OPEN's map content, powered by Docker + Craft CMS.",
+    "skills": ["Full-stack", "Docker", "CMS", "API"],
+    "preview": {
+      "src": "assets/OPEN_viz.png",
+      "alt": "Screenshot of the CMS-powered map by OPEN Technologies."
+    }
+  },
+  {
+    "id": 3,
+    "title": "Thunderbird @ UBC Sailbot",
+    "name": "Thunderbird",
+    "description": "Autonomous sailboat that finished 1st at the International Robotic Sailing Regatta.",
+    "skills": ["Embedded", "Robotics", "QA"],
+    "preview": {
+      "src": "assets/thunderbird.jpg",
+      "alt": "Footage of the Thunderbird robot sailing through open water."
+    }
+  }
+]

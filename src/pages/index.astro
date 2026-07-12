@@ -1,54 +1,17 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Avatar from "../components/Avatar.jsx";
+import Hero from "../components/Home/Hero";
+import FeaturedWorks from "../components/Home/FeaturedWorks"
+import CTABanner from "../components/Home/CTABanner";
 ---
-
-<MainLayout title="Home">
-  <div class="px-4 py-5 my-5 text-center">
-    <Avatar
-      src="/assets/profile_pic.jpg"
-      alt="Photo of me wearing a hat, with a cat on it"
-      size={200}
-      style={{ border: "5px solid var(--bs-primary)" }}
-    />
-    <h1 class="display-5 fw-bold">Bryan L. Luu</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">
-        <strong class="fw-semibold text-primary-emphasis">Hi there!</strong> I'm a
-        generalist engineer with diverse experience focused on meaningful impact in
-        climate, community, and technology.
-      </p>
-      <p class="lead mb-4">
-        I've worked as a physicist, software developer, and even robotics
-        teacher. I have experience building things in robotics, physics, web
-        applications, and climate.
-      </p>
-      <p class="lead mb-4">Thanks for stopping by to learn about me!</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a
-          href="https://github.com/bryanluu"
-          target="_blank"
-          class="btn btn-outline-secondary btn-lg px-3 gap-2 icon-link align-items-baseline"
-        >
-          <i class="bi bi-github"></i>
-          GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/bryan-luu/"
-          target="_blank"
-          class="btn btn-outline-secondary btn-lg px-3 gap-2 icon-link align-items-baseline"
-        >
-          <i class="bi bi-linkedin"></i>
-          LinkedIn
-        </a>
-        <a
-          href="mailto:loc.bryan.luu@gmail.com"
-          class="btn btn-primary btn-lg px-3 gap-2 icon-link align-items-baseline"
-        >
-          <i class="bi bi-envelope-at-fill"></i>
-          Contact me
-        </a>
-      </div>
+<div class="bg-white">
+  <MainLayout title="Home">
+    <Hero />
+    <div class="bg-primary-subtle border py-3">
+      <FeaturedWorks />
     </div>
-  </div>
-</MainLayout>
+    <div class="bg-white">
+      <CTABanner />
+    </div>
+  </MainLayout>
+</div>

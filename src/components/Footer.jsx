@@ -4,7 +4,7 @@ function Footer(props) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer class="d-flex justify-content-between p-3 align-items-center mt-auto border">
+    <footer class="d-flex justify-content-between p-3 align-items-center mt-auto border bg-light">
       <span>© {currentYear} Bryan Luu.</span>
       <ul class="d-flex flex-row navbar-nav gap-3">
         <li class="nav-item">

@@ -39,11 +39,11 @@ function CaseStudyCard(props) {
   );
 }
 
-function SelectedWorks() {
+function FeaturedWorks() {
   const caseStudies = data;
   return (
     <div className="container">
-      <h2 className="fs-3">Selected work</h2>
+      <h2 className="fs-3">Featured work</h2>
       <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
         {caseStudies.map((cs) => (
           <div key={cs.id} className="col">
@@ -55,4 +55,4 @@ function SelectedWorks() {
   );
 }
 
-export default SelectedWorks;
+export default FeaturedWorks;

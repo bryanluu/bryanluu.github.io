@@ -34,13 +34,13 @@ function Hero() {
           </div>
         </div>
         <div class="col-lg-6">
-          <p class="text-primary">Software-focused engineering physicist.</p>
+          <p class="text-primary">Software-focused engineering physicist</p>
           <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
             I build from the wires to the web.
           </h1>
           <p class="lead">
-            I understand and build systems across the technology stack that
-            implement and track your objectives.
+            Embedded software, hardware integration, and the web apps and
+            dashboards that make the data useful.
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             {/* TODO: link buttons */}

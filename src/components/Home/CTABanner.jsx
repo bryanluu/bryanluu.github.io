@@ -2,7 +2,7 @@ import React from "react";
 
 function CTABanner(props) {
   return (
-    <div class="p-5 text-center bg-body-tertiary">
+    <div class="p-5 text-center">
       <div class="container py-5">
         <h1 class="text-body-emphasis">Full-width jumbotron</h1>
         <p class="col-lg-8 mx-auto lead">

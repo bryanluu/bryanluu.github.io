@@ -3,6 +3,9 @@
     "id": 1,
     "title": "GRID Arcade",
     "name": "GRID Arcade",
+    "role": "Designer + Developer",
+    "association": "Personal",
+    "dates": { "start": "2025-12", "end": "2025-08", "label": "Fall 2025" },
     "description": "Mini-arcade built on one C++ codebase shared between hardware and emulation.",
     "skills": ["Electronics", "C++", "Game Design"],
     "preview": {
@@ -12,8 +15,11 @@
   },
   {
     "id": 2,
-    "title": "CMS @ OPEN Technologies",
+    "title": "CMS",
     "name": "OPEN CMS",
+    "role": "Core developer",
+    "association": "OPEN Technologies",
+    "dates": { "start": "2022-05", "end": "2022-08", "label": "Q3 2022" },
     "description": "Multi-tenant CMS providing OPEN's map content, powered by Docker + Craft CMS.",
     "skills": ["Full-stack", "Docker", "CMS", "API"],
     "preview": {
@@ -23,8 +29,15 @@
   },
   {
     "id": 3,
-    "title": "Thunderbird @ UBC Sailbot",
+    "title": "Thunderbird",
     "name": "Thunderbird",
+    "role": "Solo developer",
+    "association": "UBC Sailbot",
+    "dates": {
+      "start": "2013-09",
+      "end": "2014-08",
+      "label": "Fall 2013 - Summer 2014"
+    },
     "description": "Autonomous sailboat that finished 1st at the International Robotic Sailing Regatta.",
     "skills": ["Embedded", "Robotics", "QA"],
     "preview": {

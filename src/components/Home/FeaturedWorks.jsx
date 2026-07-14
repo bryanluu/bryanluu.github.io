@@ -22,8 +22,22 @@ function CaseStudyCard(props) {
             </li>
           ))}
         </ul>
-        <h3 className="card-title fs-3">{caseStudy.title}</h3>
-        <p className="text-secondary">{caseStudy.description}</p>
+        <div className="d-flex align-items-center">
+          <h3 className="card-title fs-3">
+            {caseStudy.title}
+            {caseStudy.association === "Personal"
+              ? "" // hide for personal projects
+              : " @ " + caseStudy.association}
+          </h3>
+        </div>
+        {/* <span className="">[{caseStudy.role}]</span> */}
+        <time
+          dateTime={caseStudy.dates.end}
+          className="d-block small text-body-secondary mb-2"
+        >
+          {caseStudy.dates.label}
+        </time>
+        <p className="">{caseStudy.description}</p>
         {/* TODO: link case study */}
         <a
           href=""

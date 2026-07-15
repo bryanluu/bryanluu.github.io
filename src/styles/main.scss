@@ -31,3 +31,7 @@ $light: #f8f9fa;
 // Later, once this works, you could swap the line above for individual
 // partials (root, reboot, grid, nav, buttons, etc.) to trim bundle size.
 @import "skill-list";
+
+html {
+  scroll-padding-top: 5rem; // accounts for the navbar
+}

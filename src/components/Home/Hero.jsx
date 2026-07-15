@@ -43,14 +43,14 @@ function Hero() {
             dashboards that make the data useful.
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            {/* TODO: link buttons */}
-            <button
+            <a
+              href="/#featured-work"
               type="button"
               class="btn btn-primary btn-lg me-md-2 d-flex gap-2"
             >
               <i class="bi bi-search"></i>
               See my work
-            </button>
+            </a>
           </div>
         </div>
       </div>

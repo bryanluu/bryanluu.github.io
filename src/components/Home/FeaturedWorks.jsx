@@ -62,7 +62,9 @@ function FeaturedWorks(props) {
   const caseStudies = props.data;
   return (
     <div className="container">
-      <h4 className="fs-4">Featured work</h4>
+      <h4 className="fs-4" id="featured-work">
+        Featured work
+      </h4>
       <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
         {caseStudies.map((cs) => (
           <div key={cs.id} className="col">

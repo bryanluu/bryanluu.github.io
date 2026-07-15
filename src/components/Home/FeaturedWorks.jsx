@@ -1,5 +1,4 @@
 import React from "react";
-import data from "../../data/case_studies.json";
 
 function CaseStudyCard(props) {
   const caseStudy = props.data;
@@ -53,11 +52,11 @@ function CaseStudyCard(props) {
   );
 }
 
-function FeaturedWorks() {
-  const caseStudies = data;
+function FeaturedWorks(props) {
+  const caseStudies = props.data;
   return (
     <div className="container">
-      <h2 className="fs-3">Featured work</h2>
+      <h3 className="fs-3">Featured work</h3>
       <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
         {caseStudies.map((cs) => (
           <div key={cs.id} className="col">

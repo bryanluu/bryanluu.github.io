@@ -11,7 +11,8 @@
     "preview": {
       "src": "assets/GRID_arcade.jpg",
       "alt": "Photo of a mini-arcade system, showing an LED grid display with a joystick."
-    }
+    },
+    "featured": true
   },
   {
     "id": 2,
@@ -25,7 +26,8 @@
     "preview": {
       "src": "assets/OPEN_viz.png",
       "alt": "Screenshot of the CMS-powered map by OPEN Technologies."
-    }
+    },
+    "featured": true
   },
   {
     "id": 3,
@@ -43,6 +45,7 @@
     "preview": {
       "src": "assets/thunderbird.jpg",
       "alt": "Footage of the Thunderbird robot sailing through open water."
-    }
+    },
+    "featured": true
   }
 ]

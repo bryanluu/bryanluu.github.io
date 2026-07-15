@@ -1,4 +1,5 @@
 import React from "react";
+import SkillList from "../SkillList";
 
 function DateRange(dateStart, dateEnd) {
   return (
@@ -64,13 +65,7 @@ function Project(props) {
         </time>
       )}
       <p className="">{project.description}</p>
-      <ul className="skill-list d-flex">
-        {project.skills.map((skill, idx) => (
-          <li key={idx} className="text-secondary">
-            {skill}
-          </li>
-        ))}
-      </ul>
+      <SkillList skills={project.skills} className="text-secondary" />
     </div>
   );
 }

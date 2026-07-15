@@ -1,4 +1,5 @@
 import React from "react";
+import SkillList from "../SkillList";
 
 function CaseStudyCard(props) {
   const caseStudy = props.data;
@@ -17,13 +18,7 @@ function CaseStudyCard(props) {
         </div>
       )}
       <div className="card-body d-flex flex-column">
-        <ul className="skill-list d-flex">
-          {caseStudy.skills.map((skill, idx) => (
-            <li key={idx} className="text-primary">
-              {skill}
-            </li>
-          ))}
-        </ul>
+        <SkillList skills={caseStudy.skills} />
         <div className="d-flex align-items-baseline gap-2">
           <h3 className="card-title fs-3">{caseStudy.title}</h3>
           <span className="fs-3">

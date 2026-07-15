@@ -2,7 +2,6 @@
   {
     "id": 1,
     "title": "GRID Arcade",
-    "name": "GRID Arcade",
     "role": "Designer + Developer",
     "association": "Personal",
     "dates": { "start": "2025-12", "end": "2025-08", "label": "Fall 2025" },
@@ -12,12 +11,15 @@
       "src": "assets/GRID_arcade.jpg",
       "alt": "Photo of a mini-arcade system, showing an LED grid display with a joystick."
     },
+    "link": {
+      "url": "/case-studies/grid-arcade",
+      "label": "Read about GRID Arcade"
+    },
     "featured": true
   },
   {
     "id": 2,
     "title": "CMS",
-    "name": "OPEN CMS",
     "role": "Core developer",
     "association": "OPEN Technologies",
     "dates": { "start": "2022-05", "end": "2022-08", "label": "Q3 2022" },
@@ -27,6 +29,7 @@
       "src": "assets/OPEN_viz.png",
       "alt": "Screenshot of the CMS-powered map by OPEN Technologies."
     },
+    "link": { "url": "/case-studies/open-cms", "label": "Read about OPEN CMS" },
     "featured": true
   },
   {
@@ -46,6 +49,47 @@
       "src": "assets/thunderbird.jpg",
       "alt": "Footage of the Thunderbird robot sailing through open water."
     },
+    "link": {
+      "url": "/case-studies/thunderbird",
+      "label": "Read about Thunderbird"
+    },
     "featured": true
+  },
+  {
+    "id": 4,
+    "title": "A-Maze-ing Race: Web",
+    "name": "AMR Web-port",
+    "role": "Designer + Developer",
+    "association": "Personal",
+    "dates": {
+      "start": "2025-03",
+      "end": "2025-07",
+      "label": "Fall 2013 - Summer 2014"
+    },
+    "description": "TypeScript port of my C++ maze game to browser.",
+    "skills": ["Front-end", "TypeScript", "Game Design"],
+    "link": {
+      "url": "https://bryanluu.github.io/a-maze-ing-race-web/",
+      "label": "Play it"
+    },
+    "preview": null
+  },
+  {
+    "id": 5,
+    "title": "PowerPlots Julia Library",
+    "name": "PowerPlots.jl",
+    "role": "Open-source contributor",
+    "association": "WISPO-POP Lab, UW-Madison",
+    "dates": {
+      "end": "2022-07",
+      "label": "July 2022"
+    },
+    "description": "Key plot-attribute for power-grid visualisation library.",
+    "skills": ["Vega", "Julia", "Data-visualization"],
+    "link": {
+      "url": "https://github.com/WISPO-POP/PowerPlots.jl",
+      "label": "GitHub"
+    },
+    "preview": null
   }
 ]

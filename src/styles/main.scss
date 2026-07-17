@@ -9,12 +9,27 @@
 $primary: #266da9;
 $light: #f8f9fa;
 
-// You can also override entries in Bootstrap's theme-colors map here,
-// though for now just overriding $primary/$light is enough to test the pipeline.
-// $theme-colors: (
-//   "primary": $primary,
-//   ...
-// );
+// Typography: single family (Lato) for both headings and body.
+// Loaded via <link> in MainLayout.astro.
+$font-family-sans-serif:
+  "Lato",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
+// Lato only ships 300/400/700/900 — Bootstrap's default heading weight (500)
+// doesn't exist in the family and would fall back to a synthetic/faux bold.
+$headings-font-weight: 700;
+
+// Radius: reaffirms Bootstrap's defaults (0.5rem / 1rem) rather than
+// changing them
+// Written out explicitly so that convention is a documented decision,
+// not an implicit coincidence each component has to guess at independently.
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
 
 // Feature flags also go in this section if you use any, e.g.:
 // $enable-shadows: true;
@@ -23,6 +38,17 @@ $light: #f8f9fa;
 //    so they pick up your overrides above via !default.
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark"; // only if you care about dark mode support
+
+// Trim theme-colors down to what this site actually uses. No alerts/badges
+// mean success/danger/warning/info would just be unused surface area — this
+// also has maps.scss skip generating -subtle/-emphasis variants for them.
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+);
+
 @import "bootstrap/scss/maps";
 
 // 4. Then the rest of Bootstrap. Easiest starting point: import everything.
@@ -34,6 +60,25 @@ $light: #f8f9fa;
 
 html {
   scroll-padding-top: 5rem; // accounts for the navbar
+}
+
+:root {
+  --hero-icon-size-lg: 6rem; // large hero pictogram icons (was 72pt)
+  --hero-icon-size-sm: 2.75rem; // small connector dots between them (was 32pt)
+  --case-study-hero-figure-max-height: 60vh;
+}
+
+.hero-icon-lg {
+  font-size: var(--hero-icon-size-lg);
+}
+
+.hero-icon-sm {
+  font-size: var(--hero-icon-size-sm);
+}
+
+.case-study-hero-figure {
+  max-height: var(--case-study-hero-figure-max-height);
+  width: auto;
 }
 
 .dot-list > *:not(:first-child)::before {

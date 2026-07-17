@@ -1,30 +1,9 @@
 import React from "react";
 import SkillList from "../SkillList";
-
-function DateRange(dateStart, dateEnd) {
-  return (
-    <span className="d-block small text-body-secondary mb-2">
-      <time dateTime={dateStart.toString()}>
-        {dateStart.toLocaleDateString("en-US", {
-          month: "short",
-          year: "numeric",
-        })}
-      </time>{" "}
-      -{" "}
-      <time dateTime={dateEnd.toString()}>
-        {dateEnd.toLocaleDateString("en-US", {
-          month: "short",
-          year: "numeric",
-        })}
-      </time>
-    </span>
-  );
-}
+import DateRange from "../DateRange";
 
 function Project(props) {
   const project = props.data;
-  const dateStart = project.dates.start && new Date(project.dates.start);
-  const dateEnd = project.dates.end && new Date(project.dates.end);
 
   return (
     <div className="pr-3">
@@ -55,7 +34,11 @@ function Project(props) {
       </div>
       <bold className="fw-medium">{project.role}</bold>
       {project.dates.start ? (
-        DateRange(dateStart, dateEnd)
+        DateRange({
+          start: project.dates.start,
+          end: project.dates.end,
+          className: "d-block small text-body-secondary mb-2",
+        })
       ) : (
         <time
           dateTime={project.dates.end}

@@ -9,13 +9,6 @@
 $primary: #266da9;
 $light: #f8f9fa;
 
-// You can also override entries in Bootstrap's theme-colors map here,
-// though for now just overriding $primary/$light is enough to test the pipeline.
-// $theme-colors: (
-//   "primary": $primary,
-//   ...
-// );
-
 // Feature flags also go in this section if you use any, e.g.:
 // $enable-shadows: true;
 
@@ -23,6 +16,17 @@ $light: #f8f9fa;
 //    so they pick up your overrides above via !default.
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark"; // only if you care about dark mode support
+
+// Trim theme-colors down to what this site actually uses. No alerts/badges
+// mean success/danger/warning/info would just be unused surface area — this
+// also has maps.scss skip generating -subtle/-emphasis variants for them.
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+);
+
 @import "bootstrap/scss/maps";
 
 // 4. Then the rest of Bootstrap. Easiest starting point: import everything.

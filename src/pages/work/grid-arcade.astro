@@ -57,9 +57,16 @@ if (!GRID) {
             ></span
           >
         </div>
+        <Image
+          src={image_GRID_final}
+          alt="Picture of the finished GRID mini-arcade, LED matrix lit up"
+          inferSize
+          class="img-fluid rounded-4 border mb-3 mx-auto d-block"
+          style="max-height: 60vh; width: auto;"
+        />
         {
           GRID.link && (
-            <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
+            <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-5">
               <a
                 href={GRID.link.url}
                 class="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
@@ -72,13 +79,6 @@ if (!GRID) {
             </div>
           )
         }
-        <Image
-          src={image_GRID_final}
-          alt="Picture of the finished GRID mini-arcade, LED matrix lit up"
-          inferSize
-          class="img-fluid rounded-4 border mb-5 mx-auto d-block"
-          style="max-height: 60vh; width: auto;"
-        />
       </section>
 
       <section class="mb-5">

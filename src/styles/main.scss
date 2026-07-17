@@ -9,6 +9,21 @@
 $primary: #266da9;
 $light: #f8f9fa;
 
+// Typography: single family (Lato) for both headings and body.
+// Loaded via <link> in MainLayout.astro.
+$font-family-sans-serif:
+  "Lato",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
+// Lato only ships 300/400/700/900 — Bootstrap's default heading weight (500)
+// doesn't exist in the family and would fall back to a synthetic/faux bold.
+$headings-font-weight: 700;
+
 // Feature flags also go in this section if you use any, e.g.:
 // $enable-shadows: true;
 

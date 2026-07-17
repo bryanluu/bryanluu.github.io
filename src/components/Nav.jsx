@@ -2,7 +2,8 @@ import React from "react";
 
 function buildNavLinks(activePage) {
   const navLinks = {
-    Home: "/index.html",
+    Home: "/",
+    Work: "/#featured-work",
   };
 
   return Object.entries(navLinks).map((entry, idx) => {

@@ -2,9 +2,11 @@
   {
     "id": 1,
     "title": "GRID Arcade",
+    "name": "GRID Arcade",
+    "slug": "grid-arcade",
     "role": "Designer + Developer",
     "association": "Personal",
-    "dates": { "start": "2025-12", "end": "2025-08", "label": "Fall 2025" },
+    "dates": { "start": "2025-08", "end": "2025-12", "label": "Fall 2025" },
     "description": "Mini-arcade built on one C++ codebase shared between hardware and emulation.",
     "skills": ["Electronics", "C++", "Game Design"],
     "preview": {
@@ -12,14 +14,16 @@
       "alt": "Photo of a mini-arcade system, showing an LED grid display with a joystick."
     },
     "link": {
-      "url": "/case-studies/grid-arcade",
-      "label": "Read about GRID Arcade"
+      "url": "https://github.com/bryanluu/GRID-arcade",
+      "label": "View source"
     },
     "featured": true
   },
   {
     "id": 2,
     "title": "CMS",
+    "name": "OPEN CMS",
+    "slug": "open-cms",
     "role": "Core developer",
     "association": "OPEN Technologies",
     "dates": { "start": "2022-05", "end": "2022-08", "label": "Q3 2022" },
@@ -29,13 +33,17 @@
       "src": "assets/OPEN_viz.png",
       "alt": "Screenshot of the CMS-powered map by OPEN Technologies."
     },
-    "link": { "url": "/case-studies/open-cms", "label": "Read about OPEN CMS" },
+    "link": {
+      "url": "https://grid.opentech.eco/orgs/buildingbenchmarkbc/viz",
+      "label": "See it live"
+    },
     "featured": true
   },
   {
     "id": 3,
     "title": "Thunderbird",
-    "name": "Thunderbird",
+    "name": "UBC Thunderbird",
+    "slug": "ubc-thunderbird",
     "role": "Solo developer",
     "association": "UBC Sailbot",
     "dates": {
@@ -50,15 +58,16 @@
       "alt": "Footage of the Thunderbird robot sailing through open water."
     },
     "link": {
-      "url": "/case-studies/thunderbird",
-      "label": "Read about Thunderbird"
+      "url": "https://www.ubcsailbot.org/projects/#thunderbird",
+      "label": "Learn more"
     },
     "featured": true
   },
   {
     "id": 4,
     "title": "A-Maze-ing Race: Web",
-    "name": "AMR Web-port",
+    "name": "AMR Web",
+    "slug": "a-maze-ing-race-web",
     "role": "Designer + Developer",
     "association": "Personal",
     "dates": {
@@ -78,6 +87,7 @@
     "id": 5,
     "title": "PowerPlots Julia Library",
     "name": "PowerPlots.jl",
+    "slug": "powerplots",
     "role": "Open-source contributor",
     "association": "WISPO-POP Lab, UW-Madison",
     "dates": {

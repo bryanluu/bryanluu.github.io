@@ -37,14 +37,12 @@ function CaseStudyCard(props) {
         <p className="">{caseStudy.description}</p>
         {caseStudy.link && (
           <a
-            href={caseStudy.link.url}
+            href={`/work/${caseStudy.slug}/`}
             className="icon-link icon-link-hover
           link-underline link-underline-opacity-0 link-underline-opacity-100-hover
           align-items-baseline mt-auto"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            {caseStudy.link.label}
+            Read about {caseStudy.name}
             <i className="bi bi-chevron-right"></i>
           </a>
         )}

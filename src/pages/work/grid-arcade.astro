@@ -1,0 +1,308 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import DateRange from "../../components/DateRange";
+import SkillList from "../../components/SkillList";
+import CTABanner from "../../components/Home/CTABanner";
+import projects from "../../data/projects.json";
+import { Image } from "astro:assets";
+import image_GRID_build from "../../images/grid_build.gif";
+import image_GRID_electronics from "../../images/grid_electronics.jpg";
+import image_GRID_emu from "../../images/grid_emu.png";
+import image_GRID_final from "../../images/grid_final.jpg";
+import image_GRID_maze_emu from "../../images/grid_maze_emu.png";
+import image_GRID_proto_play from "../../images/grid_proto_play.jpg";
+import image_GRID_prototype from "../../images/grid_prototype.jpg";
+
+const GRID = projects.find((project) => project.slug === "grid-arcade");
+
+if (!GRID) {
+  throw new Error(`No project found with slug "grid-arcade"`);
+}
+---
+
+<div class="bg-white">
+  <MainLayout title="GRID Arcade">
+    <article class="container pb-5">
+      <section>
+        <a
+          href="/#featured-work"
+          class="icon-link icon-link-hover mb-3"
+          style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);"
+        >
+          <i class="bi bi-chevron-left"></i> Back to work
+        </a>
+        <SkillList skills={GRID.skills} />
+        <h1>The {GRID.title}</h1>
+        <p class="lead" style={{ textWrap: "balance" }}>
+          The GRID (Gaming Retro Interactive Device) was a custom arcade I built
+          in the summer of 2025 to develop my embedded systems skillset.
+        </p>
+        <div class="text-secondary d-flex flex-wrap dot-list mb-3">
+          <span
+            ><i class="bi bi-calendar-range"></i>{" "}<DateRange
+              start={GRID.dates.start}
+              end={GRID.dates.end}
+            /></span
+          >
+          <span
+            ><i class="bi bi-braces"></i>{" "}Software / Electrical: independent</span
+          >
+          <span
+            ><i class="bi bi-tools"></i>{" "}Mechanical: built with <a
+              href="https://www.linkedin.com/in/herman-tubungbanua/"
+              >Herman Tubungbanua</a
+            ></span
+          >
+        </div>
+        {
+          GRID.link && (
+            <div class="d-grid col d-lg-flex align-items-center mb-4">
+              <a
+                href={GRID.link.url}
+                class="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {GRID.link.label}
+                <i class="bi bi-chevron-right" />
+              </a>
+            </div>
+          )
+        }
+      </section>
+
+      <section class="container">
+        <Image
+          src={image_GRID_final}
+          alt="Picture of the finished GRID mini-arcade, LED matrix lit up"
+          inferSize
+          class="img-fluid rounded-4 border mb-5"
+        />
+      </section>
+
+      <section class="mb-5">
+        <h2>The Problem</h2>
+        <p>
+          In 2022, I built a small device for a game, <em
+            ><a href="https://github.com/bryanluu/a-maze-ing-race"
+              >A-Maze-ing Race</a
+            ></em
+          >. The original system was composed of a flimsy box that mounted a
+          32×32 LED matrix display with a single joystick as controls, connected
+          to an Adafruit Metro M0 that ran game logic. The system was
+          occasionally used to demo other projects (like a small simulation of <a
+            href="https://github.com/bryanluu/boids">Boids</a
+          >) that lived in separate codebases.
+        </p>
+        <div class="row g-4 align-items-center mb-3">
+          <div class="col-md-6">
+            <Image
+              src={image_GRID_proto_play}
+              alt="The original 2022 GRID build: a hand-labeled box with an LED matrix and joystick"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">Original 2022 build</p>
+          </div>
+          <div class="col-md-6">
+            <h3>Why it fell short</h3>
+            <b class="fs-6 fw-bold">
+              This was frustrating to work with because:
+            </b>
+            <ul>
+              <li>
+                The control hardware suffered from noise due to vibration of the
+                enclosure, which could cause <em class="fw-bold"
+                  >loose connections</em
+                > in the wiring
+              </li>
+              <li>
+                Physical hardware access meant opening the enclosure each time —
+                adding wear-and-tear and <em class="fw-bold"
+                  >slowing iteration</em
+                >
+              </li>
+              <li>
+                Changing codebases introduced <em class="fw-bold"
+                  >context-switching</em
+                > overhead
+              </li>
+            </ul>
+            <p>
+              This translated to the greatest issue: my users found the
+              experience interesting but unserious because of the lack of
+              quality and slow updates.
+            </p>
+            <p>
+              Three years later, I set out to create a new, robust version that
+              could be played over a much longer time by others without
+              maintenance. This new version would be built with durability and
+              development in mind, targeting a faster iteration process.
+              Finally, the game needed to be updated to host my other projects
+              which used the matrix.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2>Approach</h2>
+
+        <h3 class="fs-5">Project Management</h3>
+        <p>
+          At the beginning of the project, Notion.so was used to create a
+          project workspace to manage the project. Time was spent early on to
+          draft detailed specifications so design decisions could be made with
+          confidence. In terms of work process, I had experience working in an <em
+            >Agile</em
+          > team, so I went with a <em>Kanban</em> board that broke the tasks into
+          milestones, stories and issues. This let me tackle the build with professionalism
+          and pace as I targeted the end of summer in 2025 as a deadline.
+        </p>
+        <p>
+          Because of this advance planning, I quickly realized that the build
+          had two parallel problems to solve:
+        </p>
+        <ul>
+          <li>
+            Better physical enclosure design and wiring around the hardware so
+            that noise and entropy would be kept to a minimum
+          </li>
+          <li>
+            Software architecture that enables easy context switching between
+            demos and is not hardware dependent
+          </li>
+        </ul>
+
+        <h3 class="fs-5">Hardware</h3>
+        <p>
+          While the hardware was predetermined from the original project, the
+          enclosure had to be upgraded from the worn-out box.
+        </p>
+        <p>
+          With the help of my mechanical engineer friend Herman, we specified
+          the design of a new laser-cut enclosure, with the custom electronics
+          from the original project inside. We wired the whole project and
+          redesigned the wiring to be more robust and easily accessible. We set
+          out building the enclosure as a cardboard prototype first, then fixed
+          any issues we found, before we settled on the final body.
+        </p>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <Image
+              src={image_GRID_prototype}
+              alt="Cardboard prototype of the GRID enclosure"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">Cardboard prototype</p>
+          </div>
+          <div class="col-md-6">
+            <Image
+              src={image_GRID_electronics}
+              alt="Rewired internals of the GRID enclosure"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">Rewired internals</p>
+          </div>
+        </div>
+        <figure class="mb-3">
+          <img
+            src={image_GRID_build.src}
+            alt="Timelapse of the GRID enclosure build"
+            loading="lazy"
+            class="img-fluid rounded-3 border"
+          />
+          <figcaption class="text-secondary small mt-1 mb-0">
+            Cardboard-to-final build timelapse
+          </figcaption>
+        </figure>
+
+        <h3 class="fs-5">Software</h3>
+        <p>
+          After the build of the enclosure, I set to work improving the
+          software. To develop the software without being blocked by hardware
+          access, I created an SDL application that emulated the program by
+          running the same C++ codebase at a fixed time-step. To enable easy
+          context-switching for different demos, I built a whole C++ game engine
+          — with the limited resources of the Metro M0 — to run multiple
+          different "Scenes" that rendered different games.
+        </p>
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <Image
+              src={image_GRID_emu}
+              alt="Emulator title screen"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">
+              Emulator — title screen
+            </p>
+          </div>
+          <div class="col-md-8">
+            <Image
+              src={image_GRID_maze_emu}
+              alt="Emulator running the maze scene"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">Emulator — maze scene</p>
+          </div>
+        </div>
+        <p>
+          This accelerated my process, and I was able to create new Scenes such
+          as the game of Life and the classic Snake game. On top of this I
+          managed to improve my controls, fix several nagging bugs, create a
+          calibration stage, and implement persistent flash storage for
+          long-term use and maintenance. Finally, this allowed for development
+          to continue while users could keep playing the old code on the new
+          enclosure.
+        </p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Result</h2>
+        <p>In essence, this project proved effective in several key ways:</p>
+        <div
+          class="p-4 bg-primary-subtle border border-primary-subtle rounded-3 mb-3"
+        >
+          <ul class="mb-0">
+            <li>
+              <strong>One codebase, two targets</strong> (hardware + emulator) — allowed
+              for parallel development and usage
+            </li>
+            <li>
+              <strong>Extensible architecture</strong> — creating a platform to host
+              different games multiplied the power of my demos
+            </li>
+            <li>
+              <strong>Hardware/software iteration + calibration</strong> — ensured
+              a better developer and user experience
+            </li>
+          </ul>
+        </div>
+        <p>
+          Because of our work ensuring designs were sufficient and iterating on
+          the build, the assembly was completed on-time with only minor issues.
+          The result was a satisfying physical enclosure that looked
+          professional and polished.
+        </p>
+        <p>
+          We learned that a good advance-planning process was critical to the
+          success of the build. The collaboration between me and Herman was
+          instructive, as it taught me to define my specs early and consider
+          buffers for the build process.
+        </p>
+        <p class="fst-italic">
+          The creation of a software emulation was extremely helpful as it
+          unblocked software development from hardware. I learned to use SDL
+          applications running fixed-timing emulation as an effective tool for
+          hardware development.
+        </p>
+      </section>
+    </article>
+    <CTABanner />
+  </MainLayout>
+</div>

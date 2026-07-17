@@ -4,23 +4,23 @@ function Footer(props) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer class="d-flex justify-content-between p-3 align-items-center mt-auto border bg-light">
+    <footer className="d-flex justify-content-between p-3 align-items-center mt-auto border bg-light">
       <span>© {currentYear} Bryan Luu.</span>
-      <ul class="d-flex flex-row navbar-nav gap-3">
-        <li class="nav-item">
+      <ul className="d-flex flex-row navbar-nav gap-3">
+        <li className="nav-item">
           <a
             href="https://bryanluu.github.io/resume/resume.pdf"
-            class="nav-link"
+            className="nav-link"
             target="_blank"
             rel="noopener noreferrer"
           >
             Resumé
           </a>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <a
             href="https://github.com/bryanluu"
-            class="nav-link"
+            className="nav-link"
             target="_blank"
             rel="noopener noreferrer"
           >

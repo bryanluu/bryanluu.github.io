@@ -2,53 +2,53 @@ import React from "react";
 
 function Hero() {
   return (
-    <div class="container">
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div class="col-10 col-sm-8 col-lg-6 container">
-          <div class="d-flex justify-content-center align-items-center gap-3">
+    <div className="container">
+      <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div className="col-10 col-sm-8 col-lg-6 container">
+          <div className="d-flex justify-content-center align-items-center gap-3">
             <i
-              class="bi bi-cpu"
+              className="bi bi-cpu"
               style={{ fontSize: "72pt" }}
               aria-hidden="true"
             ></i>
             <i
-              class="bi bi-three-dots"
+              className="bi bi-three-dots"
               style={{ fontSize: "32pt" }}
               aria-hidden="true"
             ></i>
             <i
-              class="bi bi-file-earmark-code"
+              className="bi bi-file-earmark-code"
               style={{ fontSize: "72pt" }}
               aria-hidden="true"
             ></i>
             <i
-              class="bi bi-three-dots"
+              className="bi bi-three-dots"
               style={{ fontSize: "32pt" }}
               aria-hidden="true"
             ></i>
             <i
-              class="bi bi-window"
+              className="bi bi-window"
               style={{ fontSize: "72pt" }}
               aria-hidden="true"
             ></i>
           </div>
         </div>
-        <div class="col-lg-6">
-          <p class="text-primary">Software-focused engineering physicist</p>
-          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+        <div className="col-lg-6">
+          <p className="text-primary">Software-focused engineering physicist</p>
+          <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
             I build from the wires to the web.
           </h1>
-          <p class="lead">
+          <p className="lead">
             Embedded software, hardware integration, and the web apps and
             dashboards that make the data useful.
           </p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <div className="d-grid gap-2 d-md-flex justify-content-md-start">
             <a
               href="/#featured-work"
               type="button"
-              class="btn btn-primary btn-lg me-md-2 d-flex gap-2"
+              className="btn btn-primary btn-lg me-md-2 d-flex gap-2"
             >
-              <i class="bi bi-search"></i>
+              <i className="bi bi-search"></i>
               See my work
             </a>
           </div>

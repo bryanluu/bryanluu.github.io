@@ -10,4 +10,19 @@ export default defineConfig({
   image: {
     responsiveStyles: true,
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+          silenceDeprecations: [
+            "import",
+            "global-builtin",
+            "if-function",
+            "color-functions",
+          ],
+        },
+      },
+    },
+  },
 });

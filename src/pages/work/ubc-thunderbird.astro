@@ -1,222 +1,132 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import DateRange from "../../components/DateRange";
-import SkillList from "../../components/SkillList";
-import CTABanner from "../../components/Home/CTABanner";
-import projects from "../../data/projects.json";
-import { Image } from "astro:assets";
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import Figure from "../../components/CaseStudy/Figure.astro";
+import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
+import HighlightItem from "../../components/CaseStudy/HighlightItem";
 import image_thunderbird_pose from "../../images/ubc-thunderbird/thunderbird_pose.jpg";
 import image_thunderbird_sea from "../../images/ubc-thunderbird/thunderbird_sea.jpg";
 import image_ubc_sailbot_team from "../../images/ubc-thunderbird/ubc_sailbot_team.jpg";
-
-const Thunderbird = projects.find(
-  (project) => project.slug === "ubc-thunderbird",
-);
-
-if (!Thunderbird) {
-  throw new Error(`No project found with slug "ubc-thunderbird"`);
-}
 ---
 
-<div class="bg-white">
-  <MainLayout title="UBC Thunderbird">
-    <article class="container">
-      <section>
-        <a
-          href="/#featured-work"
-          class="icon-link icon-link-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover align-items-baseline mb-3"
-          style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);"
+<CaseStudyLayout
+  slug="ubc-thunderbird"
+  heroImage={image_thunderbird_pose}
+  heroAlt="Myself posing with Thunderbird during testing"
+>
+  <Fragment slot="lead">
+    Thunderbird was a robotic sailboat I revived solo for <a
+      href="https://www.ubcsailbot.org/"
+    >
+      UBC Sailbot
+    </a>, restoring an inherited codebase to defend the team's win at the 2014
+    International Robotic Sailing Regatta.
+  </Fragment>
+  <span slot="meta"
+    ><i class="bi bi-braces"></i>{" "}Solo developer: revamped and validated the
+    inherited codebase</span
+  >
+
+  <section class="mb-5">
+    <h2>The Problem</h2>
+    <p>
+      In 2014, I was part of the UBC Sailbot student team, a group that built
+      robotic sailboats. Whereas the majority of the team was in design mode for
+      a future boat, I alone was tasked to revamp and restore the previous
+      year's boat, Thunderbird, to compete in the annual <a
+        href="https://www.sailbot.org/">International Robotic Sailing Regatta</a
+      >.
+    </p>
+    <p>The main issues with the previous boat were:</p>
+    <ul>
+      <li>
+        The core contributors to the codebase had just graduated, <em
+          class="fw-bold">leaving code without meaningful context transfer</em
         >
-          <i class="bi bi-chevron-left"></i> Back to work
-        </a>
-        <SkillList skills={Thunderbird.skills} />
-        <h1>{Thunderbird.name}</h1>
-        <p class="lead" style={{ textWrap: "balance" }}>
-          Thunderbird was a robotic sailboat I revived solo for <a
-            href="https://www.ubcsailbot.org/"
-          >
-            UBC Sailbot
-          </a>, restoring an inherited codebase to defend the team's win at the
-          2014 International Robotic Sailing Regatta.
-        </p>
-        <div class="text-secondary d-flex flex-wrap dot-list mb-3">
-          <span
-            ><i class="bi bi-calendar-range"></i>{" "}<DateRange
-              start={Thunderbird.dates.start}
-              end={Thunderbird.dates.end}
-            /></span
-          >
-          <span
-            ><i class="bi bi-braces"></i>{" "}Solo developer: revamped and
-            validated the inherited codebase</span
-          >
-        </div>
-        <figure class="mb-3 mx-auto d-block text-center">
-          <Image
-            src={image_thunderbird_pose}
-            alt="Myself posing with Thunderbird during testing"
-            inferSize
-            class="img-fluid rounded-4 border mx-auto d-block"
-            style="max-height: 60vh; width: auto;"
-          />
-          <figcaption class="text-secondary small mt-1 mb-0">
-            Myself posing with Thunderbird during testing
-          </figcaption>
-        </figure>
-        {
-          Thunderbird.link && (
-            <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
-              <a
-                href={Thunderbird.link.url}
-                class="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {Thunderbird.link.label}
-                <i class="bi bi-chevron-right" />
-              </a>
-            </div>
-          )
-        }
-      </section>
-
-      <section class="mb-5">
-        <h2>The Problem</h2>
-        <p>
-          In 2014, I was part of the UBC Sailbot student team, a group that
-          built robotic sailboats. Whereas the majority of the team was in
-          design mode for a future boat, I alone was tasked to revamp and
-          restore the previous year's boat, Thunderbird, to compete in the
-          annual <a href="https://www.sailbot.org/"
-            >International Robotic Sailing Regatta</a
-          >.
-        </p>
-        <p>The main issues with the previous boat were:</p>
-        <ul>
-          <li>
-            The core contributors to the codebase had just graduated, <em
-              class="fw-bold"
-              >leaving code without meaningful context transfer</em
-            >
-          </li>
-          <li>
-            Because of this, code needed to be understood so sponsor
-            presentations could come from <em class="fw-bold"
-              >a place of genuine knowledge</em
-            >
-          </li>
-          <li>
-            In addition, the IRSR had updated challenges which required <em
-              class="fw-bold">new functionality to be implemented</em
-            >
-          </li>
-        </ul>
-      </section>
-
-      <section class="mb-5">
-        <h2>Approach</h2>
-        <p>
-          Luckily, the boat I inherited was already a winning vessel (it won in
-          2013). One of the core factors in their success that year was testing
-          with a simulated boat. Therefore I set out to ensure the simulation
-          code, as well as the controls code, were all understood. I did this by
-          documenting code sections systematically on each system, which also
-          created resources for knowledge transfer to the rest of the team.
-        </p>
-        <p>
-          To validate my findings, I ran extensive simulation and field testing
-          to capture behaviour and reverse-engineer code. Eventually I learned
-          that everything was implemented in C on an Arduino for controls while
-          a Raspberry Pi handled navigation in Python.
-        </p>
-        <figure class="mb-3">
-          <Image
-            src={image_thunderbird_sea}
-            alt="Thunderbird sailing autonomously during field testing on open water"
-            inferSize
-            class="img-fluid rounded-3 border"
-          />
-          <figcaption class="text-secondary small mt-1 mb-0">
-            Field testing Thunderbird's autonomous sailing
-          </figcaption>
-        </figure>
-        <p>In summary:</p>
-        <ul>
-          <li>
-            By being thorough in documenting code behaviour, I created knowledge
-            resources that directly supported other members and myself for our
-            presentations during demos
-          </li>
-          <li>
-            Frequent testing allowed me to understand the control system and
-            implement new behaviours correctly
-          </li>
-          <li>
-            For instance, I expanded on the code by implementing the box
-            challenge, where the boat had to hold its position within a
-            specified box
-          </li>
-        </ul>
-      </section>
-
-      <section class="mb-5">
-        <h2>Result</h2>
-        <p>
-          On competition day, while the team attended the competition, I watched
-          the event nervously as the solo developer of the changes to the
-          inherited codebase. Fortunately, it was exhilarating to see the boat
-          pass all challenges, especially the new box challenge which other
-          teams struggled with.
-        </p>
-        <div
-          class="p-4 bg-primary-subtle border border-primary-subtle rounded-3 mb-3"
+      </li>
+      <li>
+        Because of this, code needed to be understood so sponsor presentations
+        could come from <em class="fw-bold">a place of genuine knowledge</em>
+      </li>
+      <li>
+        In addition, the IRSR had updated challenges which required <em
+          class="fw-bold">new functionality to be implemented</em
         >
-          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-            <li class="d-flex align-items-center gap-2">
-              <i class="bi bi-check2-circle fs-4 text-primary flex-shrink-0"
-              ></i>
-              <span>
-                <strong>Passed every challenge</strong> — including the new box challenge
-                that tripped up other teams
-              </span>
-            </li>
-            <li class="d-flex align-items-center gap-2">
-              <i class="bi bi-trophy fs-4 text-primary flex-shrink-0"></i>
-              <span>
-                <strong>Perfect 50/50 finish</strong> — continuing UBC Sailbot's win
-                streak at IRSR 2014
-              </span>
-            </li>
-            <li class="d-flex align-items-center gap-2">
-              <i class="bi bi-journal-text fs-4 text-primary flex-shrink-0"></i>
-              <span>
-                <strong>Durable knowledge transfer</strong> — documentation and testing
-                resources that outlived the competition
-              </span>
-            </li>
-          </ul>
-        </div>
-        <figure class="mb-3">
-          <Image
-            src={image_ubc_sailbot_team}
-            alt="The UBC Sailbot team celebrating their win at the 2014 International Robotic Sailing Regatta"
-            inferSize
-            class="img-fluid rounded-3 border"
-          />
-          <figcaption class="text-secondary small mt-1 mb-0">
-            The UBC Sailbot team celebrating IRSR 2014
-          </figcaption>
-        </figure>
-        <p class="fst-italic">
-          I am proud that my contributions led to another perfect 50/50 win at
-          IRSR 2014, continuing a team streak of perfection. Not only am I
-          grateful to be part of that winning legacy, I am honoured to have
-          contributed my knowledge to the team in a durable, tangible way.
-        </p>
-      </section>
-    </article>
-    <div class="border border-top bg-secondary-subtle">
-      <CTABanner />
-    </div>
-  </MainLayout>
-</div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h2>Approach</h2>
+    <p>
+      Luckily, the boat I inherited was already a winning vessel (it won in
+      2013). One of the core factors in their success that year was testing with
+      a simulated boat. Therefore I set out to ensure the simulation code, as
+      well as the controls code, were all understood. I did this by documenting
+      code sections systematically on each system, which also created resources
+      for knowledge transfer to the rest of the team.
+    </p>
+    <p>
+      To validate my findings, I ran extensive simulation and field testing to
+      capture behaviour and reverse-engineer code. Eventually I learned that
+      everything was implemented in C on an Arduino for controls while a
+      Raspberry Pi handled navigation in Python.
+    </p>
+    <Figure
+      src={image_thunderbird_sea}
+      alt="Thunderbird sailing autonomously during field testing on open water"
+      caption="Field testing Thunderbird's autonomous sailing"
+    />
+    <p>In summary:</p>
+    <ul>
+      <li>
+        By being thorough in documenting code behaviour, I created knowledge
+        resources that directly supported other members and myself for our
+        presentations during demos
+      </li>
+      <li>
+        Frequent testing allowed me to understand the control system and
+        implement new behaviours correctly
+      </li>
+      <li>
+        For instance, I expanded on the code by implementing the box challenge,
+        where the boat had to hold its position within a specified box
+      </li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h2>Result</h2>
+    <p>
+      On competition day, while the team attended the competition, I watched the
+      event nervously as the solo developer of the changes to the inherited
+      codebase. Fortunately, it was exhilarating to see the boat pass all
+      challenges, especially the new box challenge which other teams struggled
+      with.
+    </p>
+    <ResultHighlights>
+      <HighlightItem icon="bi-check2-circle">
+        <strong>Passed every challenge</strong> — including the new box challenge
+        that tripped up other teams
+      </HighlightItem>
+      <HighlightItem icon="bi-trophy">
+        <strong>Perfect 50/50 finish</strong> — continuing UBC Sailbot's win streak
+        at IRSR 2014
+      </HighlightItem>
+      <HighlightItem icon="bi-journal-text">
+        <strong>Durable knowledge transfer</strong> — documentation and testing resources
+        that outlived the competition
+      </HighlightItem>
+    </ResultHighlights>
+    <Figure
+      src={image_ubc_sailbot_team}
+      alt="The UBC Sailbot team celebrating their win at the 2014 International Robotic Sailing Regatta"
+      caption="The UBC Sailbot team celebrating IRSR 2014"
+    />
+    <p class="fst-italic">
+      I am proud that my contributions led to another perfect 50/50 win at IRSR
+      2014, continuing a team streak of perfection. Not only am I grateful to be
+      part of that winning legacy, I am honoured to have contributed my
+      knowledge to the team in a durable, tangible way.
+    </p>
+  </section>
+</CaseStudyLayout>

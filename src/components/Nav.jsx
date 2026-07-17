@@ -1,29 +1,20 @@
 import React from "react";
 
-function buildNavLinks(activePage) {
-  const navLinks = {
-    Home: "/",
-    Work: "/#featured-work",
-  };
+const navLinks = [
+  { title: "Home", href: "/", isActive: (path) => path === "/" },
+  { title: "Work", href: "/#featured-work", isActive: (path) => path.startsWith("/work") },
+];
 
-  return Object.entries(navLinks).map((entry, idx) => {
-    const [title, link] = entry;
-    if (title === activePage)
-      return (
-        <li key={idx} className="nav-item">
-          <a href={link} className="nav-link active">
-            {title}
-          </a>
-        </li>
-      );
-    else
-      return (
-        <li key={idx} className="nav-item">
-          <a href={link} className="nav-link">
-            {title}
-          </a>
-        </li>
-      );
+function buildNavLinks(currentPath) {
+  return navLinks.map(({ title, href, isActive }, idx) => {
+    const className = isActive(currentPath) ? "nav-link active" : "nav-link";
+    return (
+      <li key={idx} className="nav-item">
+        <a href={href} className={className}>
+          {title}
+        </a>
+      </li>
+    );
   });
 }
 
@@ -35,7 +26,7 @@ function Nav(props) {
           <span className="fs-4">Bryan Luu</span>
         </a>
         <ul className="navbar-nav d-flex flex-row flex-fill gap-3 px-3">
-          {buildNavLinks(props.activePage)}
+          {buildNavLinks(props.currentPath)}
         </ul>
         {/* TODO: wire up booking service */}
         <button className="btn btn-primary d-flex gap-2">

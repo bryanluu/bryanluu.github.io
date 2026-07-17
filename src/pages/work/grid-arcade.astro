@@ -1,0 +1,250 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import Figure from "../../components/CaseStudy/Figure.astro";
+import FigureGrid from "../../components/CaseStudy/FigureGrid";
+import FigureGridItem from "../../components/CaseStudy/FigureGridItem.astro";
+import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
+import HighlightItem from "../../components/CaseStudy/HighlightItem";
+import image_AMR_box from "../../images/grid-arcade/amr_box.jpg";
+import image_GRID_build from "../../images/grid-arcade/grid_build.gif";
+import image_GRID_electronics from "../../images/grid-arcade/grid_electronics.jpg";
+import image_GRID_logo_pose from "../../images/grid-arcade/grid_logo_pose.jpg";
+import image_GRID_logo_screen from "../../images/grid-arcade/grid_logo_screen.gif";
+import image_GRID_emu from "../../images/grid-arcade/grid_emu.png";
+import image_GRID_final from "../../images/grid-arcade/grid_final.jpg";
+import image_GRID_maze_emu from "../../images/grid-arcade/grid_maze_emu.png";
+import image_GRID_proto_play from "../../images/grid-arcade/grid_proto_play.jpg";
+import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
+---
+
+<CaseStudyLayout
+  slug="grid-arcade"
+  heroImage={image_GRID_final}
+  heroAlt="Picture of the finished GRID mini-arcade, LED matrix lit up"
+>
+  <Fragment slot="lead">
+    The GRID (Gaming Retro Interactive Device) was a custom arcade I built in
+    the fall of 2025 to develop my embedded systems skillset.
+  </Fragment>
+  <Fragment slot="meta">
+    <span
+      ><i class="bi bi-braces"></i>{" "}Software / Electrical: independent</span
+    >
+    <span
+      ><i class="bi bi-tools"></i>{" "}Mechanical: built with <a
+        href="https://www.linkedin.com/in/herman-tubungbanua/"
+        >Herman Tubungbanua</a
+      ></span
+    >
+  </Fragment>
+
+  <section class="mb-5">
+    <h2>The Problem</h2>
+    <p>
+      In 2022, I built a small device for a game, <em
+        ><a href="https://github.com/bryanluu/a-maze-ing-race"
+          >A-Maze-ing Race</a
+        ></em
+      >. The original system was composed of a flimsy box that mounted a 32×32
+      LED matrix display with a single joystick as controls, connected to an
+      Adafruit Metro M0 that ran game logic. The system was occasionally used to
+      demo other projects (like a small simulation of <a
+        href="https://github.com/bryanluu/boids">Boids</a
+      >) that lived in separate codebases.
+    </p>
+    <div class="row g-4 align-items-center mb-3">
+      <div class="col-md-6">
+        <Figure
+          src={image_AMR_box}
+          alt="The original 2022 GRID build: a hand-labeled box with an LED matrix and joystick"
+          caption="Original 2022 build"
+        />
+      </div>
+      <div class="col-md-6">
+        <h3>Why it fell short</h3>
+        <p>This was frustrating to work with because:</p>
+        <ul>
+          <li>
+            The control hardware suffered from noise due to vibration of the
+            enclosure, which could cause <em class="fw-bold"
+              >loose connections</em
+            > in the wiring
+          </li>
+          <li>
+            Physical hardware access meant opening the enclosure each time —
+            adding wear-and-tear and <em class="fw-bold">slowing iteration</em>
+          </li>
+          <li>
+            Changing codebases introduced <em class="fw-bold"
+              >context-switching</em
+            > overhead
+          </li>
+        </ul>
+        <p>
+          This translated to the greatest issue: my users found the experience
+          interesting but unserious because of the lack of quality and slow
+          updates.
+        </p>
+        <h3>The solution</h3>
+        <p>
+          Three years later, I set out to create a new, robust version that
+          could be played over a much longer time by others without maintenance.
+          This new version would be built with durability and development in
+          mind, targeting a faster iteration process. Finally, the game needed
+          to be updated to host my other projects which used the matrix.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h2>Approach</h2>
+
+    <h3 class="fs-5">Project Management</h3>
+    <p>
+      At the beginning of the project, <a href="https://notion.so/">Notion.so</a
+      > was used to create a project workspace to manage the project. Time was spent
+      early on to draft detailed specifications so design decisions could be made
+      with confidence. In terms of work process, I had experience working in an <em
+        >Agile</em
+      > team, so I went with a <em>Kanban</em> board that broke the tasks into milestones,
+      stories and issues. This let me tackle the build with professionalism and pace
+      as I targeted the <b>end of fall in 2025</b> as a deadline.
+    </p>
+    <p>
+      Because of this advance planning, I quickly realized that the build had
+      two parallel problems to solve:
+    </p>
+    <ol>
+      <li>
+        Better physical enclosure design and wiring around the hardware so that
+        noise and entropy would be kept to a minimum
+      </li>
+      <li>
+        Software architecture that enables easy context switching between demos
+        and is not hardware dependent
+      </li>
+    </ol>
+
+    <h3 class="fs-5">Hardware</h3>
+    <p>
+      While the hardware was predetermined from the original project, the
+      enclosure had to be upgraded from the worn-out box.
+    </p>
+    <p>
+      With the help of my mechanical engineer friend Herman, we specified the
+      design of a new laser-cut enclosure, with the custom electronics from the
+      original project inside. We wired the whole project and redesigned the
+      wiring to be more robust and easily accessible. We set out building the
+      enclosure as a cardboard prototype first, then fixed any issues we found,
+      before we settled on the final body.
+    </p>
+    <Figure
+      src={image_GRID_build}
+      alt="Timelapse of the GRID enclosure build"
+      caption="Cardboard build timelapse"
+      raw
+    />
+    <FigureGrid>
+      <FigureGridItem
+        src={image_GRID_prototype}
+        alt="Cardboard prototype of the GRID enclosure"
+        caption="Cardboard prototype"
+      />
+      <FigureGridItem
+        src={image_GRID_proto_play}
+        alt="The prototype running A-Maze-ing Race"
+        caption="The prototype running A-Maze-ing Race"
+      />
+    </FigureGrid>
+    <FigureGrid>
+      <FigureGridItem
+        src={image_GRID_electronics}
+        alt="Rewired internals of the GRID enclosure"
+        caption="Rewired internals"
+      />
+      <FigureGridItem
+        src={image_GRID_logo_pose}
+        alt="Me showcasing the new GRID logo"
+        caption="Me showcasing the new GRID logo"
+      />
+    </FigureGrid>
+
+    <h3 class="fs-5">Software</h3>
+    <p>
+      After the build of the enclosure, I set to work improving the software. To
+      develop the software without being blocked by hardware access, I created
+      an SDL application that emulated the program by running the same C++
+      codebase at a fixed time-step. To enable easy context-switching for
+      different demos, I built a whole C++ game engine — with the limited
+      resources of the Metro M0 — to run multiple different "Scenes" that
+      rendered different games.
+    </p>
+    <FigureGrid>
+      <FigureGridItem
+        src={image_GRID_emu}
+        alt="Emulator title screen"
+        caption="Emulator — title screen"
+        col="md-4"
+      />
+      <FigureGridItem
+        src={image_GRID_maze_emu}
+        alt="Emulator running the maze scene"
+        caption="Emulator — maze scene"
+        col="md-8"
+      />
+    </FigureGrid>
+    <p>
+      This accelerated my process, and I was able to create new Scenes such as
+      the game of Life and the classic Snake game. On top of this I managed to
+      improve my controls, fix several nagging bugs, create a calibration stage,
+      and implement persistent flash storage for long-term use and maintenance.
+      Finally, this allowed for development to continue while users could keep
+      playing the old code on the new enclosure.
+    </p>
+  </section>
+
+  <section class="mb-5">
+    <h2>Result</h2>
+    <p>In essence, this project proved effective in several key ways:</p>
+    <ResultHighlights>
+      <HighlightItem icon="bi-diagram-2">
+        <strong>One codebase, two targets</strong> (hardware + emulator) — allowed
+        for parallel development and usage
+      </HighlightItem>
+      <HighlightItem icon="bi-boxes">
+        <strong>Extensible architecture</strong> — creating a platform to host different
+        games multiplied the power of my demos
+      </HighlightItem>
+      <HighlightItem icon="bi-arrow-left-right">
+        <strong>Hardware/software iteration + calibration</strong> — ensured a better
+        developer and user experience
+      </HighlightItem>
+    </ResultHighlights>
+    <p>
+      Because of our work ensuring designs were sufficient and iterating on the
+      build, the assembly was completed on-time with only minor issues. The
+      result was a satisfying physical enclosure that looked professional and
+      polished.
+    </p>
+    <Figure
+      src={image_GRID_logo_screen}
+      alt="Timelapse of GRID showing the title screen"
+      caption="GRID showing the title screen"
+      raw
+      figureClass="mb-3 d-flex flex-column align-items-center"
+    />
+    <p>
+      We learned that a good advance-planning process was critical to the
+      success of the build. The collaboration between me and Herman was
+      instructive, as it taught me to define my specs early and consider buffers
+      for the build process.
+    </p>
+    <p class="fst-italic">
+      The creation of a software emulation was extremely helpful as it unblocked
+      software development from hardware. I learned to use SDL applications
+      running fixed-timing emulation as an effective tool for hardware
+      development.
+    </p>
+  </section>
+</CaseStudyLayout>

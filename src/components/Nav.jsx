@@ -1,44 +1,36 @@
 import React from "react";
 
-function buildNavLinks(activePage) {
-  const navLinks = {
-    Home: "/index.html",
-  };
+const navLinks = [
+  { title: "Home", href: "/", isActive: (path) => path === "/" },
+  { title: "Work", href: "/#featured-work", isActive: (path) => path.startsWith("/work") },
+];
 
-  return Object.entries(navLinks).map((entry) => {
-    const [title, link] = entry;
-    if (title === activePage)
-      return (
-        <li class="nav-item">
-          <a href={link} class="nav-link active">
-            {title}
-          </a>
-        </li>
-      );
-    else
-      return (
-        <li class="nav-item">
-          <a href={link} class="nav-link">
-            {title}
-          </a>
-        </li>
-      );
+function buildNavLinks(currentPath) {
+  return navLinks.map(({ title, href, isActive }, idx) => {
+    const className = isActive(currentPath) ? "nav-link active" : "nav-link";
+    return (
+      <li key={idx} className="nav-item">
+        <a href={href} className={className}>
+          {title}
+        </a>
+      </li>
+    );
   });
 }
 
 function Nav(props) {
   return (
-    <nav class="navbar navbar-dark bg-primary mb-4 border-bottom sticky-top">
+    <nav className="navbar navbar-dark bg-primary mb-4 border-bottom sticky-top">
       <div className="container-fluid">
-        <a href="/" class="navbar-brand">
-          <span class="fs-4">Bryan Luu</span>
+        <a href="/" className="navbar-brand">
+          <span className="fs-4">Bryan Luu</span>
         </a>
-        <ul class="navbar-nav d-flex flex-row flex-fill gap-3 px-3">
-          {buildNavLinks(props.activePage)}
+        <ul className="navbar-nav d-flex flex-row flex-fill gap-3 px-3">
+          {buildNavLinks(props.currentPath)}
         </ul>
         {/* TODO: wire up booking service */}
-        <button class="btn btn-primary d-flex gap-2">
-          <i class="bi bi-telephone-fill"></i>
+        <button className="btn btn-primary d-flex gap-2">
+          <i className="bi bi-telephone-fill"></i>
           Book a call
         </button>
       </div>

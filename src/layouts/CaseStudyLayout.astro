@@ -1,0 +1,75 @@
+---
+import MainLayout from "./MainLayout.astro";
+import DateRange from "../components/DateRange";
+import SkillList from "../components/SkillList";
+import CTABanner from "../components/Home/CTABanner";
+import Figure from "../components/CaseStudy/Figure.astro";
+import projects from "../data/projects.json";
+
+const { slug, heroImage, heroAlt, heroCaption, heroRaw = false } = Astro.props;
+
+const project = projects.find((p) => p.slug === slug);
+
+if (!project) {
+  throw new Error(`No project found with slug "${slug}"`);
+}
+---
+
+<div class="bg-white">
+  <MainLayout title={project.name}>
+    <article class="container">
+      <section>
+        <a
+          href="/#featured-work"
+          class="icon-link icon-link-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover align-items-baseline mb-3"
+          style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);"
+        >
+          <i class="bi bi-chevron-left"></i> Back to work
+        </a>
+        <SkillList skills={project.skills} />
+        <h1>{project.name}</h1>
+        <p class="lead" style={{ textWrap: "balance" }}>
+          <slot name="lead" />
+        </p>
+        <div class="text-secondary d-flex flex-wrap dot-list mb-3">
+          <span
+            ><i class="bi bi-calendar-range"></i>{" "}<DateRange
+              start={project.dates.start}
+              end={project.dates.end}
+            /></span
+          >
+          <slot name="meta" />
+        </div>
+        <Figure
+          src={heroImage}
+          alt={heroAlt}
+          caption={heroCaption}
+          raw={heroRaw}
+          figureClass="mb-3 mx-auto d-block text-center"
+          imgClass="img-fluid rounded-4 border mx-auto d-block"
+          style={{ maxHeight: "60vh", width: "auto" }}
+        />
+        {
+          project.link && (
+            <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
+              <a
+                href={project.link.url}
+                class="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.link.label}
+                <i class="bi bi-chevron-right" />
+              </a>
+            </div>
+          )
+        }
+      </section>
+
+      <slot />
+    </article>
+    <div class="border border-top bg-secondary-subtle">
+      <CTABanner />
+    </div>
+  </MainLayout>
+</div>

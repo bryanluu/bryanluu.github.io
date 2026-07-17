@@ -6,5 +6,23 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://bryanluu.github.io",
   integrations: [react()],
-  trailingSlash: "always"
+  trailingSlash: "always",
+  image: {
+    responsiveStyles: true,
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+          silenceDeprecations: [
+            "import",
+            "global-builtin",
+            "if-function",
+            "color-functions",
+          ],
+        },
+      },
+    },
+  },
 });

@@ -5,8 +5,11 @@ import SkillList from "../../components/SkillList";
 import CTABanner from "../../components/Home/CTABanner";
 import projects from "../../data/projects.json";
 import { Image } from "astro:assets";
+import image_AMR_box from "../../images/amr_box.jpg";
 import image_GRID_build from "../../images/grid_build.gif";
 import image_GRID_electronics from "../../images/grid_electronics.jpg";
+import image_GRID_logo_pose from "../../images/grid_logo_pose.jpg";
+import image_GRID_logo_screen from "../../images/grid_logo_screen.gif";
 import image_GRID_emu from "../../images/grid_emu.png";
 import image_GRID_final from "../../images/grid_final.jpg";
 import image_GRID_maze_emu from "../../images/grid_maze_emu.png";
@@ -22,7 +25,7 @@ if (!GRID) {
 
 <div class="bg-white">
   <MainLayout title="GRID Arcade">
-    <article class="container pb-5">
+    <article class="container">
       <section>
         <a
           href="/#featured-work"
@@ -32,10 +35,10 @@ if (!GRID) {
           <i class="bi bi-chevron-left"></i> Back to work
         </a>
         <SkillList skills={GRID.skills} />
-        <h1>The {GRID.title}</h1>
+        <h1>{GRID.title}</h1>
         <p class="lead" style={{ textWrap: "balance" }}>
           The GRID (Gaming Retro Interactive Device) was a custom arcade I built
-          in the summer of 2025 to develop my embedded systems skillset.
+          in the fall of 2025 to develop my embedded systems skillset.
         </p>
         <div class="text-secondary d-flex flex-wrap dot-list mb-3">
           <span
@@ -56,7 +59,7 @@ if (!GRID) {
         </div>
         {
           GRID.link && (
-            <div class="d-grid col d-lg-flex align-items-center mb-4">
+            <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
               <a
                 href={GRID.link.url}
                 class="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
@@ -69,14 +72,12 @@ if (!GRID) {
             </div>
           )
         }
-      </section>
-
-      <section class="container">
         <Image
           src={image_GRID_final}
           alt="Picture of the finished GRID mini-arcade, LED matrix lit up"
           inferSize
-          class="img-fluid rounded-4 border mb-5"
+          class="img-fluid rounded-4 border mb-5 mx-auto d-block"
+          style="max-height: 60vh; width: auto;"
         />
       </section>
 
@@ -97,7 +98,7 @@ if (!GRID) {
         <div class="row g-4 align-items-center mb-3">
           <div class="col-md-6">
             <Image
-              src={image_GRID_proto_play}
+              src={image_AMR_box}
               alt="The original 2022 GRID build: a hand-labeled box with an LED matrix and joystick"
               inferSize
               class="img-fluid rounded-3 border"
@@ -106,9 +107,7 @@ if (!GRID) {
           </div>
           <div class="col-md-6">
             <h3>Why it fell short</h3>
-            <b class="fs-6 fw-bold">
-              This was frustrating to work with because:
-            </b>
+            <p>This was frustrating to work with because:</p>
             <ul>
               <li>
                 The control hardware suffered from noise due to vibration of the
@@ -133,6 +132,7 @@ if (!GRID) {
               experience interesting but unserious because of the lack of
               quality and slow updates.
             </p>
+            <h3>The solution</h3>
             <p>
               Three years later, I set out to create a new, robust version that
               could be played over a much longer time by others without
@@ -150,20 +150,22 @@ if (!GRID) {
 
         <h3 class="fs-5">Project Management</h3>
         <p>
-          At the beginning of the project, Notion.so was used to create a
-          project workspace to manage the project. Time was spent early on to
-          draft detailed specifications so design decisions could be made with
-          confidence. In terms of work process, I had experience working in an <em
-            >Agile</em
-          > team, so I went with a <em>Kanban</em> board that broke the tasks into
-          milestones, stories and issues. This let me tackle the build with professionalism
-          and pace as I targeted the end of summer in 2025 as a deadline.
+          At the beginning of the project, <a href="https://notion.so/"
+            >Notion.so</a
+          > was used to create a project workspace to manage the project. Time was
+          spent early on to draft detailed specifications so design decisions could
+          be made with confidence. In terms of work process, I had experience working
+          in an <em>Agile</em> team, so I went with a <em>Kanban</em> board that broke
+          the tasks into milestones, stories and issues. This let me tackle the build
+          with professionalism and pace as I targeted the <b
+            >end of fall in 2025</b
+          > as a deadline.
         </p>
         <p>
           Because of this advance planning, I quickly realized that the build
           had two parallel problems to solve:
         </p>
-        <ul>
+        <ol>
           <li>
             Better physical enclosure design and wiring around the hardware so
             that noise and entropy would be kept to a minimum
@@ -172,7 +174,7 @@ if (!GRID) {
             Software architecture that enables easy context switching between
             demos and is not hardware dependent
           </li>
-        </ul>
+        </ol>
 
         <h3 class="fs-5">Hardware</h3>
         <p>
@@ -187,6 +189,17 @@ if (!GRID) {
           out building the enclosure as a cardboard prototype first, then fixed
           any issues we found, before we settled on the final body.
         </p>
+        <figure class="mb-3">
+          <img
+            src={image_GRID_build.src}
+            alt="Timelapse of the GRID enclosure build"
+            loading="lazy"
+            class="img-fluid rounded-3 border"
+          />
+          <figcaption class="text-secondary small mt-1 mb-0">
+            Cardboard build timelapse
+          </figcaption>
+        </figure>
         <div class="row g-3 mb-3">
           <div class="col-md-6">
             <Image
@@ -199,6 +212,19 @@ if (!GRID) {
           </div>
           <div class="col-md-6">
             <Image
+              src={image_GRID_proto_play}
+              alt="The prototype running A-Maze-ing Race"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">
+              The prototype running A-Maze-ing Race
+            </p>
+          </div>
+        </div>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <Image
               src={image_GRID_electronics}
               alt="Rewired internals of the GRID enclosure"
               inferSize
@@ -206,18 +232,18 @@ if (!GRID) {
             />
             <p class="text-secondary small mt-1 mb-0">Rewired internals</p>
           </div>
+          <div class="col-md-6">
+            <Image
+              src={image_GRID_logo_pose}
+              alt="Me showcasing the new GRID logo"
+              inferSize
+              class="img-fluid rounded-3 border"
+            />
+            <p class="text-secondary small mt-1 mb-0">
+              Me showcasing the new GRID logo
+            </p>
+          </div>
         </div>
-        <figure class="mb-3">
-          <img
-            src={image_GRID_build.src}
-            alt="Timelapse of the GRID enclosure build"
-            loading="lazy"
-            class="img-fluid rounded-3 border"
-          />
-          <figcaption class="text-secondary small mt-1 mb-0">
-            Cardboard-to-final build timelapse
-          </figcaption>
-        </figure>
 
         <h3 class="fs-5">Software</h3>
         <p>
@@ -268,18 +294,28 @@ if (!GRID) {
         <div
           class="p-4 bg-primary-subtle border border-primary-subtle rounded-3 mb-3"
         >
-          <ul class="mb-0">
-            <li>
-              <strong>One codebase, two targets</strong> (hardware + emulator) — allowed
-              for parallel development and usage
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-diagram-2 fs-4 text-primary flex-shrink-0"></i>
+              <span>
+                <strong>One codebase, two targets</strong> (hardware + emulator) —
+                allowed for parallel development and usage
+              </span>
             </li>
-            <li>
-              <strong>Extensible architecture</strong> — creating a platform to host
-              different games multiplied the power of my demos
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-boxes fs-4 text-primary flex-shrink-0"></i>
+              <span>
+                <strong>Extensible architecture</strong> — creating a platform to
+                host different games multiplied the power of my demos
+              </span>
             </li>
-            <li>
-              <strong>Hardware/software iteration + calibration</strong> — ensured
-              a better developer and user experience
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-arrow-left-right fs-4 text-primary flex-shrink-0"
+              ></i>
+              <span>
+                <strong>Hardware/software iteration + calibration</strong> — ensured
+                a better developer and user experience
+              </span>
             </li>
           </ul>
         </div>
@@ -289,6 +325,17 @@ if (!GRID) {
           The result was a satisfying physical enclosure that looked
           professional and polished.
         </p>
+        <figure class="mb-3 d-flex flex-column align-items-center">
+          <img
+            src={image_GRID_logo_screen.src}
+            alt="Timelapse of GRID showing the title screen"
+            loading="lazy"
+            class="img-fluid rounded-3 border"
+          />
+          <figcaption class="text-secondary small mt-1 mb-0">
+            GRID showing the title screen
+          </figcaption>
+        </figure>
         <p>
           We learned that a good advance-planning process was critical to the
           success of the build. The collaboration between me and Herman was
@@ -303,6 +350,8 @@ if (!GRID) {
         </p>
       </section>
     </article>
-    <CTABanner />
+    <div class="border border-top bg-secondary-subtle">
+      <CTABanner />
+    </div>
   </MainLayout>
 </div>

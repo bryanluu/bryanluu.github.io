@@ -59,8 +59,8 @@ function ProjectsList(props) {
     <div className="container">
       <h5 className="fs-5 pb-2 text-secondary">Other projects</h5>
       <div className="d-flex flex-wrap justify-content-between align-items-baseline gap-5">
-        {projects.map((project) => (
-          <Project data={project} />
+        {projects.map((project, idx) => (
+          <Project key={idx} data={project} />
         ))}
       </div>
     </div>

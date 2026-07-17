@@ -5,7 +5,7 @@ function CaseStudyCard(props) {
   const caseStudy = props.data;
 
   return (
-    <div className="card rounded-4 shadow-lg h-100">
+    <section className="card rounded-4 shadow-lg h-100">
       {/* <pre>{JSON.stringify(caseStudy, null, 2)}</pre> */}
       {caseStudy.preview && (
         <div className="ratio ratio-4x3 rounded-top-4 overflow-hidden bg-light border-bottom">
@@ -47,14 +47,14 @@ function CaseStudyCard(props) {
           </a>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
 function FeaturedWorks(props) {
   const caseStudies = props.data;
   return (
-    <div className="container">
+    <section className="container">
       <h4 className="fs-4" id="featured-work">
         Featured work
       </h4>
@@ -65,7 +65,7 @@ function FeaturedWorks(props) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 
 const navLinks = [
   { title: "Home", href: "/", isActive: (path) => path === "/" },
+  { title: "About", href: "/about/", isActive: (path) => path === "/about/" },
   {
     title: "Work",
     href: "/#featured-work",

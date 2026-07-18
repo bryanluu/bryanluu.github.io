@@ -4,7 +4,7 @@ import Avatar from "../components/About/Avatar";
 import CTABanner from "../components/CTABanner";
 
 const avatarSize = 200;
-const topBannerHeight = `${avatarSize / 2 + 48}px`;
+const topBannerHeight = `${avatarSize / 2 + 56}px`; // a little extra clearance so the "y" in "many" doesn't dip past the edge
 ---
 
 <style define:vars={{ avatarSize, topBannerHeight }}>
@@ -15,6 +15,10 @@ const topBannerHeight = `${avatarSize / 2 + 48}px`;
     width: 100%;
     background-color: var(--bs-primary-bg-subtle);
     z-index: -1;
+  }
+
+  :global(.avatar) {
+    border: 5px solid var(--bs-primary);
   }
 
   #hero {

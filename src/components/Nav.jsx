@@ -2,7 +2,11 @@ import React from "react";
 
 const navLinks = [
   { title: "Home", href: "/", isActive: (path) => path === "/" },
-  { title: "Work", href: "/#featured-work", isActive: (path) => path.startsWith("/work") },
+  {
+    title: "Work",
+    href: "/#featured-work",
+    isActive: (path) => path.startsWith("/work"),
+  },
 ];
 
 function buildNavLinks(currentPath) {
@@ -20,7 +24,7 @@ function buildNavLinks(currentPath) {
 
 function Nav(props) {
   return (
-    <nav className="navbar navbar-dark bg-primary mb-4 border-bottom sticky-top">
+    <nav className="navbar navbar-dark bg-primary border-bottom sticky-top">
       <div className="container-fluid">
         <a href="/" className="navbar-brand">
           <span className="fs-4">Bryan Luu</span>

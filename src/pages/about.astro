@@ -1,0 +1,87 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Avatar from "../components/About/Avatar";
+
+const avatarSize = 200;
+const topBannerHeight = `${avatarSize / 2 + 48}px`;
+---
+
+<style define:vars={{ avatarSize, topBannerHeight }}>
+  #top-banner {
+    position: absolute;
+    top: 63px;
+    height: var(--topBannerHeight);
+    width: 100%;
+    background-color: var(--bs-primary-bg-subtle);
+    z-index: -1;
+  }
+
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 1rem;
+  }
+
+  #hero > :global(.avatar) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #hero > #hero-text {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+  }
+
+  @media (min-width: 992px) {
+    #hero {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      row-gap: 0;
+    }
+
+    #hero > :global(.avatar) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: left;
+    }
+
+    #hero > #hero-text {
+      grid-column: 1 / 2;
+      grid-row: 1;
+      justify-self: right;
+      padding-right: 1em;
+      text-align: left;
+    }
+  }
+</style>
+<MainLayout title="About">
+  <section>
+    <div id="top-banner"></div>
+    <div class="container mt-5">
+      <div id="hero">
+        <Avatar
+          src="/assets/profile_pic.jpg"
+          alt="Photo of me, wearing a hat with a cat on it"
+          size={avatarSize}
+          className="avatar"
+        />
+        <div id="hero-text">
+          <h1 id="heading" class="display-4 fw-bold text-primary-emphasis mb-1">
+            Hi, I'm <span class="text-primary">Bryan</span>.
+          </h1>
+          <p id="lead" class="lead text-body-secondary mb-0">
+            As software-focused engineering physicist,
+          </p>
+          <p
+            id="subheading"
+            class="about-hero-intro text-center text-lg-start mb-0"
+          >
+            I am a technical professional that wears many hats. 🤠
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -8,7 +8,7 @@ function Avatar(params) {
     height: `${size}px`,
     borderRadius: "50%",
     objectFit: "cover",
-    ...params.style
+    ...params.style,
   };
 
   return <img src={src} alt={alt} style={avatarStyle} className={className} />;

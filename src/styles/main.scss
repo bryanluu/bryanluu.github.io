@@ -8,6 +8,7 @@
 //    These run before Bootstrap's own _variables.scss, so they win.
 $primary: #266da9;
 $light: #f8f9fa;
+$enable-cssgrid: true;
 
 // Typography: single family (Lato) for both headings and body.
 // Loaded via <link> in MainLayout.astro.

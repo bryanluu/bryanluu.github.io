@@ -2,7 +2,7 @@
 import MainLayout from "./MainLayout.astro";
 import DateRange from "../components/DateRange";
 import SkillList from "../components/SkillList";
-import CTABanner from "../components/Home/CTABanner";
+import CTABanner from "../components/CTABanner";
 import Figure from "../components/CaseStudy/Figure.astro";
 import projects from "../data/projects.json";
 
@@ -17,7 +17,7 @@ if (!project) {
 
 <div class="bg-white">
   <MainLayout title={project.name}>
-    <article class="container">
+    <article class="container mt-4">
       <section>
         <a
           href="/#featured-work"

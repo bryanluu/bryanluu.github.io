@@ -1,25 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Home/Hero";
-import FeaturedWorks from "../components/Home/FeaturedWorks"
+import FeaturedWorks from "../components/Home/FeaturedWorks";
 import ProjectsList from "../components/Home/ProjectsList";
-import CTABanner from "../components/Home/CTABanner";
+import CTABanner from "../components/CTABanner";
 import projects from "../data/projects.json";
 
 const featuredWorks = projects.filter((project) => project.featured);
 const otherProjects = projects.filter((project) => !project.featured);
 ---
-<div class="bg-white">
-  <MainLayout title="Home">
-    <Hero />
-    <div class="bg-primary-subtle border py-3">
-      <FeaturedWorks data={featuredWorks} />
-    </div>
-    <div class="bg-secondary-subtle border py-3">
-      <ProjectsList data={otherProjects} />
-    </div>
-    <div class="bg-white">
-      <CTABanner />
-    </div>
-  </MainLayout>
-</div>
+
+<MainLayout title="Home">
+  <Hero />
+  <div class="bg-primary-subtle border py-3">
+    <FeaturedWorks data={featuredWorks} />
+  </div>
+  <div class="bg-white border py-3">
+    <ProjectsList data={otherProjects} />
+  </div>
+  <div class="bg-secondary-subtle">
+    <CTABanner />
+  </div>
+</MainLayout>

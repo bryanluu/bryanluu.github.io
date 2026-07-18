@@ -2,7 +2,7 @@ import React from "react";
 
 function CTABanner(props) {
   return (
-    <div className="p-5 text-center">
+    <section className="p-5 text-center">
       <div className="container py-5">
         <h2 className="text-body-emphasis">Need my help?</h2>
         <p className="col-lg-8 mx-auto lead" style={{ textWrap: "balance" }}>
@@ -26,7 +26,7 @@ function CTABanner(props) {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

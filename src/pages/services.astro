@@ -21,7 +21,7 @@ const services = [
     priceUsd: "$8,500 USD",
   },
   {
-    icon: "bi-lightbulb",
+    icon: "bi-chat-square-text",
     title: "Technical consultation",
     description:
       "A fixed-fee engagement to scope a build, assess hardware-software feasibility, or review an architecture before you commit. A low-risk way to work together first.",
@@ -110,7 +110,9 @@ const chevronPositions = processSteps
     color: var(--bs-primary);
     font-size: 1.25rem;
     text-shadow: 0 0 0.5px currentColor; /* bootstrap-icons has no bold weight, so fake one */
-    background-color: var(--bs-primary-bg-subtle); /* matches the section bg, masking the line behind the chevron */
+    background-color: var(
+      --bs-primary-bg-subtle
+    ); /* matches the section bg, masking the line behind the chevron */
     padding: 0 0.25rem;
     transform: translate(-50%, -50%);
   }
@@ -124,7 +126,7 @@ const chevronPositions = processSteps
 <MainLayout title="Services">
   <section class="container py-5">
     <div class="col-lg-8">
-      <h1 class="display-4 fw-bold text-primary-emphasis mb-1">My services</h1>
+      <h1 class="display-4 fw-bold text-primary-emphasis mb-1">Services</h1>
       <p class="lead text-body-secondary mb-3">How can I help?</p>
       <p class="mb-3">
         From the wires to the web, I build and understand the whole stack: the
@@ -132,15 +134,15 @@ const chevronPositions = processSteps
         dashboard your team actually looks at.
       </p>
       <span
-        class="d-inline-block rounded-pill bg-primary-subtle text-primary-emphasis fw-medium px-3 py-2"
+        class="d-inline-block rounded-pill bg-primary-subtle shadow-sm text-primary-emphasis fw-bold px-3 py-2"
       >
-        Fixed scope, fixed price — no surprises
+        fixed scope + fixed price = no surprises
       </span>
     </div>
   </section>
 
   <section class="container pb-5">
-    <div class="bg-light rounded-4 p-3 p-md-4">
+    <div class="bg-primary-subtle shadow rounded-4 p-3 p-md-4">
       <div class="row row-cols-1 row-cols-lg-3 g-4">
         {
           services.map((service) => (
@@ -172,7 +174,7 @@ const chevronPositions = processSteps
       </div>
     </div>
     <p class="text-center mt-4 mb-0">
-      Not sure which fits?
+      Not sure which fits?{" "}
       <!-- TODO: wire up booking service -->
       <a
         href="#"
@@ -184,7 +186,7 @@ const chevronPositions = processSteps
 
   <section class="bg-primary-subtle">
     <div class="container py-5">
-      <h2 class="display-6 fw-bold mb-1">My process</h2>
+      <h2 class="display-6 fw-bold mb-1">Process</h2>
       <p class="lead text-body-secondary mb-4">How we'll work together</p>
       <!-- Mobile: steps stacked vertically -->
       <div class="d-flex d-lg-none flex-column gap-4">
@@ -234,9 +236,7 @@ const chevronPositions = processSteps
             processSteps.map((step) => (
               <div class="process-label text-center">
                 <h3 class="fs-6 fw-bold mb-1">{step.title}</h3>
-                <p class="small text-body-secondary mb-0">
-                  {step.description}
-                </p>
+                <p class="small text-body-secondary mb-0">{step.description}</p>
               </div>
             ))
           }
@@ -251,7 +251,7 @@ const chevronPositions = processSteps
       <!-- TODO: wire up booking service -->
       <button
         type="button"
-        class="btn btn-light btn-lg px-4 d-inline-flex align-items-center gap-2"
+        class="btn btn-light btn-lg px-4 text-primary-emphasis d-inline-flex align-items-center gap-2"
       >
         <i class="bi bi-telephone-fill"></i>
         Book a call

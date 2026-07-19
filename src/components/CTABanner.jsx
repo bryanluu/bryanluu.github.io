@@ -18,12 +18,12 @@ function CTABanner(props) {
             <i className="bi bi-telephone-fill"></i>
             Book a discovery call
           </button>
-          <button
-            type="button"
+          <a
             className="btn btn-outline-secondary btn-lg px-3"
+            href="/services/"
           >
             Learn about my services <i className="bi bi-arrow-right"></i>
-          </button>
+          </a>
         </div>
       </div>
     </section>

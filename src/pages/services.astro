@@ -1,0 +1,261 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const services = [
+  {
+    icon: "bi-window",
+    title: "Web apps & dashboards",
+    description:
+      "Custom web applications, data dashboards, internal tools, client-facing portals, reporting interfaces — whichever you need, I'll build it. Full-stack package, deployed and documented.",
+    priceLabel: "Typical projects from",
+    priceCad: "$15,000 CAD",
+    priceUsd: "$10,500 USD",
+  },
+  {
+    icon: "bi-cpu",
+    title: "Hardware-to-UI integration",
+    description:
+      "Getting device data onto your application: firmware → data pipeline → dashboard as one coherent build. Ideal for energy monitoring, sensor networks, and connected-hardware products.",
+    priceLabel: "Typical projects from",
+    priceCad: "$12,000 CAD",
+    priceUsd: "$8,500 USD",
+  },
+  {
+    icon: "bi-chat-square-text",
+    title: "Technical consultation",
+    description:
+      "A fixed-fee engagement to scope a build, assess hardware-software feasibility, or review an architecture before you commit. A low-risk way to work together first.",
+    priceLabel: "From",
+    priceCad: "$1,500 CAD",
+    priceUsd: "$1,100 USD",
+  },
+];
+
+const processSteps = [
+  {
+    icon: "bi-telephone",
+    title: "Discovery call",
+    description:
+      "We'll do a free 45-minute call to talk through what you're building and what success looks like.",
+  },
+  {
+    icon: "bi-file-earmark-text",
+    title: "Proposal",
+    description:
+      "You get a written proposal: fixed scope, fixed price, timeline, and clear deliverables. It includes payment terms, with nothing ambiguous.",
+  },
+  {
+    icon: "bi-flag",
+    title: "Milestones",
+    description:
+      "Work ships in defined milestones so you see progress and stay in control. You're never waiting in the dark.",
+  },
+  {
+    icon: "bi-box-seam",
+    title: "Handoff",
+    description:
+      "You receive documented, deployed, maintainable work — plus everything you need to run it without me.",
+  },
+];
+
+// Icons and labels each render as `processSteps.length` equal-width flex
+// columns, so a column's center always sits at this fraction in from each
+// edge — used to inset the connecting line and to place the chevrons
+// exactly on each column boundary (the midpoint between two icon centers).
+const processLineInset = `${100 / (2 * processSteps.length)}%`;
+const chevronPositions = processSteps
+  .slice(1)
+  .map((_, idx) => `${((idx + 1) / processSteps.length) * 100}%`);
+---
+
+<style define:vars={{ processLineInset }}>
+  .process-step-icon {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+  }
+
+  /* Desktop layout: icons on their own row, connected by one continuous line
+     that runs edge-to-edge (inset by the circle radius so it meets each
+     circle's center) and disappears behind the circles' solid backgrounds. */
+  .process-icons {
+    position: relative;
+  }
+
+  .process-icons::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: var(--processLineInset);
+    right: var(--processLineInset);
+    height: 2px;
+    background-color: var(--bs-primary);
+    opacity: 0.5;
+    transform: translateY(-50%);
+  }
+
+  .process-icons .process-step-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-icon-col {
+    flex: 1;
+  }
+
+  .process-chevron {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    color: var(--bs-primary);
+    font-size: 1.25rem;
+    text-shadow: 0 0 0.5px currentColor; /* bootstrap-icons has no bold weight, so fake one */
+    background-color: var(
+      --bs-primary-bg-subtle
+    ); /* matches the section bg, masking the line behind the chevron */
+    padding: 0 0.25rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .process-label {
+    flex: 1;
+    padding: 0 0.5rem;
+  }
+</style>
+
+<MainLayout title="Services">
+  <section class="container py-5">
+    <div class="col-lg-8">
+      <h1 class="display-4 fw-bold text-primary-emphasis mb-1">Services</h1>
+      <p class="lead text-body-secondary mb-3">How can I help?</p>
+      <p class="mb-3">
+        From the wires to the web, I build and understand the whole stack: the
+        embedded software on the device, the API in the middle, and the
+        dashboard your team actually looks at.
+      </p>
+      <span
+        class="d-inline-block rounded-pill bg-primary text-bg-primary shadow-sm fw-bold px-3 py-2"
+      >
+        fixed scope + fixed price = no surprises
+      </span>
+    </div>
+  </section>
+
+  <section class="container pb-5">
+    <div class="bg-primary-subtle shadow rounded-4 p-3 p-md-4">
+      <div class="row row-cols-1 row-cols-lg-3 g-4">
+        {
+          services.map((service) => (
+            <div class="col">
+              <div class="card rounded-4 p-4 h-100 d-flex flex-column">
+                <i
+                  class={`bi ${service.icon} fs-1 text-primary mb-3`}
+                  aria-hidden="true"
+                />
+                <h3 class="fs-4 mb-2">{service.title}</h3>
+                <p class="text-body-secondary flex-grow-1">
+                  {service.description}
+                </p>
+                <div class="mt-3">
+                  <div class="small text-body-secondary mb-1">
+                    {service.priceLabel}
+                  </div>
+                  <div class="fs-3 fw-bold text-body-emphasis">
+                    {service.priceCad}
+                  </div>
+                  <div class="small text-body-secondary">
+                    {service.priceUsd}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <p class="text-center mt-4 mb-0">
+      Not sure which fits?{" "}
+      <!-- TODO: wire up booking service -->
+      <a
+        href="#"
+        class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+        >Book a discovery call</a
+      >
+    </p>
+  </section>
+
+  <section class="bg-primary-subtle">
+    <div class="container py-5">
+      <h2 class="display-6 fw-bold mb-1">Process</h2>
+      <p class="lead text-body-secondary mb-4">How we'll work together</p>
+      <!-- Mobile: steps stacked vertically -->
+      <div class="d-flex d-lg-none flex-column gap-4">
+        {
+          processSteps.map((step) => (
+            <div class="text-center">
+              <div class="process-step-icon rounded-circle bg-white border border-primary d-flex align-items-center justify-content-center mx-auto mb-3">
+                <i
+                  class={`bi ${step.icon} fs-4 text-primary`}
+                  aria-hidden="true"
+                />
+              </div>
+              <h3 class="fs-6 fw-bold mb-1">{step.title}</h3>
+              <p class="small text-body-secondary mb-0">{step.description}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Desktop: icon row with a connecting line, labels row below -->
+      <div class="d-none d-lg-block">
+        <div class="process-icons d-flex align-items-center">
+          {
+            processSteps.map((step) => (
+              <div class="process-icon-col text-center">
+                <div class="process-step-icon rounded-circle bg-white border border-primary d-flex align-items-center justify-content-center mx-auto">
+                  <i
+                    class={`bi ${step.icon} fs-4 text-primary`}
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            ))
+          }
+          {
+            chevronPositions.map((pos) => (
+              <i
+                class="bi bi-chevron-right process-chevron"
+                style={`left: ${pos};`}
+                aria-hidden="true"
+              />
+            ))
+          }
+        </div>
+        <div class="d-flex mt-3">
+          {
+            processSteps.map((step) => (
+              <div class="process-label text-center">
+                <h3 class="fs-6 fw-bold mb-1">{step.title}</h3>
+                <p class="small text-body-secondary mb-0">{step.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary text-center py-5">
+    <div class="container">
+      <h2 class="text-white mb-4">Ready to get started?</h2>
+      <!-- TODO: wire up booking service -->
+      <button
+        type="button"
+        class="btn btn-light btn-lg px-4 text-primary-emphasis d-inline-flex align-items-center gap-2"
+      >
+        <i class="bi bi-telephone-fill"></i>
+        Book a discovery call
+      </button>
+    </div>
+  </section>
+</MainLayout>

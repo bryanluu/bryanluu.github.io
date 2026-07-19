@@ -30,18 +30,33 @@ function buildNavLinks(currentPath) {
 
 function Nav(props) {
   return (
-    <nav className="navbar navbar-dark bg-primary border-bottom sticky-top">
+    <nav className="navbar navbar-expand-md navbar-dark bg-primary border-bottom sticky-top">
       <div className="container-fluid">
         <a href="/" className="navbar-brand">
           <span className="fs-4">Bryan Luu</span>
         </a>
-        <ul className="navbar-nav d-flex flex-row flex-fill gap-3 px-3">
-          {buildNavLinks(props.currentPath)}
-        </ul>
+        <div id="navlinks" className="collapse navbar-collapse">
+          <div className="d-flex justify-content-center flex-fill">
+            <ul className="navbar-nav d-flex flex-row gap-3 px-3">
+              {buildNavLinks(props.currentPath)}
+            </ul>
+          </div>
+        </div>
         {/* TODO: wire up booking service */}
         <button className="btn btn-primary d-flex gap-2">
           <i className="bi bi-telephone-fill"></i>
           Book a call
+        </button>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navlinks"
+          aria-controls="navlinks"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>

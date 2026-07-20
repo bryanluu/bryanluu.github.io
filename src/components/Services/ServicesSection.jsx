@@ -1,5 +1,6 @@
 import React from "react";
 import ServiceCard from "./ServiceCard";
+import HoverLink from "../HoverLink";
 
 function ServicesSection(props) {
   const services = props.data;
@@ -18,12 +19,7 @@ function ServicesSection(props) {
       <p className="text-center mt-4 mb-0">
         Not sure which fits?{" "}
         {/* TODO: wire up booking service */}
-        <a
-          href="#"
-          className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-        >
-          Book a discovery call
-        </a>
+        <HoverLink href="#">Book a discovery call</HoverLink>
       </p>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import SkillList from "../SkillList";
+import HoverLink from "../HoverLink";
 
 function CaseStudyCard(props) {
   const caseStudy = props.data;
@@ -36,15 +37,13 @@ function CaseStudyCard(props) {
         </time>
         <p className="">{caseStudy.description}</p>
         {caseStudy.link && (
-          <a
+          <HoverLink
             href={`/work/${caseStudy.slug}/`}
-            className="icon-link icon-link-hover
-          link-underline link-underline-opacity-0 link-underline-opacity-100-hover
-          align-items-baseline mt-auto"
+            className="icon-link icon-link-hover align-items-baseline mt-auto"
           >
             Read about {caseStudy.name}
             <i className="bi bi-chevron-right"></i>
-          </a>
+          </HoverLink>
         )}
       </div>
     </section>

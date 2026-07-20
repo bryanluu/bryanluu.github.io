@@ -1,4 +1,5 @@
 import React from "react";
+import HoverLink from "../HoverLink";
 
 function IdentityCard(props) {
   const { emoji, title, subtitle, className = "mb-3", children } = props;
@@ -21,14 +22,13 @@ function LearnMore() {
   return (
     <p className="text-center mt-4 mb-0">
       Want to learn more?{" "}
-      <a
+      <HoverLink
         href="https://bryanluu.github.io/resume/resume.pdf"
-        className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
         target="_blank"
         rel="noopener noreferrer"
       >
         Dive deeper
-      </a>{" "}
+      </HoverLink>{" "}
       into my resumé 🤿
     </p>
   );
@@ -47,23 +47,21 @@ function AboutIdentities() {
             I've worked as a <strong>full-stack developer</strong> for over 2
             years, building scalable web applications. I learned the ropes
             creating data products with{" "}
-            <a
+            <HoverLink
               href="https://opentech.eco/"
-              className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               target="_blank"
               rel="noopener noreferrer"
             >
               OPEN Technologies
-            </a>{" "}
+            </HoverLink>{" "}
             and interactive forms with{" "}
-            <a
+            <HoverLink
               href="https://proofgov.com/"
-              className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               target="_blank"
               rel="noopener noreferrer"
             >
               Proof
-            </a>
+            </HoverLink>
             .
           </p>
           <p>
@@ -75,21 +73,15 @@ function AboutIdentities() {
           <p className="mb-0">
             I've acted as a <strong>game developer</strong> in my spare time,
             building hobby projects such as{" "}
-            <a
-              href="/work/grid-arcade/"
-              className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
-            >
-              GRID
-            </a>
+            <HoverLink href="/work/grid-arcade/">GRID</HoverLink>
             , a mini-arcade which I developed from scratch, and{" "}
-            <a
+            <HoverLink
               href="https://github.com/bryanluu/a-maze-ing-race-web"
-              className="link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
               target="_blank"
               rel="noopener noreferrer"
             >
               A-Maze-ing Race
-            </a>
+            </HoverLink>
             , a web port of a hardware project.
           </p>
         </IdentityCard>

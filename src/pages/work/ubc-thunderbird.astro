@@ -1,5 +1,6 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import HoverLink from "../../components/HoverLink";
 import Figure from "../../components/CaseStudy/Figure.astro";
 import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
 import HighlightItem from "../../components/CaseStudy/HighlightItem";
@@ -14,11 +15,11 @@ import image_ubc_sailbot_team from "../../images/ubc-thunderbird/ubc_sailbot_tea
   heroAlt="Myself posing with Thunderbird during testing"
 >
   <Fragment slot="lead">
-    Thunderbird was a robotic sailboat I revived solo for <a
+    Thunderbird was a robotic sailboat I revived solo for <HoverLink
       href="https://www.ubcsailbot.org/"
     >
       UBC Sailbot
-    </a>, restoring an inherited codebase to defend the team's win at the 2014
+    </HoverLink>, restoring an inherited codebase to defend the team's win at the 2014
     International Robotic Sailing Regatta.
   </Fragment>
   <span slot="meta"
@@ -32,8 +33,9 @@ import image_ubc_sailbot_team from "../../images/ubc-thunderbird/ubc_sailbot_tea
       In 2014, I was part of the UBC Sailbot student team, a group that built
       robotic sailboats. Whereas the majority of the team was in design mode for
       a future boat, I alone was tasked to revamp and restore the previous
-      year's boat, Thunderbird, to compete in the annual <a
-        href="https://www.sailbot.org/">International Robotic Sailing Regatta</a
+      year's boat, Thunderbird, to compete in the annual <HoverLink
+        href="https://www.sailbot.org/"
+        >International Robotic Sailing Regatta</HoverLink
       >.
     </p>
     <p>The main issues with the previous boat were:</p>

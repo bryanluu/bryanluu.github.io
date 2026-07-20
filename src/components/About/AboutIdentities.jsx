@@ -24,8 +24,7 @@ function LearnMore() {
       Want to learn more?{" "}
       <HoverLink
         href="https://bryanluu.github.io/resume/resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
+        external
       >
         Dive deeper
       </HoverLink>{" "}
@@ -47,19 +46,11 @@ function AboutIdentities() {
             I've worked as a <strong>full-stack developer</strong> for over 2
             years, building scalable web applications. I learned the ropes
             creating data products with{" "}
-            <HoverLink
-              href="https://opentech.eco/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <HoverLink href="https://opentech.eco/" external>
               OPEN Technologies
             </HoverLink>{" "}
             and interactive forms with{" "}
-            <HoverLink
-              href="https://proofgov.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <HoverLink href="https://proofgov.com/" external>
               Proof
             </HoverLink>
             .
@@ -77,8 +68,7 @@ function AboutIdentities() {
             , a mini-arcade which I developed from scratch, and{" "}
             <HoverLink
               href="https://github.com/bryanluu/a-maze-ing-race-web"
-              target="_blank"
-              rel="noopener noreferrer"
+              external
             >
               A-Maze-ing Race
             </HoverLink>

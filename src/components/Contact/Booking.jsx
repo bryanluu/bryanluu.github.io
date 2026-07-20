@@ -37,7 +37,7 @@ function Booking(props) {
       <section className="card border bg-primary-subtle rounded-4 shadow p-4 mb-5">
         <div className="card-body bg-light rounded-4 p-4">
           <h2 id="book-a-call" className="h4 mb-3 text-primary d-flex gap-2">
-            <i className="bi bi-telephone"></i> Book a call
+            <i className="bi bi-telephone" aria-hidden="true"></i> Book a call
           </h2>
           <BookingCalendar />
         </div>

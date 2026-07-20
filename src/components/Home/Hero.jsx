@@ -37,7 +37,7 @@ function Hero() {
               type="button"
               className="btn btn-primary btn-lg me-md-2 d-flex gap-2"
             >
-              <i className="bi bi-search"></i>
+              <i className="bi bi-search" aria-hidden="true"></i>
               See my work
             </a>
           </div>

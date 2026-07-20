@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ExternalLink from "../ExternalLink";
 
 function makeMailToLink({ name, message }) {
   const email = "loc.bryan.luu@gmail.com";
@@ -19,7 +20,7 @@ function MailForm(props) {
   const mailto = makeMailToLink({ name, message });
   return (
     <section className={props.className}>
-      <h3 className="h4 text-center">Prefer email?</h3>
+      <h2 className="h4 text-center">Prefer email?</h2>
       <div className="d-flex flex-column gap-3">
         <div>
           <label htmlFor="name" className="form-label text-secondary">
@@ -51,14 +52,12 @@ function MailForm(props) {
             }}
           ></textarea>
         </div>
-        <a
+        <ExternalLink
           className="btn btn-outline-secondary me-auto"
           href={mailto}
-          target="_blank"
-          rel="noopener noreferrer"
         >
-          <i className="bi bi-envelope"></i> Email me
-        </a>
+          <i className="bi bi-envelope" aria-hidden="true"></i> Email me
+        </ExternalLink>
       </div>
     </section>
   );

@@ -22,10 +22,15 @@ const navLinks = [
 
 function buildNavLinks(currentPath) {
   return navLinks.map(({ title, href, isActive }, idx) => {
-    const className = isActive(currentPath) ? "nav-link active" : "nav-link";
+    const active = isActive(currentPath);
+    const className = active ? "nav-link active" : "nav-link";
     return (
       <li key={idx} className="nav-item">
-        <a href={href} className={className}>
+        <a
+          href={href}
+          className={className}
+          aria-current={active ? "page" : undefined}
+        >
           {title}
         </a>
       </li>

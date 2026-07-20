@@ -9,7 +9,7 @@ function ServicesCTA(props) {
           href="/contact/"
           className="btn btn-light btn-lg px-4 text-primary-emphasis d-inline-flex align-items-center gap-2"
         >
-          <i className="bi bi-telephone-fill"></i>
+          <i className="bi bi-telephone-fill" aria-hidden="true"></i>
           Book a discovery call
         </a>
       </div>

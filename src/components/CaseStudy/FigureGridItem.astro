@@ -1,16 +1,13 @@
 ---
-import { Image } from "astro:assets";
+import Figure from "./Figure.astro";
 
 const { src, alt, caption = alt, raw = false, col = "md-6" } = Astro.props;
 ---
 
-<div class={`col-${col}`}>
-  {
-    raw ? (
-      <img src={src.src} alt={alt} loading="lazy" class="img-fluid rounded-3 border" />
-    ) : (
-      <Image src={src} alt={alt} inferSize class="img-fluid rounded-3 border" />
-    )
-  }
-  <p class="text-secondary small mt-1 mb-0">{caption}</p>
-</div>
+<Figure
+  src={src}
+  alt={alt}
+  caption={caption}
+  raw={raw}
+  figureClass={`col-${col}`}
+/>

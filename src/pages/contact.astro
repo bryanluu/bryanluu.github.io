@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import BookingCalendar from "../components/Contact/BookingCalendar";
 ---
 
 <MainLayout title="Services">
@@ -13,24 +14,12 @@ import MainLayout from "../layouts/MainLayout.astro";
           Book a free 45-minute discovery call, or send me a note.
         </p>
       </section>
-      <section
-        class="card border bg-primary-subtle rounded-4 shadow-lg p-4 mb-5"
-      >
+      <section class="card border bg-primary-subtle rounded-4 shadow p-4 mb-5">
         <div class="card-body bg-light rounded-4 p-4">
-          <h2 class="h4 mb-3">
-            <i class="bi bi-telephone text-primary"></i> Book a discovery call
+          <h2 id="book-a-call" class="h4 mb-3 text-primary d-flex gap-2">
+            <i class="bi bi-telephone"></i> Book a call
           </h2>
-          <div
-            class="border border-2 border-dashed rounded-2 bg-secondary-subtle d-flex flex-column align-items-center justify-content-center text-center p-4"
-            style="height: 700px"
-          >
-            <i class="bi bi-calendar3 fs-1 text-secondary mb-3"></i>
-            <p class="fw-bold mb-2">Cal.com inline embed mounts here</p>
-            <p class="small text-body-secondary mb-0" style="max-width: 320px">
-              Matches Cal.com's default inline booking layout, with the
-              qualifying questions (budget, timeline) built into the flow.
-            </p>
-          </div>
+          <BookingCalendar client:load />
         </div>
       </section>
     </div>

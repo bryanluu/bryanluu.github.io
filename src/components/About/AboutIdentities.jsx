@@ -1,5 +1,6 @@
 import React from "react";
 import HoverLink from "../HoverLink";
+import NewTabHint from "../NewTabHint";
 
 function IdentityCard(props) {
   const { emoji, title, subtitle, className = "mb-3", children } = props;
@@ -28,6 +29,7 @@ function LearnMore() {
         rel="noopener noreferrer"
       >
         Dive deeper
+        <NewTabHint />
       </HoverLink>{" "}
       into my resumé 🤿
     </p>
@@ -53,6 +55,7 @@ function AboutIdentities() {
               rel="noopener noreferrer"
             >
               OPEN Technologies
+              <NewTabHint />
             </HoverLink>{" "}
             and interactive forms with{" "}
             <HoverLink
@@ -61,6 +64,7 @@ function AboutIdentities() {
               rel="noopener noreferrer"
             >
               Proof
+              <NewTabHint />
             </HoverLink>
             .
           </p>
@@ -81,6 +85,7 @@ function AboutIdentities() {
               rel="noopener noreferrer"
             >
               A-Maze-ing Race
+              <NewTabHint />
             </HoverLink>
             , a web port of a hardware project.
           </p>

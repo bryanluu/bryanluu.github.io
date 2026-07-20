@@ -2,6 +2,7 @@ import React from "react";
 import SkillList from "../SkillList";
 import DateRange from "../DateRange";
 import HoverLink from "../HoverLink";
+import NewTabHint from "../NewTabHint";
 
 function Project(props) {
   const project = props.data;
@@ -27,6 +28,7 @@ function Project(props) {
             >
               {project.link.label}
               <i className="bi bi-chevron-right" aria-hidden="true"></i>
+              <NewTabHint />
             </HoverLink>
           </div>
         )}

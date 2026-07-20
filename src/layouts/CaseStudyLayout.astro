@@ -4,6 +4,7 @@ import DateRange from "../components/DateRange";
 import SkillList from "../components/SkillList";
 import CTABanner from "../components/CTABanner";
 import HoverLink from "../components/HoverLink";
+import NewTabHint from "../components/NewTabHint";
 import Figure from "../components/CaseStudy/Figure.astro";
 import projects from "../data/projects.json";
 
@@ -60,6 +61,7 @@ if (!project) {
               >
                 {project.link.label}
                 <i class="bi bi-chevron-right" />
+                <NewTabHint />
               </a>
             </div>
           )

@@ -1,4 +1,5 @@
 import React from "react";
+import NewTabHint from "./NewTabHint";
 
 function Footer(props) {
   const currentYear = new Date().getFullYear();
@@ -15,6 +16,7 @@ function Footer(props) {
             rel="noopener noreferrer"
           >
             Resumé
+            <NewTabHint />
           </a>
         </li>
         <li className="nav-item">
@@ -25,6 +27,7 @@ function Footer(props) {
             rel="noopener noreferrer"
           >
             GitHub
+            <NewTabHint />
           </a>
         </li>
       </ul>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NewTabHint from "../NewTabHint";
 
 function makeMailToLink({ name, message }) {
   const email = "loc.bryan.luu@gmail.com";
@@ -58,6 +59,7 @@ function MailForm(props) {
           rel="noopener noreferrer"
         >
           <i className="bi bi-envelope" aria-hidden="true"></i> Email me
+          <NewTabHint />
         </a>
       </div>
     </section>

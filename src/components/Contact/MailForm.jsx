@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NewTabHint from "../NewTabHint";
+import ExternalLink from "../ExternalLink";
 
 function makeMailToLink({ name, message }) {
   const email = "loc.bryan.luu@gmail.com";
@@ -52,15 +52,9 @@ function MailForm(props) {
             }}
           ></textarea>
         </div>
-        <a
-          className="btn btn-outline-secondary me-auto"
-          href={mailto}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ExternalLink className="btn btn-outline-secondary me-auto" href={mailto}>
           <i className="bi bi-envelope" aria-hidden="true"></i> Email me
-          <NewTabHint />
-        </a>
+        </ExternalLink>
       </div>
     </section>
   );

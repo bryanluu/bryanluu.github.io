@@ -1,7 +1,8 @@
 import React from "react";
+import NewTabHint from "./NewTabHint";
 
 function HoverLink(props) {
-  const { className, children, ...rest } = props;
+  const { className, external = false, children, ...rest } = props;
 
   return (
     <a
@@ -13,9 +14,11 @@ function HoverLink(props) {
       ]
         .filter(Boolean)
         .join(" ")}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       {...rest}
     >
       {children}
+      {external && <NewTabHint />}
     </a>
   );
 }

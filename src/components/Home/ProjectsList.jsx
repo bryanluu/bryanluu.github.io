@@ -2,7 +2,6 @@ import React from "react";
 import SkillList from "../SkillList";
 import DateRange from "../DateRange";
 import HoverLink from "../HoverLink";
-import NewTabHint from "../NewTabHint";
 
 function Project(props) {
   const project = props.data;
@@ -23,12 +22,10 @@ function Project(props) {
             <HoverLink
               href={project.link.url}
               className="icon-link icon-link-hover align-items-baseline mt-auto"
-              target="_blank"
-              rel="noopener noreferrer"
+              external
             >
               {project.link.label}
               <i className="bi bi-chevron-right" aria-hidden="true"></i>
-              <NewTabHint />
             </HoverLink>
           </div>
         )}

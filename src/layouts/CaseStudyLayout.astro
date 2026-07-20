@@ -4,7 +4,7 @@ import DateRange from "../components/DateRange";
 import SkillList from "../components/SkillList";
 import CTABanner from "../components/CTABanner";
 import HoverLink from "../components/HoverLink";
-import NewTabHint from "../components/NewTabHint";
+import ExternalLink from "../components/ExternalLink";
 import Figure from "../components/CaseStudy/Figure.astro";
 import projects from "../data/projects.json";
 
@@ -53,16 +53,13 @@ if (!project) {
         {
           project.link && (
             <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
-              <a
+              <ExternalLink
                 href={project.link.url}
-                class="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
-                target="_blank"
-                rel="noopener noreferrer"
+                className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
               >
                 {project.link.label}
                 <i class="bi bi-chevron-right" />
-                <NewTabHint />
-              </a>
+              </ExternalLink>
             </div>
           )
         }

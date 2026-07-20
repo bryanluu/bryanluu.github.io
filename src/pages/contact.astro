@@ -1,0 +1,58 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Services">
+  <section class="container py-5">
+    <div class="col-lg-10 container">
+      <section>
+        <h1 class="display-4 fw-bold text-primary-emphasis mb-1">
+          Let's talk!
+        </h1>
+        <p class="lead text-body-secondary">
+          Book a free 45-minute discovery call, or send me a note.
+        </p>
+      </section>
+      <section
+        class="card border bg-primary-subtle rounded-4 shadow-lg p-4 mb-5"
+      >
+        <div class="card-body bg-light rounded-4 p-4">
+          <h2 class="h4 mb-3">
+            <i class="bi bi-telephone text-primary"></i> Book a discovery call
+          </h2>
+          <div class="bg-secondary-subtle rounded-2" style="height: 700px">
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="col-lg-5 container rounded-4 p-4 bg-secondary-subtle">
+      <h3 class="h4 text-center">Prefer email?</h3>
+      <div class="d-flex flex-column gap-3">
+        <div>
+          <label for="name" class="form-label text-secondary">Your name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-control"
+            placeholder="John Doe"
+          />
+        </div>
+        <div>
+          <label for="message" class="form-label text-secondary">Message</label>
+          <input
+            type="text"
+            name="message"
+            id="message"
+            class="form-control"
+            placeholder="Tell me a bit about what you're building..."
+          />
+        </div>
+        <!-- TODO: make dynamic mailto link for btn -->
+        <a href="" class="btn btn-outline-secondary me-auto"
+          ><i class="bi bi-envelope"></i> Email me</a
+        >
+      </div>
+    </section>
+  </section>
+</MainLayout>

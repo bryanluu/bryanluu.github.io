@@ -13,6 +13,11 @@ const navLinks = [
     isActive: (path) => path === "/services/",
   },
   { title: "About", href: "/about/", isActive: (path) => path === "/about/" },
+  {
+    title: "Contact",
+    href: "/contact/",
+    isActive: (path) => path === "/contact/",
+  },
 ];
 
 function buildNavLinks(currentPath) {
@@ -42,13 +47,6 @@ function Nav(props) {
             </ul>
           </div>
         </div>
-        <a
-          href="/contact/#book-a-call"
-          className="btn btn-primary d-flex gap-2"
-        >
-          <i className="bi bi-telephone-fill"></i>
-          Book a call
-        </a>
         <button
           className="navbar-toggler"
           type="button"

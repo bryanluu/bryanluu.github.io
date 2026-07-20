@@ -86,3 +86,8 @@ html {
   content: "•";
   margin: 0 0.5rem;
 }
+
+.form-control::placeholder {
+  color: var(--bs-tertiary-color);
+  opacity: 1;
+}

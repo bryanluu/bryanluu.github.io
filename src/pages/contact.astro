@@ -1,67 +1,15 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import BookingCalendar from "../components/Contact/BookingCalendar";
+import Booking from "../components/Contact/Booking";
+import MailForm from "../components/Contact/MailForm";
 ---
 
 <MainLayout title="Services">
   <section class="container py-5">
-    <div class="col-lg-10 mx-auto">
-      <section>
-        <h1 class="display-4 fw-bold text-primary-emphasis mb-1">
-          Let's talk!
-        </h1>
-        <p class="lead text-body-secondary">
-          Book a free 45-minute discovery call, or send me a note.
-        </p>
-      </section>
-      <section class="card border bg-primary-subtle rounded-4 shadow p-4 mb-5">
-        <div class="card-body bg-light rounded-4 p-4">
-          <h2 id="book-a-call" class="h4 mb-3 text-primary d-flex gap-2">
-            <i class="bi bi-telephone"></i> Book a call
-          </h2>
-          <BookingCalendar client:load />
-        </div>
-      </section>
-    </div>
-    <section class="col-lg-5 mx-auto rounded-4 p-4 bg-secondary-subtle">
-      <h3 class="h4 text-center">Prefer email?</h3>
-      <div class="d-flex flex-column gap-3">
-        <div>
-          <label for="name" class="form-label text-secondary">Your name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="form-control"
-            placeholder="Bruce Li"
-          />
-        </div>
-        <div>
-          <label for="message" class="form-label text-secondary">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            class="form-control"
-            rows="4"
-            placeholder="Tell me a bit about what you're building..."
-          ></textarea>
-        </div>
-        <!-- TODO: make dynamic mailto link for btn -->
-        <a href="" class="btn btn-outline-secondary me-auto"
-          ><i class="bi bi-envelope"></i> Email me</a
-        >
-      </div>
-    </section>
+    <Booking className="col-lg-10 mx-auto" client:load />
+    <MailForm
+      className="col-lg-5 mx-auto rounded-4 p-4 bg-secondary-subtle"
+      client:load
+    />
   </section>
 </MainLayout>
-
-<style>
-  .border-dashed {
-    border-style: dashed !important;
-  }
-
-  .form-control::placeholder {
-    color: var(--bs-tertiary-color);
-    opacity: 1;
-  }
-</style>

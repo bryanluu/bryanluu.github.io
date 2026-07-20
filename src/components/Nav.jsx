@@ -42,11 +42,13 @@ function Nav(props) {
             </ul>
           </div>
         </div>
-        {/* TODO: wire up booking service */}
-        <button className="btn btn-primary d-flex gap-2">
+        <a
+          href="/contact/#book-a-call"
+          className="btn btn-primary d-flex gap-2"
+        >
           <i className="bi bi-telephone-fill"></i>
           Book a call
-        </button>
+        </a>
         <button
           className="navbar-toggler"
           type="button"

@@ -10,14 +10,13 @@ function CTABanner(props) {
           consultations — every engagement at a fixed scope and price.
         </p>
         <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-          {/* TODO: link buttons */}
-          <button
-            type="button"
+          <a
+            href="/contact/"
             className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
           >
             <i className="bi bi-telephone-fill"></i>
             Book a discovery call
-          </button>
+          </a>
           <a
             className="btn btn-outline-secondary btn-lg px-3"
             href="/services/"

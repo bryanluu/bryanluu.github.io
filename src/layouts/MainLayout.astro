@@ -22,11 +22,16 @@ const { title } = Astro.props;
   </head>
   <body>
     <!-- <pre>{JSON.stringify(Astro.props, null, 2)}</pre> -->
-    <main class="d-flex flex-column min-vh-100">
+    <a href="#main-content" class="visually-hidden-focusable"
+      >Skip to main content</a
+    >
+    <div class="d-flex flex-column min-vh-100">
       <Nav currentPath={Astro.url.pathname} />
-      <slot />
+      <main id="main-content" tabindex="-1">
+        <slot />
+      </main>
       <Footer />
-    </main>
+    </div>
     <script>
       import "bootstrap/dist/js/bootstrap.bundle.min.js";
     </script>

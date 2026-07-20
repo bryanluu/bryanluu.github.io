@@ -7,7 +7,6 @@ function CaseStudyCard(props) {
 
   return (
     <section className="card rounded-4 shadow-lg h-100">
-      {/* <pre>{JSON.stringify(caseStudy, null, 2)}</pre> */}
       {caseStudy.preview && (
         <div className="ratio ratio-4x3 rounded-top-4 overflow-hidden bg-light border-bottom">
           <img

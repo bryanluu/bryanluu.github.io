@@ -26,7 +26,7 @@ function Project(props) {
               rel="noopener noreferrer"
             >
               {project.link.label}
-              <i className="bi bi-chevron-right"></i>
+              <i className="bi bi-chevron-right" aria-hidden="true"></i>
             </HoverLink>
           </div>
         )}

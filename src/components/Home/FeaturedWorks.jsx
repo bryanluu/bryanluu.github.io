@@ -41,7 +41,7 @@ function CaseStudyCard(props) {
             className="icon-link icon-link-hover align-items-baseline mt-auto"
           >
             Read about {caseStudy.name}
-            <i className="bi bi-chevron-right"></i>
+            <i className="bi bi-chevron-right" aria-hidden="true"></i>
           </HoverLink>
         )}
       </div>

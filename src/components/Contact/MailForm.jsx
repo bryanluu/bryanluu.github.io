@@ -57,7 +57,7 @@ function MailForm(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="bi bi-envelope"></i> Email me
+          <i className="bi bi-envelope" aria-hidden="true"></i> Email me
         </a>
       </div>
     </section>

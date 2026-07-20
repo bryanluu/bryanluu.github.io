@@ -14,14 +14,15 @@ function CTABanner(props) {
             href="/contact/"
             className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
           >
-            <i className="bi bi-telephone-fill"></i>
+            <i className="bi bi-telephone-fill" aria-hidden="true"></i>
             Book a discovery call
           </a>
           <a
             className="btn btn-outline-secondary btn-lg px-3"
             href="/services/"
           >
-            Learn about my services <i className="bi bi-arrow-right"></i>
+            Learn about my services{" "}
+            <i className="bi bi-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import React from "react";
 import SkillList from "../SkillList";
+import HoverLink from "../HoverLink";
 
 function CaseStudyCard(props) {
   const caseStudy = props.data;
 
   return (
     <section className="card rounded-4 shadow-lg h-100">
-      {/* <pre>{JSON.stringify(caseStudy, null, 2)}</pre> */}
       {caseStudy.preview && (
         <div className="ratio ratio-4x3 rounded-top-4 overflow-hidden bg-light border-bottom">
           <img
@@ -36,15 +36,13 @@ function CaseStudyCard(props) {
         </time>
         <p className="">{caseStudy.description}</p>
         {caseStudy.link && (
-          <a
+          <HoverLink
             href={`/work/${caseStudy.slug}/`}
-            className="icon-link icon-link-hover
-          link-underline link-underline-opacity-0 link-underline-opacity-100-hover
-          align-items-baseline mt-auto"
+            className="icon-link icon-link-hover align-items-baseline mt-auto"
           >
             Read about {caseStudy.name}
             <i className="bi bi-chevron-right"></i>
-          </a>
+          </HoverLink>
         )}
       </div>
     </section>

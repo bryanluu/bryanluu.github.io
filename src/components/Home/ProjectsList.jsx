@@ -1,6 +1,7 @@
 import React from "react";
 import SkillList from "../SkillList";
 import DateRange from "../DateRange";
+import HoverLink from "../HoverLink";
 
 function Project(props) {
   const project = props.data;
@@ -18,17 +19,15 @@ function Project(props) {
         </div>
         {project.link && (
           <div className="d-flex align-items-center">
-            <a
+            <HoverLink
               href={project.link.url}
-              className="icon-link icon-link-hover
-              link-underline link-underline-opacity-0 link-underline-opacity-100-hover
-              align-items-baseline mt-auto"
+              className="icon-link icon-link-hover align-items-baseline mt-auto"
               target="_blank"
               rel="noopener noreferrer"
             >
               {project.link.label}
               <i className="bi bi-chevron-right"></i>
-            </a>
+            </HoverLink>
           </div>
         )}
       </div>

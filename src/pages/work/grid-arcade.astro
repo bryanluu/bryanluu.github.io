@@ -1,5 +1,6 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import HoverLink from "../../components/HoverLink";
 import Figure from "../../components/CaseStudy/Figure.astro";
 import FigureGrid from "../../components/CaseStudy/FigureGrid";
 import FigureGridItem from "../../components/CaseStudy/FigureGridItem.astro";
@@ -31,9 +32,9 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
       ><i class="bi bi-braces"></i>{" "}Software / Electrical: independent</span
     >
     <span
-      ><i class="bi bi-tools"></i>{" "}Mechanical: built with <a
+      ><i class="bi bi-tools"></i>{" "}Mechanical: built with <HoverLink
         href="https://www.linkedin.com/in/herman-tubungbanua/"
-        >Herman Tubungbanua</a
+        >Herman Tubungbanua</HoverLink
       ></span
     >
   </Fragment>
@@ -41,15 +42,14 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
   <section class="mb-5">
     <h2>The Problem</h2>
     <p>
-      In 2022, I built a small device for a game, <em
-        ><a href="https://github.com/bryanluu/a-maze-ing-race"
-          >A-Maze-ing Race</a
-        ></em
+      In 2022, I built a small device for a game, <HoverLink
+        href="https://github.com/bryanluu/a-maze-ing-race"
+        >A-Maze-ing Race</HoverLink
       >. The original system was composed of a flimsy box that mounted a 32×32
       LED matrix display with a single joystick as controls, connected to an
       Adafruit Metro M0 that ran game logic. The system was occasionally used to
-      demo other projects (like a small simulation of <a
-        href="https://github.com/bryanluu/boids">Boids</a
+      demo other projects (like a small simulation of <HoverLink
+        href="https://github.com/bryanluu/boids">Boids</HoverLink
       >) that lived in separate codebases.
     </p>
     <div class="row g-4 align-items-center mb-3">
@@ -102,7 +102,8 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
 
     <h3 class="fs-5">Project Management</h3>
     <p>
-      At the beginning of the project, <a href="https://notion.so/">Notion.so</a
+      At the beginning of the project, <HoverLink href="https://notion.so/"
+        >Notion.so</HoverLink
       > was used to create a project workspace to manage the project. Time was spent
       early on to draft detailed specifications so design decisions could be made
       with confidence. In terms of work process, I had experience working in an <em

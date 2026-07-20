@@ -1,5 +1,6 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import HoverLink from "../../components/HoverLink";
 import FigureGrid from "../../components/CaseStudy/FigureGrid";
 import FigureGridItem from "../../components/CaseStudy/FigureGridItem.astro";
 import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
@@ -18,11 +19,11 @@ import image_CMS_casestudy_copy from "../../images/open-cms/cms_casestudy_copy.p
   heroCaption="GRID CMS's login screen, backed by the new Craft CMS instance"
 >
   <Fragment slot="lead">
-    OPEN CMS is a multi-tenant content management system I built for <a
+    OPEN CMS is a multi-tenant content management system I built for <HoverLink
       href="https://opentech.eco/"
     >
       OPEN Technologies
-    </a>, letting each municipal partner publish their own map content without
+    </HoverLink>, letting each municipal partner publish their own map content without
     waiting on the development team.
   </Fragment>
   <span slot="meta"

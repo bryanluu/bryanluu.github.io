@@ -1,0 +1,52 @@
+.process-step-icon {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+}
+
+// Desktop layout: icons on their own row, connected by one continuous line
+// that runs edge-to-edge (inset by the circle radius so it meets each
+// circle's center) and disappears behind the circles' solid backgrounds.
+.process-icons {
+  position: relative;
+}
+
+.process-icons::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--process-line-inset);
+  right: var(--process-line-inset);
+  height: 2px;
+  background-color: var(--bs-primary);
+  opacity: 0.5;
+  transform: translateY(-50%);
+}
+
+.process-icons .process-step-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.process-icon-col {
+  flex: 1;
+}
+
+.process-chevron {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  color: var(--bs-primary);
+  font-size: 1.25rem;
+  text-shadow: 0 0 0.5px currentColor; // bootstrap-icons has no bold weight, so fake one
+  background-color: var(
+    --bs-primary-bg-subtle
+  ); // matches the section bg, masking the line behind the chevron
+  padding: 0 0.25rem;
+  transform: translate(-50%, -50%);
+}
+
+.process-label {
+  flex: 1;
+  padding: 0 0.5rem;
+}

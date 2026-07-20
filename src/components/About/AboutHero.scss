@@ -1,0 +1,52 @@
+#top-banner {
+  position: absolute;
+  top: 63px;
+  height: var(--top-banner-height);
+  width: 100%;
+  background-color: var(--bs-primary-bg-subtle);
+  z-index: -1;
+}
+
+.avatar {
+  border: 5px solid var(--bs-primary);
+}
+
+#hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  row-gap: 1rem;
+}
+
+#hero > .avatar {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#hero > #hero-text {
+  grid-column: 1;
+  grid-row: 2;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  #hero {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    row-gap: 0;
+  }
+
+  #hero > .avatar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: left;
+  }
+
+  #hero > #hero-text {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    justify-self: right;
+    padding-right: 1em;
+    text-align: left;
+  }
+}

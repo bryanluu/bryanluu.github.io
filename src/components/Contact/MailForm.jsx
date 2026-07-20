@@ -20,7 +20,7 @@ function MailForm(props) {
   const mailto = makeMailToLink({ name, message });
   return (
     <section className={props.className}>
-      <h3 className="h4 text-center">Prefer email?</h3>
+      <h2 className="h4 text-center">Prefer email?</h2>
       <div className="d-flex flex-column gap-3">
         <div>
           <label htmlFor="name" className="form-label text-secondary">
@@ -52,7 +52,10 @@ function MailForm(props) {
             }}
           ></textarea>
         </div>
-        <ExternalLink className="btn btn-outline-secondary me-auto" href={mailto}>
+        <ExternalLink
+          className="btn btn-outline-secondary me-auto"
+          href={mailto}
+        >
           <i className="bi bi-envelope" aria-hidden="true"></i> Email me
         </ExternalLink>
       </div>

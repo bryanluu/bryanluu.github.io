@@ -10,7 +10,7 @@ function Project(props) {
     <section className="pr-3">
       <div className="d-flex justify-content-between align-items-center gap-5">
         <div className="d-flex align-items-baseline gap-2">
-          <h4 className="card-title fs-4">{project.title}</h4>
+          <h3 className="card-title fs-4">{project.title}</h3>
           <span className="fs-4">
             {project.association === "Personal"
               ? "" // hide for personal projects
@@ -55,7 +55,7 @@ function ProjectsList(props) {
   const projects = props.data;
   return (
     <section className="container">
-      <h5 className="fs-5 pb-2 text-secondary">Other projects</h5>
+      <h2 className="fs-5 pb-2 text-secondary">Other projects</h2>
       <div className="d-flex flex-wrap justify-content-between align-items-baseline gap-5">
         {projects.map((project, idx) => (
           <Project key={idx} data={project} />

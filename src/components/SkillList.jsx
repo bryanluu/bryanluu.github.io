@@ -6,7 +6,7 @@ function DotList(props) {
   if (!skills || skills.length === 0) return;
 
   return (
-    <ul className="skill-list d-flex">
+    <ul className="skill-list d-flex flex-wrap row-gap-1">
       {skills.map((skill, idx) => (
         <li key={idx} className={props.className || "text-primary"}>
           {skill}

@@ -45,13 +45,6 @@ function Nav(props) {
         <a href="/" className="navbar-brand">
           <span className="fs-4">Bryan Luu</span>
         </a>
-        <div id="navlinks" className="collapse navbar-collapse">
-          <div className="d-flex justify-content-center flex-fill">
-            <ul className="navbar-nav d-flex flex-row gap-3 px-3">
-              {buildNavLinks(props.currentPath)}
-            </ul>
-          </div>
-        </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -63,6 +56,13 @@ function Nav(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <div id="navlinks" className="collapse navbar-collapse">
+          <div className="d-flex justify-content-center flex-fill">
+            <ul className="navbar-nav d-flex flex-row gap-3 px-3">
+              {buildNavLinks(props.currentPath)}
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );

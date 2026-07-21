@@ -8,8 +8,8 @@ function Project(props) {
 
   return (
     <section className="pr-3">
-      <div className="d-flex justify-content-between align-items-center gap-5">
-        <div className="d-flex align-items-baseline gap-2">
+      <div className="d-flex flex-wrap justify-content-between align-items-center gap-5 row-gap-2">
+        <div className="d-flex flex-wrap align-items-baseline gap-2">
           <h3 className="card-title fs-4">{project.title}</h3>
           <span className="fs-4">
             {project.association === "Personal"

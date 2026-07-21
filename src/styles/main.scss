@@ -64,8 +64,11 @@ html {
 }
 
 :root {
-  --hero-icon-size-lg: 6rem; // large hero pictogram icons (was 72pt)
-  --hero-icon-size-sm: 2.75rem; // small connector dots between them (was 32pt)
+  // Fluid between mobile and the ~1200px viewport where the row hits its
+  // original fixed size, so the icon trio always fits its column width
+  // instead of overflowing on narrow screens.
+  --hero-icon-size-lg: clamp(2rem, 8vw, 6rem); // large hero pictogram icons (was 72pt)
+  --hero-icon-size-sm: clamp(1rem, 4vw, 2.75rem); // small connector dots between them (was 32pt)
   --case-study-hero-figure-max-height: 60vh;
 }
 

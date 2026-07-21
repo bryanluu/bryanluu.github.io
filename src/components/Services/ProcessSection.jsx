@@ -40,15 +40,23 @@ function ProcessSection(props) {
         <h2 className="display-6 fw-bold mb-1">Process</h2>
         <p className="lead text-body-secondary mb-4">How we'll work together</p>
 
-        {/* Mobile: steps stacked vertically */}
-        <div className="d-flex d-lg-none flex-column gap-4">
-          {steps.map((step) => (
-            <div key={step.title} className="text-center">
-              <div className="mb-3">
+        {/* Mobile: icon+text side by side, connected by an arrow under each icon */}
+        <div className="d-flex d-lg-none flex-column gap-3">
+          {steps.map((step, idx) => (
+            <React.Fragment key={step.title}>
+              <div className="d-flex align-items-center gap-3">
                 <ProcessStepIcon data={step} />
+                <ProcessStep data={step} />
               </div>
-              <ProcessStep data={step} />
-            </div>
+              {idx < steps.length - 1 && (
+                <div className="process-mobile-connector">
+                  <i
+                    className="bi bi-arrow-down text-primary fs-4"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
 

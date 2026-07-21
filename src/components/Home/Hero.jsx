@@ -2,23 +2,17 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="container">
+    <div className="container gx-5">
       <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-        <div className="col-10 col-sm-8 col-lg-6 container">
+        <div className="col-10 col-sm-8 col-lg-6 container mt-4 mt-lg-0">
           <div className="d-flex justify-content-center align-items-center gap-3">
             <i className="bi bi-cpu hero-icon-lg" aria-hidden="true"></i>
-            <i
-              className="bi bi-three-dots hero-icon-sm"
-              aria-hidden="true"
-            ></i>
+            <i className="bi bi-three-dots hero-icon-sm" aria-hidden="true"></i>
             <i
               className="bi bi-file-earmark-code hero-icon-lg"
               aria-hidden="true"
             ></i>
-            <i
-              className="bi bi-three-dots hero-icon-sm"
-              aria-hidden="true"
-            ></i>
+            <i className="bi bi-three-dots hero-icon-sm" aria-hidden="true"></i>
             <i className="bi bi-window hero-icon-lg" aria-hidden="true"></i>
           </div>
         </div>

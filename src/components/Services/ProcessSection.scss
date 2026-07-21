@@ -1,7 +1,17 @@
+$process-icon-size: 4rem;
+
 .process-step-icon {
-  width: 4rem;
-  height: 4rem;
+  width: $process-icon-size;
+  height: $process-icon-size;
   flex-shrink: 0;
+}
+
+// Mobile: centers the connecting arrow within the same width as the icon
+// above it, so it lines up under the icon instead of the whole row.
+.process-mobile-connector {
+  width: $process-icon-size;
+  display: flex;
+  justify-content: center;
 }
 
 // Desktop layout: icons on their own row, connected by one continuous line

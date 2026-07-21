@@ -9,15 +9,32 @@ const {
   figureClass = "mb-3",
   imgClass = "img-fluid rounded-3 border",
   style,
+  loading = "lazy",
+  fetchpriority = "auto",
 } = Astro.props;
 ---
 
 <figure class={figureClass}>
   {
     raw ? (
-      <img src={src.src} alt={alt} loading="lazy" class={imgClass} style={style} />
+      <img
+        src={src.src}
+        alt={alt}
+        class={imgClass}
+        style={style}
+        loading={loading}
+        fetchpriority={fetchpriority}
+      />
     ) : (
-      <Image src={src} alt={alt} inferSize class={imgClass} style={style} />
+      <Image
+        src={src}
+        alt={alt}
+        inferSize
+        class={imgClass}
+        style={style}
+        loading={loading}
+        fetchpriority={fetchpriority}
+      />
     )
   }
   <figcaption class="text-secondary small mt-1 mb-0">{caption}</figcaption>

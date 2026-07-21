@@ -1,11 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy to GitHub Pages
+name: Build & Deploy to GitHub Pages
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the target branch
   push:
+    branches: ["astro"] # TODO: switch back to main once merged
+  pull_request:
     branches: ["astro"] # TODO: switch back to main once merged
 
   # Allows you to run this workflow manually from the Actions tab
@@ -51,6 +53,7 @@ jobs:
           path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
+    if: ${{ github.event_name == 'push' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

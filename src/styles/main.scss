@@ -128,3 +128,16 @@ html {
     transition: none;
   }
 }
+
+// `.text-primary` reads ~2.8:1 against the dark-mode body background — below
+// WCAG AA's 4.5:1 minimum. `.text-primary-emphasis` fixes that, but its
+// light-mode shade doesn't match the brand accent look. This keeps the
+// existing `.text-primary` shade in light mode and only swaps to the
+// accessible emphasis shade under `[data-bs-theme="dark"]`.
+.text-primary-adaptive {
+  color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .text-primary-adaptive {
+  color: var(--bs-primary-text-emphasis);
+}

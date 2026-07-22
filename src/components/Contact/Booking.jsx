@@ -39,7 +39,7 @@ function Booking(props) {
         <div className="card-body bg-body-tertiary rounded-4 p-4">
           <h2
             id="book-a-call"
-            className="h4 m-3 mt-md-0 text-primary d-flex gap-2"
+            className="h4 m-3 mt-md-0 text-primary-adaptive d-flex gap-2"
           >
             <i className="bi bi-telephone" aria-hidden="true"></i> Book a call
           </h2>

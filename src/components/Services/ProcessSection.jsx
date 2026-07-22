@@ -17,7 +17,10 @@ function ProcessStepIcon(props) {
 
   return (
     <div className="process-step-icon rounded-circle bg-white border border-primary d-flex align-items-center justify-content-center mx-auto">
-      <i className={`bi ${step.icon} fs-4 text-primary`} aria-hidden="true" />
+      <i
+        className={`bi ${step.icon} fs-4 text-primary-adaptive`}
+        aria-hidden="true"
+      />
     </div>
   );
 }
@@ -51,7 +54,7 @@ function ProcessSection(props) {
               {idx < steps.length - 1 && (
                 <div className="process-mobile-connector">
                   <i
-                    className="bi bi-arrow-down text-primary fs-4"
+                    className="bi bi-arrow-down text-primary-adaptive fs-4"
                     aria-hidden="true"
                   ></i>
                 </div>

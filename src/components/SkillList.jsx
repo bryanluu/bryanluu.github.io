@@ -8,7 +8,7 @@ function DotList(props) {
   return (
     <ul className="skill-list d-flex flex-wrap row-gap-1">
       {skills.map((skill, idx) => (
-        <li key={idx} className={props.className || "text-primary"}>
+        <li key={idx} className={props.className || "text-primary-adaptive"}>
           {skill}
         </li>
       ))}

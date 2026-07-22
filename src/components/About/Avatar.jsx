@@ -5,6 +5,7 @@ function Avatar(params) {
   const { src, alt, size = 50, className, style } = params;
 
   const wrapperStyle = {
+    position: "relative",
     width: `${size}px`,
     height: `${size}px`,
     borderRadius: "50%",
@@ -21,7 +22,8 @@ function Avatar(params) {
         src={src}
         alt={alt}
         className=""
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        style={{ objectFit: "cover" }}
+        fill
       />
     </div>
   );

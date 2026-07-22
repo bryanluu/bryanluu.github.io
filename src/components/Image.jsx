@@ -13,9 +13,17 @@ function Image(params) {
     figureClassName = "mb-3",
     className = "img-fluid rounded-3 border",
     style,
+    // When the caller's own container already has a size (Avatar's fixed
+    // px circle, Bootstrap's .ratio box) and wants the image to stretch
+    // to fill it, rather than sizing off the image's own dimensions.
+    // Sets both the wrapper and the <img> together so they can't drift
+    // out of sync with each other.
+    fill = false,
     loading = "lazy",
     fetchPriority = "auto",
   } = params;
+
+  const fillStyle = fill ? { width: "100%", height: "100%" } : undefined;
 
   const imgRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
@@ -40,7 +48,7 @@ function Image(params) {
       width={resolvedWidth}
       height={resolvedHeight}
       className={`${className} img-fade-in`}
-      style={style}
+      style={{ ...fillStyle, ...style }}
       loading={loading}
       fetchPriority={fetchPriority}
       data-loaded={loaded || undefined}
@@ -49,21 +57,17 @@ function Image(params) {
     />
   );
 
-  // A sibling div can't inherit the <img>'s reserved aspect-ratio box, so
-  // without this its height:100% has nothing definite to resolve against
-  // in a plain figure (no fixed-size or ratio-locked ancestor) and
-  // collapses to a thin strip. Reuses className so rounding/border match
-  // the image exactly; d-flex safely wins over any d-block it carries
+  // Overlaid on the img via position:absolute rather than sitting beside
+  // it in normal flow — a sibling with its own reserved height would add
+  // to, not share, the img's own reserved aspect-ratio space, doubling
+  // the layout height while loading and leaving a gap once it disappears.
+  // Reuses className so rounding/border match the image; positioning
+  // classes it carries (e.g. d-block) become inert once absolutely
+  // positioned, and d-flex safely wins the display property regardless
   // (both !important, but d-flex is declared later in Bootstrap's CSS).
-  const spinnerStyle =
-    resolvedWidth && resolvedHeight
-      ? { width: "100%", aspectRatio: `${resolvedWidth} / ${resolvedHeight}` }
-      : { width: "100%", height: "100%" };
-
-  const spinner = (
+  const spinner = !loaded && (
     <div
-      style={spinnerStyle}
-      className={`${className} d-flex justify-content-center align-items-center bg-secondary-subtle`}
+      className={`${className} position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-secondary-subtle`}
     >
       <div className="spinner-border text-secondary" role="status">
         <span className="visually-hidden">Loading...</span>
@@ -71,11 +75,22 @@ function Image(params) {
     </div>
   );
 
-  const content = (
+  // fill=true: the caller's own container (a Bootstrap .ratio box, or
+  // Avatar's own div) already needs to be the positioning context for the
+  // spinner overlay, so we stay out of its way here rather than add our
+  // own — Bootstrap's .ratio > * rule needs position:absolute, and our
+  // position-relative utility (!important) would always beat it, however
+  // it's applied, breaking the ratio box's own sizing in the process.
+  const content = fill ? (
     <>
-      {!loaded && spinner}
       {img}
+      {spinner}
     </>
+  ) : (
+    <div style={{ position: "relative" }}>
+      {img}
+      {spinner}
+    </div>
   );
 
   if (!caption) return content;

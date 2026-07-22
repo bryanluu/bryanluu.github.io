@@ -27,8 +27,10 @@ function Image(params) {
   }, []);
 
   const resolvedSrc = typeof src === "string" ? src : src?.src;
-  const resolvedWidth = width ?? (typeof src === "object" ? src?.width : undefined);
-  const resolvedHeight = height ?? (typeof src === "object" ? src?.height : undefined);
+  const resolvedWidth =
+    width ?? (typeof src === "object" ? src?.width : undefined);
+  const resolvedHeight =
+    height ?? (typeof src === "object" ? src?.height : undefined);
 
   const img = (
     <img
@@ -47,11 +49,24 @@ function Image(params) {
     />
   );
 
-  if (!caption) return img;
+  const spinner = (
+    <div
+      style={{ width: "100%", height: "100%" }}
+      className="d-flex justify-content-center align-items-center bg-secondary-subtle"
+    >
+      <div className="spinner-border text-secondary" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  );
+
+  const content = loaded ? img : spinner;
+
+  if (!caption) return content;
 
   return (
     <figure className={figureClassName}>
-      {img}
+      {content}
       <figcaption className="text-secondary small mt-1 mb-0">
         {caption}
       </figcaption>

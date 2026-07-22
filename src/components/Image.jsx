@@ -49,10 +49,21 @@ function Image(params) {
     />
   );
 
+  // A sibling div can't inherit the <img>'s reserved aspect-ratio box, so
+  // without this its height:100% has nothing definite to resolve against
+  // in a plain figure (no fixed-size or ratio-locked ancestor) and
+  // collapses to a thin strip. Reuses className so rounding/border match
+  // the image exactly; d-flex safely wins over any d-block it carries
+  // (both !important, but d-flex is declared later in Bootstrap's CSS).
+  const spinnerStyle =
+    resolvedWidth && resolvedHeight
+      ? { width: "100%", aspectRatio: `${resolvedWidth} / ${resolvedHeight}` }
+      : { width: "100%", height: "100%" };
+
   const spinner = (
     <div
-      style={{ width: "100%", height: "100%" }}
-      className="d-flex justify-content-center align-items-center bg-secondary-subtle"
+      style={spinnerStyle}
+      className={`${className} d-flex justify-content-center align-items-center bg-secondary-subtle`}
     >
       <div className="spinner-border text-secondary" role="status">
         <span className="visually-hidden">Loading...</span>

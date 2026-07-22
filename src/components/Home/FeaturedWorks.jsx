@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "../Image";
 import SkillList from "../SkillList";
 import HoverLink from "../HoverLink";
 
@@ -9,7 +10,7 @@ function CaseStudyCard(props) {
     <section className="card rounded-4 shadow-lg h-100">
       {caseStudy.preview && (
         <div className="ratio ratio-4x3 rounded-top-4 overflow-hidden bg-light border-bottom">
-          <img
+          <Image
             src={caseStudy.preview.src}
             alt={caseStudy.preview.alt}
             className="object-fit-contain p-3"

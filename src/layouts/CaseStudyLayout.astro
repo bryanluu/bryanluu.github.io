@@ -5,10 +5,10 @@ import SkillList from "../components/SkillList";
 import CTABanner from "../components/CTABanner";
 import HoverLink from "../components/HoverLink";
 import ExternalLink from "../components/ExternalLink";
-import Figure from "../components/CaseStudy/Figure.astro";
+import Image from "../components/Image.jsx";
 import projects from "../data/projects.json";
 
-const { slug, heroImage, heroAlt, heroCaption, heroRaw = false } = Astro.props;
+const { slug, heroImage, heroAlt, heroCaption } = Astro.props;
 
 const project = projects.find((p) => p.slug === slug);
 
@@ -42,15 +42,15 @@ if (!project) {
           >
           <slot name="meta" />
         </div>
-        <Figure
+        <Image
+          client:load
           src={heroImage}
           alt={heroAlt}
           caption={heroCaption}
-          raw={heroRaw}
           loading="eager"
-          fetchpriority="high"
-          figureClass="mb-3 mx-auto d-block text-center"
-          imgClass="img-fluid rounded-4 border mx-auto d-block case-study-hero-figure"
+          fetchPriority="high"
+          figureClassName="mb-3 mx-auto d-block text-center"
+          className="img-fluid rounded-4 border mx-auto d-block case-study-hero-figure"
         />
         {
           project.link && (

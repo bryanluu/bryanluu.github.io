@@ -1,13 +1,13 @@
 ---
-import Figure from "./Figure.astro";
+import Image from "../Image.jsx";
 
-const { src, alt, caption = alt, raw = false, col = "md-6" } = Astro.props;
+const { src, alt, caption = alt, col = "md-6" } = Astro.props;
 ---
 
-<Figure
+<Image
+  client:visible
   src={src}
   alt={alt}
   caption={caption}
-  raw={raw}
-  figureClass={`col-${col}`}
+  figureClassName={`col-${col}`}
 />

@@ -1,7 +1,7 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 import HoverLink from "../../components/HoverLink";
-import Figure from "../../components/CaseStudy/Figure.astro";
+import Image from "../../components/Image.jsx";
 import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
 import HighlightItem from "../../components/CaseStudy/HighlightItem";
 import image_thunderbird_pose from "../../images/ubc-thunderbird/thunderbird_pose.jpg";
@@ -73,7 +73,8 @@ import image_ubc_sailbot_team from "../../images/ubc-thunderbird/ubc_sailbot_tea
       everything was implemented in C on an Arduino for controls while a
       Raspberry Pi handled navigation in Python.
     </p>
-    <Figure
+    <Image
+      client:visible
       src={image_thunderbird_sea}
       alt="Thunderbird sailing autonomously during field testing on open water"
       caption="Field testing Thunderbird's autonomous sailing"
@@ -119,7 +120,8 @@ import image_ubc_sailbot_team from "../../images/ubc-thunderbird/ubc_sailbot_tea
         that outlived the competition
       </HighlightItem>
     </ResultHighlights>
-    <Figure
+    <Image
+      client:visible
       src={image_ubc_sailbot_team}
       alt="The UBC Sailbot team celebrating their win at the 2014 International Robotic Sailing Regatta"
       caption="The UBC Sailbot team celebrating IRSR 2014"

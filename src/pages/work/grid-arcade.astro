@@ -1,7 +1,7 @@
 ---
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 import HoverLink from "../../components/HoverLink";
-import Figure from "../../components/CaseStudy/Figure.astro";
+import Image from "../../components/Image.jsx";
 import FigureGrid from "../../components/CaseStudy/FigureGrid";
 import FigureGridItem from "../../components/CaseStudy/FigureGridItem.astro";
 import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
@@ -54,7 +54,8 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
     </p>
     <div class="row g-4 align-items-center mb-3">
       <div class="col-md-6">
-        <Figure
+        <Image
+          client:visible
           src={image_AMR_box}
           alt="The original 2022 GRID build: a hand-labeled box with an LED matrix and joystick"
           caption="Original 2022 build"
@@ -140,11 +141,11 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
       enclosure as a cardboard prototype first, then fixed any issues we found,
       before we settled on the final body.
     </p>
-    <Figure
+    <Image
+      client:visible
       src={image_GRID_build}
       alt="Timelapse of the GRID enclosure build"
       caption="Cardboard build timelapse"
-      raw
     />
     <FigureGrid>
       <FigureGridItem
@@ -228,12 +229,12 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
       result was a satisfying physical enclosure that looked professional and
       polished.
     </p>
-    <Figure
+    <Image
+      client:visible
       src={image_GRID_logo_screen}
       alt="Timelapse of GRID showing the title screen"
       caption="GRID showing the title screen"
-      raw
-      figureClass="mb-3 d-flex flex-column align-items-center"
+      figureClassName="mb-3 d-flex flex-column align-items-center"
     />
     <p>
       We learned that a good advance-planning process was critical to the

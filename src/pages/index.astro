@@ -13,7 +13,7 @@ const otherProjects = projects.filter((project) => !project.featured);
 <MainLayout title="Home">
   <Hero />
   <div class="bg-primary-subtle border py-3">
-    <FeaturedWorks data={featuredWorks} />
+    <FeaturedWorks client:visible data={featuredWorks} />
   </div>
   <div class="bg-white border py-3">
     <ProjectsList data={otherProjects} />

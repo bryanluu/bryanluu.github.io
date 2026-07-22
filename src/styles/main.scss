@@ -60,6 +60,19 @@ $theme-colors: (
 // partials (root, reboot, grid, nav, buttons, etc.) to trim bundle size.
 @import "skill-list";
 
+// The full-saturation brand blue is bold in light mode but vibrates against
+// the dark page, so dark mode uses a muted navy instead.
+$primary-dark: shade-color($primary, 45%);
+
+// Redefines --bs-primary (and its -rgb sibling, which the bg-*/text-*/
+// border-* utilities read for rgba() opacity support), reaching bg-primary,
+// text-primary, border-primary, and direct var(--bs-primary) references
+// (e.g. process-section.scss).
+[data-bs-theme="dark"] {
+  --bs-primary: #{$primary-dark};
+  --bs-primary-rgb: #{to-rgb($primary-dark)};
+}
+
 html {
   scroll-padding-top: 5rem; // accounts for the navbar
 }
@@ -142,18 +155,15 @@ html {
   color: var(--bs-primary-text-emphasis);
 }
 
-// A solid, saturated `bg-primary` band reads as bold and confident in light
-// mode, but the same color full-bleed against an already-dark page feels
-// like it's vibrating rather than accenting — dark mode swaps to a richer,
-// muted navy instead. Deliberately not `--bs-primary-bg-subtle`: ProcessSection
-// already uses that token, and reusing it here made the CTA band blend into
-// the section above instead of standing out as its own focal band.
-.bg-primary-adaptive {
-  background-color: var(--bs-primary);
+// The original vivid brand blue in light mode (e.g. "Bryan" in AboutHero).
+// In dark mode, plain white reads clearly against the page and stands out
+// on its own — no need to chase the brand blue's hue here.
+.text-brand-accent {
+  color: $primary;
 }
 
-[data-bs-theme="dark"] .bg-primary-adaptive {
-  background-color: shade-color($primary, 45%);
+[data-bs-theme="dark"] .text-brand-accent {
+  color: #fff;
 }
 
 .text-on-primary-adaptive {

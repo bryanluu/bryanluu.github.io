@@ -23,7 +23,7 @@ function AboutHero(props) {
               id="heading"
               className="display-4 fw-bold text-primary-emphasis mb-1"
             >
-              Hi, I'm <span className="text-primary">Bryan</span>.
+              Hi, I'm <span className="text-brand-accent">Bryan</span>.
             </h1>
             <h2 id="lead" className="lead text-body-secondary mb-0">
               As a software-focused engineering physicist,

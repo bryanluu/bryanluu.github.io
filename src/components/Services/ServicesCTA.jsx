@@ -2,7 +2,7 @@ import React from "react";
 
 function ServicesCTA(props) {
   return (
-    <section className="bg-primary-adaptive text-center py-5">
+    <section className="bg-primary text-center py-5">
       <div className="container">
         <h2 className="text-on-primary-adaptive mb-4">Ready to get started?</h2>
         <a

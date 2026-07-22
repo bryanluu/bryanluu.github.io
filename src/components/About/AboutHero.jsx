@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "./Avatar";
-import "./AboutHero.scss";
+import "../../styles/about-hero.scss";
 
 function AboutHero(props) {
   const avatarSize = props.avatarSize ?? 200;

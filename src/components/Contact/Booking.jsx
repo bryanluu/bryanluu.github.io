@@ -1,7 +1,7 @@
 import React from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
-import "./Booking.scss";
+import "../../styles/booking.scss";
 
 function BookingCalendar() {
   useEffect(() => {

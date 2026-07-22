@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProcessSection.scss";
+import "../../styles/process-section.scss";
 
 function ProcessStep(props) {
   const step = props.data;

@@ -109,3 +109,22 @@ html {
   color: var(--bs-tertiary-color);
   opacity: 1;
 }
+
+// Fades Image in once loaded (see Image.jsx) — opacity keeps the element's
+// box intact while hidden, unlike display:none, which would stop native
+// loading="lazy" from ever starting the fetch (it needs a layout box to
+// check against the viewport).
+.img-fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.img-fade-in[data-loaded] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-fade-in {
+    transition: none;
+  }
+}

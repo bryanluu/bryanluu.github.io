@@ -39,7 +39,7 @@ function Image(params) {
       alt={alt}
       width={resolvedWidth}
       height={resolvedHeight}
-      className={loaded ? className : "invisible"}
+      className={`${className} img-fade-in`}
       style={style}
       loading={loading}
       fetchPriority={fetchPriority}

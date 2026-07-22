@@ -39,7 +39,7 @@ function Image(params) {
       alt={alt}
       width={resolvedWidth}
       height={resolvedHeight}
-      className={className}
+      className={loaded ? className : "invisible"}
       style={style}
       loading={loading}
       fetchPriority={fetchPriority}
@@ -60,7 +60,12 @@ function Image(params) {
     </div>
   );
 
-  const content = loaded ? img : spinner;
+  const content = (
+    <>
+      {!loaded && spinner}
+      {img}
+    </>
+  );
 
   if (!caption) return content;
 

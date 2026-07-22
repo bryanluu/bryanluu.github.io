@@ -13,7 +13,10 @@ function Avatar(params) {
   };
 
   return (
-    <div className={className} style={wrapperStyle}>
+    <div
+      className={`bg-secondary-subtle${className ? ` ${className}` : ""}`}
+      style={wrapperStyle}
+    >
       <Image
         src={src}
         alt={alt}

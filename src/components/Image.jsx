@@ -10,8 +10,9 @@ function Image(params) {
     width,
     height,
     caption,
+    captionClassName = "",
     figureClassName = "mb-3",
-    className = "img-fluid rounded-3 border",
+    className = "img-fluid rounded-3 border mx-auto d-block",
     style,
     // When the caller's own container already has a size (Avatar's fixed
     // px circle, Bootstrap's .ratio box) and wants the image to stretch
@@ -98,7 +99,9 @@ function Image(params) {
   return (
     <figure className={figureClassName}>
       {content}
-      <figcaption className="text-secondary small mt-1 mb-0">
+      <figcaption
+        className={`text-center text-secondary small mt-1 mb-0${captionClassName ? ` ${captionClassName}` : ""}`}
+      >
         {caption}
       </figcaption>
     </figure>

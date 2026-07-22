@@ -2,7 +2,6 @@
 import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 import HoverLink from "../../components/HoverLink";
 import FigureGrid from "../../components/CaseStudy/FigureGrid";
-import FigureGridItem from "../../components/CaseStudy/FigureGridItem.astro";
 import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
 import HighlightItem from "../../components/CaseStudy/HighlightItem";
 import image_CMS_login from "../../images/open-cms/cms_login.png";
@@ -23,8 +22,8 @@ import image_CMS_casestudy_copy from "../../images/open-cms/cms_casestudy_copy.p
       href="https://opentech.eco/"
     >
       OPEN Technologies
-    </HoverLink>, letting each municipal partner publish their own map content without
-    waiting on the development team.
+    </HoverLink>, letting each municipal partner publish their own map content
+    without waiting on the development team.
   </Fragment>
   <span slot="meta"
     ><i class="bi bi-braces"></i>{" "}Full-stack: sole CMS build, from platform
@@ -158,34 +157,40 @@ import image_CMS_casestudy_copy from "../../images/open-cms/cms_casestudy_copy.p
       details through the CMS — shown here for Building Benchmark BC and Better
       Buildings Ottawa.
     </p>
-    <FigureGrid>
-      <FigureGridItem
-        src={image_CMS_about_bbbc}
-        alt="Building Benchmark BC's About panel, with copy and partner logos authored by that program's team"
-        caption="Building Benchmark BC's client-authored About panel"
-      />
-      <FigureGridItem
-        src={image_CMS_about_ottawa}
-        alt="Better Buildings Ottawa's About panel, with its own branding and copy authored by that program's team"
-        caption="Better Buildings Ottawa's client-authored About panel"
-      />
-    </FigureGrid>
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_CMS_about_bbbc,
+          alt: "Building Benchmark BC's About panel, with copy and partner logos authored by that program's team",
+          caption: "Building Benchmark BC's client-authored About panel",
+        },
+        {
+          src: image_CMS_about_ottawa,
+          alt: "Better Buildings Ottawa's About panel, with its own branding and copy authored by that program's team",
+          caption: "Better Buildings Ottawa's client-authored About panel",
+        },
+      ]}
+    />
     <p>
       Clients also author their own case studies, which surface directly on the
       map:
     </p>
-    <FigureGrid>
-      <FigureGridItem
-        src={image_CMS_casestudy}
-        alt="A case study pin highlighted on the map, before being selected"
-        caption="A case study, highlighted"
-      />
-      <FigureGridItem
-        src={image_CMS_casestudy_copy}
-        alt="The same case study selected, revealing its client-authored copy in the sidebar"
-        caption="...and selected, revealing its copy"
-      />
-    </FigureGrid>
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_CMS_casestudy,
+          alt: "A case study pin highlighted on the map, before being selected",
+          caption: "A case study, highlighted",
+        },
+        {
+          src: image_CMS_casestudy_copy,
+          alt: "The same case study selected, revealing its client-authored copy in the sidebar",
+          caption: "...and selected, revealing its copy",
+        },
+      ]}
+    />
     <p class="fst-italic">
       The project also helped me understand the importance of strong
       communication and collaboration with my OPEN team members. I am proud of

@@ -3,7 +3,6 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 import HoverLink from "../../components/HoverLink";
 import Image from "../../components/Image.jsx";
 import FigureGrid from "../../components/CaseStudy/FigureGrid";
-import FigureGridItem from "../../components/CaseStudy/FigureGridItem.astro";
 import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
 import HighlightItem from "../../components/CaseStudy/HighlightItem";
 import image_AMR_box from "../../images/grid-arcade/amr_box.jpg";
@@ -147,30 +146,36 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
       alt="Timelapse of the GRID enclosure build"
       caption="Cardboard build timelapse"
     />
-    <FigureGrid>
-      <FigureGridItem
-        src={image_GRID_prototype}
-        alt="Cardboard prototype of the GRID enclosure"
-        caption="Cardboard prototype"
-      />
-      <FigureGridItem
-        src={image_GRID_proto_play}
-        alt="The prototype running A-Maze-ing Race"
-        caption="The prototype running A-Maze-ing Race"
-      />
-    </FigureGrid>
-    <FigureGrid>
-      <FigureGridItem
-        src={image_GRID_electronics}
-        alt="Rewired internals of the GRID enclosure"
-        caption="Rewired internals"
-      />
-      <FigureGridItem
-        src={image_GRID_logo_pose}
-        alt="Me showcasing the new GRID logo"
-        caption="Me showcasing the new GRID logo"
-      />
-    </FigureGrid>
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_GRID_prototype,
+          alt: "Cardboard prototype of the GRID enclosure",
+          caption: "Cardboard prototype",
+        },
+        {
+          src: image_GRID_proto_play,
+          alt: "The prototype running A-Maze-ing Race",
+          caption: "The prototype running A-Maze-ing Race",
+        },
+      ]}
+    />
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_GRID_electronics,
+          alt: "Rewired internals of the GRID enclosure",
+          caption: "Rewired internals",
+        },
+        {
+          src: image_GRID_logo_pose,
+          alt: "Me showcasing the new GRID logo",
+          caption: "Me showcasing the new GRID logo",
+        },
+      ]}
+    />
 
     <h3 class="fs-5">Software</h3>
     <p>
@@ -182,20 +187,23 @@ import image_GRID_prototype from "../../images/grid-arcade/grid_prototype.jpg";
       resources of the Metro M0 — to run multiple different "Scenes" that
       rendered different games.
     </p>
-    <FigureGrid>
-      <FigureGridItem
-        src={image_GRID_emu}
-        alt="Emulator title screen"
-        caption="Emulator — title screen"
-        col="md-4"
-      />
-      <FigureGridItem
-        src={image_GRID_maze_emu}
-        alt="Emulator running the maze scene"
-        caption="Emulator — maze scene"
-        col="md-8"
-      />
-    </FigureGrid>
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_GRID_emu,
+          alt: "Emulator title screen",
+          caption: "Emulator — title screen",
+          col: "md-6",
+        },
+        {
+          src: image_GRID_maze_emu,
+          alt: "Emulator running the maze scene",
+          caption: "Emulator — maze scene",
+          col: "md-6",
+        },
+      ]}
+    />
     <p>
       This accelerated my process, and I was able to create new Scenes such as
       the game of Life and the classic Snake game. On top of this I managed to

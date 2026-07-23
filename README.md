@@ -1,4 +1,8 @@
+# Bryan Luu's Portfolio
+
 Personal website of Bryan Luu.
+
+[![Build & Deploy to GitHub Pages](https://github.com/bryanluu/portfolio/actions/workflows/build_and_deploy.yml/badge.svg)](https://github.com/bryanluu/portfolio/actions/workflows/build_and_deploy.yml)
 
 Built with [Astro](https://astro.build/) + React islands, Bootstrap 5, and Sass. Deployed to GitHub Pages at [bryanluu.github.io](https://bryanluu.github.io).
 

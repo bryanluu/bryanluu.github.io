@@ -18,59 +18,57 @@ if (!project) {
 ---
 
 <MainLayout title={project.name}>
-  <div class="bg-white">
-    <article class="container mt-4">
-      <section>
-        <HoverLink
-          href="/#featured-work"
-          className="icon-link icon-link-hover align-items-baseline mb-3"
-          style={{ "--bs-icon-link-transform": "translate3d(-.125rem, 0, 0)" }}
+  <article class="container mt-4">
+    <section>
+      <HoverLink
+        href="/#featured-work"
+        className="icon-link icon-link-hover align-items-baseline mb-3"
+        style={{ "--bs-icon-link-transform": "translate3d(-.125rem, 0, 0)" }}
+      >
+        <i class="bi bi-chevron-left"></i> Back to work
+      </HoverLink>
+      <SkillList skills={project.skills} />
+      <h1>{project.name}</h1>
+      <p class="lead" style={{ textWrap: "balance" }}>
+        <slot name="lead" />
+      </p>
+      <div class="text-secondary d-flex flex-wrap dot-list mb-3">
+        <span
+          ><i class="bi bi-calendar-range"></i>{" "}<DateRange
+            start={project.dates.start}
+            end={project.dates.end}
+          /></span
         >
-          <i class="bi bi-chevron-left"></i> Back to work
-        </HoverLink>
-        <SkillList skills={project.skills} />
-        <h1>{project.name}</h1>
-        <p class="lead" style={{ textWrap: "balance" }}>
-          <slot name="lead" />
-        </p>
-        <div class="text-secondary d-flex flex-wrap dot-list mb-3">
-          <span
-            ><i class="bi bi-calendar-range"></i>{" "}<DateRange
-              start={project.dates.start}
-              end={project.dates.end}
-            /></span
-          >
-          <slot name="meta" />
-        </div>
-        <Image
-          client:load
-          src={heroImage}
-          alt={heroAlt}
-          caption={heroCaption}
-          loading="eager"
-          fetchPriority="high"
-          figureClassName="mb-3 mx-auto d-block text-center"
-          className="img-fluid rounded-4 border mx-auto d-block case-study-hero-figure"
-        />
-        {
-          project.link && (
-            <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
-              <ExternalLink
-                href={project.link.url}
-                className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
-              >
-                {project.link.label}
-                <i class="bi bi-chevron-right" />
-              </ExternalLink>
-            </div>
-          )
-        }
-      </section>
+        <slot name="meta" />
+      </div>
+      <Image
+        client:load
+        src={heroImage}
+        alt={heroAlt}
+        caption={heroCaption}
+        loading="eager"
+        fetchPriority="high"
+        figureClassName="mb-3 mx-auto d-block text-center"
+        className="img-fluid rounded-4 border mx-auto d-block case-study-hero-figure"
+      />
+      {
+        project.link && (
+          <div class="d-grid col d-lg-flex justify-content-center align-items-center mb-4">
+            <ExternalLink
+              href={project.link.url}
+              className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
+            >
+              {project.link.label}
+              <i class="bi bi-chevron-right" />
+            </ExternalLink>
+          </div>
+        )
+      }
+    </section>
 
-      <slot />
-    </article>
-    <div class="border border-top bg-secondary-subtle">
-      <CTABanner />
-    </div>
+    <slot />
+  </article>
+  <div class="border border-top bg-secondary-subtle">
+    <CTABanner />
   </div>
 </MainLayout>

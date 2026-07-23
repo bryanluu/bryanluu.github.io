@@ -60,6 +60,19 @@ $theme-colors: (
 // partials (root, reboot, grid, nav, buttons, etc.) to trim bundle size.
 @import "skill-list";
 
+// The full-saturation brand blue is bold in light mode but vibrates against
+// the dark page, so dark mode uses a muted navy instead.
+$primary-dark: shade-color($primary, 45%);
+
+// Redefines --bs-primary (and its -rgb sibling, which the bg-*/text-*/
+// border-* utilities read for rgba() opacity support), reaching bg-primary,
+// text-primary, border-primary, and direct var(--bs-primary) references
+// (e.g. process-section.scss).
+[data-bs-theme="dark"] {
+  --bs-primary: #{$primary-dark};
+  --bs-primary-rgb: #{to-rgb($primary-dark)};
+}
+
 html {
   scroll-padding-top: 5rem; // accounts for the navbar
 }
@@ -127,4 +140,36 @@ html {
   .img-fade-in {
     transition: none;
   }
+}
+
+// `.text-primary` reads ~2.8:1 against the dark-mode body background — below
+// WCAG AA's 4.5:1 minimum. `.text-primary-emphasis` fixes that, but its
+// light-mode shade doesn't match the brand accent look. This keeps the
+// existing `.text-primary` shade in light mode and only swaps to the
+// accessible emphasis shade under `[data-bs-theme="dark"]`.
+.text-primary-adaptive {
+  color: var(--bs-primary);
+}
+
+[data-bs-theme="dark"] .text-primary-adaptive {
+  color: var(--bs-primary-text-emphasis);
+}
+
+// The original vivid brand blue in light mode (e.g. "Bryan" in AboutHero).
+// In dark mode, plain white reads clearly against the page and stands out
+// on its own — no need to chase the brand blue's hue here.
+.text-brand-accent {
+  color: $primary;
+}
+
+[data-bs-theme="dark"] .text-brand-accent {
+  color: #fff;
+}
+
+.text-on-primary-adaptive {
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .text-on-primary-adaptive {
+  color: var(--bs-primary-text-emphasis);
 }

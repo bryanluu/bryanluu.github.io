@@ -5,7 +5,10 @@ function ServiceCard(props) {
 
   return (
     <div className="card rounded-4 p-4 h-100 d-flex flex-column">
-      <i className={`bi ${service.icon} fs-1 text-primary mb-3`} aria-hidden="true" />
+      <i
+        className={`bi ${service.icon} fs-1 text-primary-adaptive mb-3`}
+        aria-hidden="true"
+      />
       <h3 className="fs-4 mb-2">{service.title}</h3>
       <p className="text-body-secondary flex-grow-1">{service.description}</p>
       <div className="mt-3">

@@ -17,7 +17,9 @@ function Hero() {
           </div>
         </div>
         <div className="col-lg-6">
-          <p className="text-primary">Software-focused engineering physicist</p>
+          <p className="text-primary-adaptive">
+            Software-focused engineering physicist
+          </p>
           <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">
             I build from the wires to the web.
           </h1>

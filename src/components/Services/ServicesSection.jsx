@@ -18,7 +18,7 @@ function ServicesSection(props) {
       </div>
       <p className="text-center mt-4 mb-0">
         Not sure which fits?{" "}
-        <HoverLink href="/contact/">Book a discovery call</HoverLink>
+        <HoverLink href="/contact">Book a discovery call</HoverLink>
       </p>
     </section>
   );

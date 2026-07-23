@@ -9,14 +9,14 @@ const navLinks = [
   },
   {
     title: "Services",
-    href: "/services/",
-    isActive: (path) => path === "/services/",
+    href: "/services",
+    isActive: (path) => path === "/services",
   },
-  { title: "About", href: "/about/", isActive: (path) => path === "/about/" },
+  { title: "About", href: "/about", isActive: (path) => path === "/about" },
   {
     title: "Contact",
-    href: "/contact/",
-    isActive: (path) => path === "/contact/",
+    href: "/contact",
+    isActive: (path) => path === "/contact",
   },
 ];
 

@@ -6,7 +6,7 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://bryanluu.github.io",
   integrations: [react()],
-  trailingSlash: "always",
+  trailingSlash: "ignore",
   image: {
     responsiveStyles: true,
   },

@@ -8,9 +8,22 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      (function initSystemTheme() {
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const applySystemTheme = () => {
+          document.documentElement.setAttribute(
+            "data-bs-theme",
+            media.matches ? "dark" : "light",
+          );
+        };
+        applySystemTheme();
+        media.addEventListener("change", applySystemTheme);
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

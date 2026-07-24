@@ -1,6 +1,6 @@
 # Bryan Luu's Portfolio
 
-Personal website of Bryan Luu.
+My personal portfolio website. See my [LinkedIn](https://www.linkedin.com/in/bryan-luu/) for more information.
 
 [![Build & Deploy to GitHub Pages](https://github.com/bryanluu/portfolio/actions/workflows/build_and_deploy.yml/badge.svg)](https://github.com/bryanluu/portfolio/actions/workflows/build_and_deploy.yml)
 

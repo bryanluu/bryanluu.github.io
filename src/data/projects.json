@@ -26,7 +26,7 @@
     "slug": "open-cms",
     "role": "Core developer",
     "association": "OPEN Technologies",
-    "dates": { "start": "2022-05", "end": "2022-08", "label": "Q3 2022" },
+    "dates": { "start": "2023-05", "end": "2023-08", "label": "Q3 2023" },
     "description": "Multi-tenant CMS providing OPEN's map content, powered by Docker + Craft CMS.",
     "skills": ["Full-stack", "Docker", "CMS", "API"],
     "preview": {

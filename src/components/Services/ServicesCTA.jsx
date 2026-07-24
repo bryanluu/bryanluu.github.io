@@ -6,7 +6,7 @@ function ServicesCTA(props) {
       <div className="container">
         <h2 className="text-on-primary-adaptive mb-4">Ready to get started?</h2>
         <a
-          href="/contact/"
+          href="/contact"
           className="btn btn-light btn-lg px-4 text-primary d-inline-flex align-items-center gap-2"
         >
           <i className="bi bi-telephone-fill" aria-hidden="true"></i>

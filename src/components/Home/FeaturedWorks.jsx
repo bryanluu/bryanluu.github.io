@@ -39,7 +39,7 @@ function CaseStudyCard(props) {
         <p className="">{caseStudy.description}</p>
         {caseStudy.link && (
           <HoverLink
-            href={`/work/${caseStudy.slug}/`}
+            href={`/work/${caseStudy.slug}`}
             className="icon-link icon-link-hover align-items-baseline mt-auto"
           >
             Read about {caseStudy.name}

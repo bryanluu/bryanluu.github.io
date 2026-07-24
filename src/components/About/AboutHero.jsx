@@ -26,7 +26,7 @@ function AboutHero(props) {
               Hi, I'm <span className="text-brand-accent">Bryan</span>.
             </h1>
             <h2 id="lead" className="lead text-body-secondary mb-0">
-              As a software-focused engineering physicist,
+              As someone who solves problems across multiple fields,
             </h2>
             <p
               id="subheading"

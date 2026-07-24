@@ -11,7 +11,7 @@ function CTABanner(props) {
         </p>
         <div className="d-grid gap-2 d-md-flex justify-content-md-center">
           <a
-            href="/contact/"
+            href="/contact"
             className="btn btn-primary btn-lg px-3 me-md-2 d-flex gap-2"
           >
             <i className="bi bi-telephone-fill" aria-hidden="true"></i>
@@ -19,7 +19,7 @@ function CTABanner(props) {
           </a>
           <a
             className="btn btn-outline-secondary btn-lg px-3"
-            href="/services/"
+            href="/services"
           >
             Learn about my services{" "}
             <i className="bi bi-arrow-right" aria-hidden="true"></i>

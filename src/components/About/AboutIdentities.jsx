@@ -64,7 +64,7 @@ function AboutIdentities() {
           <p className="mb-0">
             I've acted as a <strong>game developer</strong> in my spare time,
             building hobby projects such as{" "}
-            <HoverLink href="/work/grid-arcade/">GRID</HoverLink>
+            <HoverLink href="/work/grid-arcade">GRID</HoverLink>
             , a mini-arcade which I developed from scratch, and{" "}
             <HoverLink
               href="https://github.com/bryanluu/a-maze-ing-race-web"

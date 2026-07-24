@@ -1,0 +1,202 @@
+---
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+import HoverLink from "../../components/HoverLink";
+import FigureGrid from "../../components/CaseStudy/FigureGrid";
+import ResultHighlights from "../../components/CaseStudy/ResultHighlights";
+import HighlightItem from "../../components/CaseStudy/HighlightItem";
+import image_CMS_login from "../../images/open-cms/cms_login.png";
+import image_CMS_about_bbbc from "../../images/open-cms/cms_about_bbbc.png";
+import image_CMS_about_ottawa from "../../images/open-cms/cms_about_ottawa.png";
+import image_CMS_casestudy from "../../images/open-cms/cms_casestudy.png";
+import image_CMS_casestudy_copy from "../../images/open-cms/cms_casestudy_copy.png";
+---
+
+<CaseStudyLayout
+  slug="open-cms"
+  heroImage={image_CMS_login}
+  heroAlt="Login screen for GRID by OPEN, the map application backed by the new Craft CMS instance"
+  heroCaption="GRID CMS's login screen, backed by the new Craft CMS instance"
+>
+  <Fragment slot="lead">
+    OPEN CMS is a multi-tenant content management system I built for <HoverLink
+      href="https://opentech.eco/"
+    >
+      OPEN Technologies
+    </HoverLink>, letting each municipal partner publish their own map content
+    without waiting on the development team.
+  </Fragment>
+  <span slot="meta"
+    ><i class="bi bi-braces"></i>{" "}Full-stack: sole CMS build, from platform
+    selection through the GraphQL API</span
+  >
+
+  <section class="mb-5">
+    <h2>The Problem</h2>
+    <p>
+      The benchmarking software at OPEN was used by different benchmarking
+      programs across municipalities. The new disclosure map of the main
+      application thus required unique content targeting each municipality. The
+      existing app could handle multiple tenants (at least 6 different
+      municipalities), but the configuration had to be hard-coded. This
+      presented several issues:
+    </p>
+    <ul>
+      <li>
+        Municipal clients had to interface with the development team to update
+        their content, <em class="fw-bold"
+          >coupling the development timeline with their needs</em
+        >
+      </li>
+      <li>
+        Developers had to take on extra work ensuring the copy was correct, <em
+          class="fw-bold">resulting in errors and time lost in clarification</em
+        >
+      </li>
+      <li>
+        Custom content types were sometimes unsupported by the existing
+        configuration, which meant <em class="fw-bold"
+          >costly development work</em
+        >
+      </li>
+    </ul>
+    <p>
+      Because of this, a new content management system (CMS) was necessary to:
+    </p>
+    <ul>
+      <li>
+        Offload custom content to clients, decoupling the development team
+      </li>
+      <li>
+        Empower clients to present their own copy, granting them more powerful
+        expression
+      </li>
+      <li>
+        Align the application with standard best-practices, improving the
+        professionalism of the team
+      </li>
+    </ul>
+    <p>
+      My responsibility was to establish this new CMS and lay the foundation for
+      future development and maintenance, delivered within the project's
+      timeline (roughly <b>2 months</b>).
+    </p>
+  </section>
+
+  <section class="mb-5">
+    <h2>Approach</h2>
+    <p>
+      As an OPEN developer, I worked in Agile flows, tackling issues related to
+      the CMS. This helped me manage the system in concrete milestones.
+    </p>
+
+    <h3 class="fs-5">Milestone 1: Picking the CMS</h3>
+    <p>
+      The process started with in-depth research of CMS software. Potential
+      candidates were found and screened according to criteria that I had to
+      establish, then shared with the rest of the team. From this, Craft CMS was
+      picked as a professional and economical option.
+    </p>
+
+    <h3 class="fs-5">Milestone 2: Building the new infrastructure</h3>
+    <p>
+      The new map presented the opportunity to build infrastructure for the new
+      CMS from the ground up.
+    </p>
+    <h4 class="fs-6 fw-bold">Incorporating the CMS</h4>
+    <p>
+      Craft CMS was an entirely different application, so I had to learn systems
+      development to incorporate it as a separate instance from our application.
+      After conducting extensive research and prototyping, I settled on a build
+      system based on Make and Docker, a familiar system to the rest of the
+      team. This reduced developer friction and onboarding from a weeks-long
+      task to a few days, by working with our existing approaches instead of
+      completely new architectures.
+    </p>
+    <p>
+      To capture clients' requests for richer expression, I configured data
+      fields such as Rich-Text-Fields and custom tags. This enabled
+      municipalities to add layers of content which couldn't exist before.
+    </p>
+    <p>
+      Finally, for the CMS handoff, I ensured I maintained clear documentation
+      and configuration so that future developers could easily adjust as needed.
+    </p>
+    <h4 class="fs-6 fw-bold">Wiring the CMS to the application</h4>
+    <p>
+      The new infrastructure was a good exercise in working with pre-existing
+      patterns and innovating with new solutions. Working with my senior's
+      specs, I built improved plumbing that led to scalable and extendible code
+      still in use today. I also led the development of a new GraphQL API,
+      chosen to leverage a more modern and extensible schema, and shared my
+      knowledge with the team. This improved schema adjustments from larger
+      multi-day tickets to a single short ticket lasting hours.
+    </p>
+  </section>
+
+  <section class="mb-5">
+    <h2>Result</h2>
+    <p>The key outcomes I achieved through the CMS:</p>
+    <ResultHighlights>
+      <HighlightItem icon="bi-unlock">
+        <strong>Client self-service</strong> — clients can now publish content changes
+        without contacting the development team, reducing update delays from weekly
+        to as-needed
+      </HighlightItem>
+      <HighlightItem icon="bi-diagram-3">
+        <strong>Best-practice architecture</strong> — a new system was built following
+        existing best practices, improving development time and enhancing work for
+        future developers
+      </HighlightItem>
+      <HighlightItem icon="bi-journal-text">
+        <strong>Strong documentation</strong> — cutting onboarding time from weeks
+        to days
+      </HighlightItem>
+    </ResultHighlights>
+    <p>
+      Each municipal partner now controls its own copy, logos and program
+      details through the CMS — shown here for Building Benchmark BC and Better
+      Buildings Ottawa.
+    </p>
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_CMS_about_bbbc,
+          alt: "Building Benchmark BC's About panel, with copy and partner logos authored by that program's team",
+          caption: "Building Benchmark BC's client-authored About panel",
+        },
+        {
+          src: image_CMS_about_ottawa,
+          alt: "Better Buildings Ottawa's About panel, with its own branding and copy authored by that program's team",
+          caption: "Better Buildings Ottawa's client-authored About panel",
+        },
+      ]}
+    />
+    <p>
+      Clients also author their own case studies, which surface directly on the
+      map:
+    </p>
+    <FigureGrid
+      client:visible
+      items={[
+        {
+          src: image_CMS_casestudy,
+          alt: "A case study pin highlighted on the map, before being selected",
+          caption: "A case study, highlighted",
+        },
+        {
+          src: image_CMS_casestudy_copy,
+          alt: "The same case study selected, revealing its client-authored copy in the sidebar",
+          caption: "...and selected, revealing its copy",
+        },
+      ]}
+    />
+    <p class="fst-italic">
+      The project also helped me understand the importance of strong
+      communication and collaboration with my OPEN team members. I am proud of
+      making robust software by thoroughly understanding the project's
+      specifications, identifying existing effective patterns and advancing
+      opportunities to innovate OPEN's systems.
+    </p>
+  </section>
+</CaseStudyLayout>

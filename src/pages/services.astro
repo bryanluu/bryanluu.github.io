@@ -1,0 +1,88 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ServicesSection from "../components/Services/ServicesSection";
+import ProcessSection from "../components/Services/ProcessSection";
+import ServicesCTA from "../components/Services/ServicesCTA";
+
+const services = [
+  {
+    icon: "bi-window",
+    title: "Web apps & dashboards",
+    description:
+      "Custom web applications, data dashboards, internal tools, client-facing portals, reporting interfaces — whichever you need, I'll build it. Full-stack package, deployed and documented.",
+    priceLabel: "Typical projects from",
+    priceCad: "$15,000 CAD",
+    priceUsd: "$10,500 USD",
+  },
+  {
+    icon: "bi-cpu",
+    title: "Hardware-to-UI integration",
+    description:
+      "Getting device data onto your application: firmware → data pipeline → dashboard as one coherent build. Ideal for energy monitoring, sensor networks, and connected-hardware products.",
+    priceLabel: "Typical projects from",
+    priceCad: "$12,000 CAD",
+    priceUsd: "$8,500 USD",
+  },
+  {
+    icon: "bi-chat-square-text",
+    title: "Technical consultation",
+    description:
+      "A fixed-fee engagement to scope a build, assess hardware-software feasibility, or review an architecture before you commit. A low-risk way to work together first.",
+    priceLabel: "From",
+    priceCad: "$1,500 CAD",
+    priceUsd: "$1,100 USD",
+  },
+];
+
+const processSteps = [
+  {
+    icon: "bi-telephone",
+    title: "Discovery call",
+    description:
+      "We'll do a free 45-minute call to talk through what you're building and what success looks like.",
+  },
+  {
+    icon: "bi-file-earmark-text",
+    title: "Proposal",
+    description:
+      "You get a written proposal: fixed scope, fixed price, timeline, and clear deliverables. It includes payment terms, with nothing ambiguous.",
+  },
+  {
+    icon: "bi-flag",
+    title: "Milestones",
+    description:
+      "Work ships in defined milestones so you see progress and stay in control. You're never waiting in the dark.",
+  },
+  {
+    icon: "bi-box-seam",
+    title: "Handoff",
+    description:
+      "You receive documented, deployed, maintainable work — plus everything you need to run it without me.",
+  },
+];
+---
+
+<MainLayout title="Services">
+  <section class="container py-5">
+    <div class="col-lg-8">
+      <h1 class="display-4 fw-bold text-primary-emphasis mb-1">Services</h1>
+      <p class="lead text-body-secondary mb-3">How can I help?</p>
+      <p class="mb-3">
+        From the wires to the web, I build and understand the whole stack: the
+        embedded software on the device, the API in the middle, and the
+        dashboard your team actually looks at.
+      </p>
+      <span
+        class="d-inline-block rounded-pill bg-primary text-bg-primary shadow-sm fw-bold px-3 py-2"
+      >
+        fixed scope + fixed price = no surprises
+      </span>
+    </div>
+  </section>
+
+  <ServicesSection data={services} />
+
+  <ProcessSection data={processSteps} />
+
+  <ServicesCTA />
+</MainLayout>

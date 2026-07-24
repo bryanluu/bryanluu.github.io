@@ -1,0 +1,35 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+// On mobile, the card's own padding plus the page container's gutter left
+// very little width for the calendar widget. Below md, bleed the card out
+// to the true viewport edges and drop the border/rounding that look odd
+// flush against the screen edge.
+//
+// margin-inline: calc(50% - 50vw) is used instead of a fixed negative
+// margin because .container isn't a consistent width to offset against:
+// it's fluid (100%, just the gutter) below the sm breakpoint, but at sm
+// and up it switches to a *fixed* max-width (540px at sm, centered via
+// auto-margins) until md. A negative margin sized for the gutter alone
+// can't reach past that auto-margin gap. This calc is self-referential to
+// the viewport instead, so it works regardless of which container width
+// is currently active.
+@include media-breakpoint-down(md) {
+  // !important needed throughout: Bootstrap's .border, .rounded-4, and .p-4
+  // utilities (still applied in JSX for the desktop look) all compile with
+  // !important themselves.
+  .booking-card {
+    margin-inline: calc(50% - 50vw);
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 1rem !important;
+  }
+
+  // Zero all around so BookingCalendar can reach every edge of the card;
+  // the title now gets its spacing from its own m-3/mt-md-0 margin in the
+  // JSX instead of card-body padding.
+  .booking-card .card-body {
+    padding: 0 !important;
+  }
+}

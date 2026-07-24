@@ -1,0 +1,68 @@
+import React from "react";
+import SkillList from "../SkillList";
+import DateRange from "../DateRange";
+import HoverLink from "../HoverLink";
+
+function Project(props) {
+  const project = props.data;
+
+  return (
+    <section className="pr-3">
+      <div className="d-flex flex-wrap justify-content-between align-items-center gap-5 row-gap-2">
+        <div className="d-flex flex-wrap align-items-baseline gap-2">
+          <h3 className="card-title fs-4">{project.title}</h3>
+          <span className="fs-4">
+            {project.association === "Personal"
+              ? "" // hide for personal projects
+              : " @ " + project.association}
+          </span>
+        </div>
+        {project.link && (
+          <div className="d-flex align-items-center">
+            <HoverLink
+              href={project.link.url}
+              className="icon-link icon-link-hover align-items-baseline mt-auto"
+              external
+            >
+              {project.link.label}
+              <i className="bi bi-chevron-right" aria-hidden="true"></i>
+            </HoverLink>
+          </div>
+        )}
+      </div>
+      <bold className="fw-medium">{project.role}</bold>
+      {project.dates.start ? (
+        DateRange({
+          start: project.dates.start,
+          end: project.dates.end,
+          className: "d-block small text-body-secondary mb-2",
+        })
+      ) : (
+        <time
+          dateTime={project.dates.end}
+          className="d-block small text-body-secondary mb-2"
+        >
+          {project.dates.label}
+        </time>
+      )}
+      <p className="">{project.description}</p>
+      <SkillList skills={project.skills} className="text-secondary" />
+    </section>
+  );
+}
+
+function ProjectsList(props) {
+  const projects = props.data;
+  return (
+    <section className="container">
+      <h2 className="fs-5 pb-2 text-secondary">Other projects</h2>
+      <div className="d-flex flex-wrap justify-content-between align-items-baseline gap-5">
+        {projects.map((project, idx) => (
+          <Project key={idx} data={project} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default ProjectsList;

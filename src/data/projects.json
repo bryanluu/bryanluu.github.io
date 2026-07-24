@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "title": "GRID Arcade",
+    "name": "GRID Arcade",
+    "slug": "grid-arcade",
+    "role": "Designer + Developer",
+    "association": "Personal",
+    "dates": { "start": "2025-08", "end": "2025-12", "label": "Fall 2025" },
+    "description": "Mini-arcade built on one C++ codebase shared between hardware and emulation.",
+    "skills": ["Electronics", "C++", "Game Design"],
+    "preview": {
+      "src": "assets/GRID_arcade.jpg",
+      "alt": "Photo of a mini-arcade system, showing an LED grid display with a joystick."
+    },
+    "link": {
+      "url": "https://github.com/bryanluu/GRID-arcade",
+      "label": "View source"
+    },
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "CMS",
+    "name": "OPEN CMS",
+    "slug": "open-cms",
+    "role": "Core developer",
+    "association": "OPEN Technologies",
+    "dates": { "start": "2023-05", "end": "2023-08", "label": "Q3 2023" },
+    "description": "Multi-tenant CMS providing OPEN's map content, powered by Docker + Craft CMS.",
+    "skills": ["Full-stack", "Docker", "CMS", "API"],
+    "preview": {
+      "src": "assets/OPEN_viz.png",
+      "alt": "Screenshot of the CMS-powered map by OPEN Technologies."
+    },
+    "link": {
+      "url": "https://grid.opentech.eco/orgs/buildingbenchmarkbc/viz",
+      "label": "See it in action"
+    },
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Thunderbird",
+    "name": "UBC Thunderbird",
+    "slug": "ubc-thunderbird",
+    "role": "Solo developer",
+    "association": "UBC Sailbot",
+    "dates": {
+      "start": "2013-09",
+      "end": "2014-08",
+      "label": "Fall 2013 - Summer 2014"
+    },
+    "description": "Autonomous sailboat that finished 1st at the International Robotic Sailing Regatta.",
+    "skills": ["Embedded", "Robotics", "QA"],
+    "preview": {
+      "src": "assets/thunderbird.jpg",
+      "alt": "Footage of the Thunderbird robot sailing through open water."
+    },
+    "link": {
+      "url": "https://www.ubcsailbot.org/projects/#thunderbird",
+      "label": "Thunderbird's story"
+    },
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "A-Maze-ing Race: Web",
+    "name": "AMR Web",
+    "slug": "a-maze-ing-race-web",
+    "role": "Designer + Developer",
+    "association": "Personal",
+    "dates": {
+      "start": "2025-03",
+      "end": "2025-07",
+      "label": "Fall 2013 - Summer 2014"
+    },
+    "description": "TypeScript port of my C++ maze game to browser.",
+    "skills": ["Front-end", "TypeScript", "Game Design"],
+    "link": {
+      "url": "https://bryanluu.github.io/a-maze-ing-race-web/",
+      "label": "Play it"
+    },
+    "preview": null
+  },
+  {
+    "id": 5,
+    "title": "PowerPlots Julia Library",
+    "name": "PowerPlots.jl",
+    "slug": "powerplots",
+    "role": "Open-source contributor",
+    "association": "WISPO-POP Lab, UW-Madison",
+    "dates": {
+      "end": "2022-07",
+      "label": "July 2022"
+    },
+    "description": "Key plot-attribute for power-grid visualisation library.",
+    "skills": ["Vega", "Julia", "Data-visualization"],
+    "link": {
+      "url": "https://github.com/WISPO-POP/PowerPlots.jl",
+      "label": "GitHub"
+    },
+    "preview": null
+  }
+]

@@ -1,0 +1,55 @@
+---
+import React from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "../styles/main.scss";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script is:inline>
+      (function initSystemTheme() {
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const applySystemTheme = () => {
+          document.documentElement.setAttribute(
+            "data-bs-theme",
+            media.matches ? "dark" : "light",
+          );
+        };
+        applySystemTheme();
+        media.addEventListener("change", applySystemTheme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="alternate icon" href="/assets/favicon.ico" />
+    <title>Bryan Luu | {title}</title>
+  </head>
+  <body>
+    <!-- <pre>{JSON.stringify(Astro.props, null, 2)}</pre> -->
+    <a href="#main-content" class="visually-hidden-focusable"
+      >Skip to main content</a
+    >
+    <div class="d-flex flex-column min-vh-100">
+      <Nav currentPath={Astro.url.pathname} />
+      <main id="main-content" tabindex="-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <script>
+      import "bootstrap/dist/js/bootstrap.bundle.min.js";
+    </script>
+  </body>
+</html>

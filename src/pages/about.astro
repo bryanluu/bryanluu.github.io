@@ -1,0 +1,16 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import AboutHero from "../components/About/AboutHero";
+import AboutIdentities from "../components/About/AboutIdentities";
+import CTABanner from "../components/CTABanner";
+---
+
+<MainLayout title="About">
+  <AboutHero client:load />
+
+  <AboutIdentities />
+
+  <div class="bg-secondary-subtle">
+    <CTABanner />
+  </div>
+</MainLayout>
